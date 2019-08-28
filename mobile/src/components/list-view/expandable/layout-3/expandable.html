@@ -1,0 +1,34 @@
+<!-- Themes Expandable - Filters Products -->
+<ion-grid had-header no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col col-12 no-padding no-margin>
+      <!-- Header -->
+      <ion-list no-margin>
+        <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"
+          (ionCancel)="onCancelSearch()">
+        </ion-searchbar>
+        <!--- List Content -->
+        <ul no-margin no-padding class="collapsible">
+          <li no-margin *ngFor="let group of data;">
+            <!-- Expandable - Filters Products - Header-->
+            <!-- <div class="collapsible-header" item-divider no-padding (click)="toggleGroup(group)"> -->
+            <div class="collapsible-header" item-divider no-padding (click)="onEvent('onItemClick', group, $event)">
+              <ion-item no-lines>
+                <ion-avatar item-start>
+                  <img [src]="group.displayImage" />
+                </ion-avatar>
+                <h2 item-title text-capitalize>{{group.product_name}}</h2>
+                <!-- <p item-subtitle text-capitalize>{{group.size}}</p> -->
+                <div item-content>
+                  <span span-small>{{group.unit_value_total}} QTY</span>
+                  <ion-icon icon-small item-end>
+                  </ion-icon>
+                </div>
+              </ion-item>
+            </div>
+          </li>
+        </ul>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,11 @@
+/*  #Style Search - Field + Header 2
+===========================================*/
+search-bar-layout-3 {
+  .active {
+    color: theme-colors('textColors', 'accent');
+  }
+  [card-title] {
+    margin-top: 10px;
+    @include font-title;
+  }
+}

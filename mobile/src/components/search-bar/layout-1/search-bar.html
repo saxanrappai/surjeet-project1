@@ -1,0 +1,31 @@
+<!-- Theme  Search bars - Simple -->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title *ngIf="data != null">{{data.headerTitle}}</ion-title>
+  </ion-navbar>
+  <ion-toolbar search-bar-section>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onEvent('onTextChange', $event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<!-- Content -->
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <!-- List Search-->
+    <ion-row card-background-page>
+      <ion-col col-12 col-md-6 col-lg-4 *ngFor="let item of data.items;" (click)="onEvent('onItemClick', item)">
+        <ion-card box-shadow>
+          <img [src]="item.image" />
+          <div title-block padding>
+          <!--- Big Title -->
+          <h2 card-title>{{item.title}}</h2>
+          <!-- Description -->
+          <h3 card-body-text>{{item.subtitle}}</h3>
+        </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

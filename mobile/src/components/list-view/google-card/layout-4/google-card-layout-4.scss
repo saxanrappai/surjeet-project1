@@ -1,0 +1,12 @@
+/*  #Style Google Card - Review cards
+================================================*/
+google-card-layout-4 {
+  [card-title] {
+    margin-top: 10px;
+    @include font-title;
+  }
+  .active {
+    color: theme-colors('textColors', 'accent');
+  }
+  
+}

@@ -1,0 +1,29 @@
+<!--Theme Scanner - Click here-->
+<ion-content has-header>
+  <div *ngIf="data != null">
+  <ion-item *ngIf="data.cardType">
+    {{data.cardType}}
+  </ion-item>
+  <ion-item *ngIf="data.redactedCardNumber">
+    {{data.redactedCardNumber}}
+  </ion-item>
+  <ion-item *ngIf="data.cardNumber">
+    {{data.cardNumber}}
+  </ion-item>
+  <ion-item *ngIf="data.expiryMonth">
+    {{data.expiryMonth}}
+  </ion-item>
+  <ion-item *ngIf="data.expiryYear">
+    {{data.expiryYear}}
+  </ion-item>
+  <ion-item *ngIf="data.cvv">
+    {{data.cvv}}
+  </ion-item>
+  <ion-item *ngIf="data.postalCode">
+    {{data.postalCode}}
+  </ion-item>
+  <ion-item *ngIf="data.cardholderName">
+    {{data.cardholderName}}
+  </ion-item>
+</div>
+</ion-content>

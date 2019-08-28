@@ -1,0 +1,40 @@
+<!--Theme Swipe To Dismiss - Small item + header-->
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row *ngIf="data != null">
+      <ion-col col-12>
+        <!--Header Small item + header-->
+        <ion-list-header no-margin header-section no-lines padding-left>
+          <!--Header Big Title-->
+          <h1 header-title text-capitalize>{{data.header}}</h1>
+          <ion-item no-lines>
+            <!-- Title -->
+            <h2 item-title text-capitalize margin-top text-wrap>{{data.title}}</h2>
+            <!-- Subtitle -->
+            <p item-subtitle no-margin text-wrap>{{data.subtitle}}</p>
+            <button item-end ion-button default-button (click)="onEvent('onButtonGetClick', 'ok', $event)">{{data.button}}</button>
+          </ion-item>
+        </ion-list-header>
+        <!-- Content -->
+        <ion-list no-margin item-divider>
+          <ion-item-sliding item-divider *ngFor="let item of data.items" #slidingItem>
+            <ion-item no-lines (click)="onEvent('onItemClick', item.title, $event)">
+              <!-- Title -->
+              <h2 item-title>{{item.title}}</h2>
+              <!-- Subtitle -->
+              <h3 item-subtitle>{{item.subtitle}}</h3>
+              <!-- Details Item-->
+              <span span-medium>{{item.time}}</span>
+            </ion-item>
+            <!--Action Button-->
+            <ion-item-options text-center no-lines>
+              <button no-padding ion-button button-icon transparent>
+                <ion-icon no-padding icon-large [name]="item.icon" (click)="onEvent('onButtonGetClick', item.title, $event)"></ion-icon>
+              </button >
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

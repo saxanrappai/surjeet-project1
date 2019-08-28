@@ -1,0 +1,8 @@
+/*  #Style -- Alert - Alert Subscribe
+===========================================*/
+alert-layout-3 {
+  [card-title] {
+    margin-top: 10px;
+    @include font-title;
+  }
+}

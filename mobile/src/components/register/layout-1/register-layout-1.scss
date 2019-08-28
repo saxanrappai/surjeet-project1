@@ -1,0 +1,95 @@
+/*  #Style Register + logo
+================================================*/
+register-layout-1 {
+  [background-size] {
+    position: relative;
+    background-position: center !important;
+  }
+
+  .scroll-content {
+    padding-bottom: 0 !important;
+
+    img {
+      max-width: 170px;
+      max-height: 40px;
+      margin-bottom: 10px;
+    }
+
+    ion-grid {
+      height: 100%;
+
+      ion-row {
+        height: 100%;
+
+        .item-inner {
+          padding-right: 0 !important;
+        }
+        //Setting Form
+        form {
+          ion-item {
+            padding-left: 0 !important;
+            padding-bottom: 15px !important;
+
+            [error-field] {
+              margin: 0 !important;
+              position: absolute !important;
+              bottom: 0 !important;
+              right: 5px !important;
+              font-size: $h6-font-size;
+              color: theme-colors('textColors', 'secondary') !important;
+            }
+
+            .item-inner {
+              border-bottom: none !important;
+              box-shadow: none !important;
+              padding-right: 0 !important;
+            }
+
+            ion-label {
+              margin: 0 5px !important;
+            }
+
+            ion-input {
+              background: theme-colors('mainColors', 'secondary') !important;
+              margin: 5px 10px 15px 10px !important;
+              border-radius: $border-radius;
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+              padding: 5px 10px !important;
+              z-index: 999;
+              .input-cover {
+                display: none;
+              }
+            }
+          }
+
+          [stacked] {
+            font-size: $h6-font-size !important;
+            color: theme-colors('textColors', 'secondary') !important;
+          }
+
+          .item-label-stacked ion-datetime {
+            background: theme-colors('mainColors', 'secondary') !important;
+            margin: 5px 10px 15px 10px !important;
+            border-radius: $border-radius;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+            padding: 5px 10px !important;
+            z-index: 999;
+          }
+        }
+
+        [item-subtitle] {
+          color: theme-colors('textColors', 'secondary') !important;
+        }
+
+        .datetime-text {
+          font-size: 15px;
+          font-weight: 400 !important;
+          margin: 8px 0;
+        }
+        .datetime-placeholder {
+          color: theme-colors('textColors', 'accent')
+        }
+      }
+    }
+  }
+}

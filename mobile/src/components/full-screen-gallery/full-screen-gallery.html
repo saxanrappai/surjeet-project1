@@ -1,0 +1,7 @@
+<!--Screen Gallery-->
+<ion-slides style="height:80% !important" #slider pager="true" [initialSlide]="data.index">
+    <ion-slide *ngFor="let item of data;">
+        <img [src]="item.url" #myImage style="width: 70%;height: 100%;border-radius: 5%;"
+            (click)="onImageClick(myImage)" />
+    </ion-slide>
+</ion-slides>

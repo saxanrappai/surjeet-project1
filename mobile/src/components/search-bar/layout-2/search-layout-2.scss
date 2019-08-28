@@ -1,0 +1,31 @@
+/*  #Style Search - Field + Header
+===========================================*/
+search-bar-layout-2 {
+  .toolbar-ios {
+    min-height: 64px;
+  }
+  .bar-button-default-ios,
+  .toolbar-title-ios {
+    padding-top: 20px;
+  }
+
+  // Settings Big Image
+  [background-size] {
+    min-height: 160px!important;
+    position: relative;
+
+    [search-bar-bcg] {
+      position: absolute;
+      z-index: 2;
+      right: 16px;
+      left: 16px;
+      bottom: 16px;
+    }
+  }
+
+  [search-bar-title] {
+    color: theme-colors('textColors', 'accent');
+    padding-bottom: 10px;
+    @include font-title;
+  }
+}

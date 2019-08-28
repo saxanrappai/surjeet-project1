@@ -1,0 +1,35 @@
+/*  #Style Profile - Profile 1
+================================================*/
+profile-layout-5 {
+  ion-avatar {
+    img {
+      width: 120px !important;
+      height: 120px !important;
+      margin: 15px auto 20px;
+      border: 2px solid theme-colors('mainColors', 'secondary');
+    }
+  }
+
+  ion-card {
+    box-shadow: none !important;
+  }
+
+  .button-inner {
+    display: block;
+  }
+
+  [small-font] {
+    clear: both;
+    display: block;
+  }
+
+  [description] {
+    background: theme-colors('mainColors', 'primary');
+    border-radius: $border-radius;
+
+  ion-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    }
+  }
+}

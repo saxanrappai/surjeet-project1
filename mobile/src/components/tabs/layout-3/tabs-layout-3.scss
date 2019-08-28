@@ -1,0 +1,35 @@
+/*  # Style Tabs Header tab -- text
+==================================*/
+tabs-layout-3 {
+  .tabs-md .tab-button[aria-selected=false],
+  .tabs-md .tab-button {
+    color: theme-colors('textColors', 'primary');
+  }
+
+  .tabs-md .tab-button[aria-selected=true],
+  .tabs-md .tab-button,
+  .tabs-ios .tab-button[aria-selected=true],
+  .tabs-ios .tab-button {
+    color: theme-colors('textColors', 'accent');
+    margin-top: 240px;
+    background: theme-colors('mainColors', 'primary') !important;
+  }
+
+  .tabs-ios [header] {
+    height: 185px;
+  }
+
+  [background-size] {
+    background-size: cover !important;
+    margin-top: 56px;
+    @include font-title;
+    z-index: 9;
+    height: 185px;
+    position: relative;
+  }
+
+  .tabs-md .tabbar,
+  .tabs-ios .tabbar {
+      background: transparent;
+  }
+}

@@ -1,0 +1,39 @@
+<!--Theme Google Card - Full Image Cards-->
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col no-padding col-12 col-md-6 *ngFor="let item of data.items;let i = index">
+        <ion-card background-size text-left (click)="onEvent('onItemClick', item, $event)">
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="item.avatar">
+            </ion-avatar>
+            <h2>{{item.title}}</h2>
+            <p>{{item.data}}</p>
+            <div item-content>
+              {{item.time}}
+            </div>
+          </ion-item>
+          <img [src]="item.backgroundImage">
+          <ion-card-content>
+            <p card-body-text>{{item.description}}</p>
+          </ion-card-content>
+          <ion-row>
+            <ion-col col-auto *ngIf="item.like != null">
+              <button ion-button button-icon-clear icon-start clear small (click)="onEvent('onLike', item, $event)">
+                <ion-icon [ngClass]="{'active' : item.like.isActive}" [name]="item.like.icon"></ion-icon>
+                <div text-capitalize>{{item.like.number}} {{item.like.text}}</div>
+              </button>
+            </ion-col>
+            <ion-col col-auto *ngIf="item.comment != null">
+              <button ion-button button-icon-clear icon-start clear small (click)="onEvent('onComment', item, $event)">
+                <ion-icon  [ngClass]="{'active' : item.comment.isActive}" [name]="item.comment.icon"></ion-icon>
+                <div text-capitalize>{{item.comment.number}} {{item.comment.text}}</div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,107 @@
+<!-- Theme Login pages - Login + logo 1-->
+<ion-content has-header *ngIf="data != null" background-size [ngStyle]="{'background-image': 'url(' + data.background + ')'}">
+  <ion-grid no-padding *ngIf="data != null">
+    <div segment-block>
+      <ion-segment has-header [(ngModel)]="selectedItem">
+        <ion-segment-button text-capitalize value="login">
+          {{data.segmentLogin}}
+        </ion-segment-button>
+        <ion-segment-button text-capitalize value="register">
+          {{data.segmentRegister}}
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <!--- SETTINGS LOGIN SCREEN -->
+    <ion-row *ngIf="isEnabled('login')" padding-left padding-right align-items-center>
+      <ion-col margin-bottom margin-top col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-item transparent no-margin no-padding no-lines>
+          <!---Logo-->
+          <img item-start [src]="data.logo">
+          <button item-end ion-button button-clear text-uppercase clear no-padding (click)="onEvent('onSkip')">{{data.skip}}</button>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <form margin-bottom>
+          <!---Logo Title-->
+          <h1 ion-text login-title no-margin text-center padding-bottom text-wrap>{{data.login.title}}</h1>
+          <!---Input field username-->
+          <ion-item transparent margin-top>
+            <ion-label stacked>{{data.login.labelUsername}}</ion-label>
+            <ion-input required type="text" [placeholder]="data.login.username" [(ngModel)]="usernameLogin" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isUsernameValidLogin">{{data.login.errorUser}}</ion-label>
+          </ion-item>
+          <!---Input field password-->
+          <ion-item transparent>
+            <ion-label stacked>{{data.login.labelPassword}}</ion-label>
+            <ion-input required type="password" [placeholder]="data.login.password" [(ngModel)]="passwordLogin" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isPasswordValidLogin">{{data.login.errorPassword}}</ion-label>
+          </ion-item>
+          <ion-item transparent>
+            <button ion-button button-clear text-capitalize clear no-padding float-right (click)="onEvent('onForgot')">{{data.login.forgotPassword}}</button>
+          </ion-item>
+          <!-- Settings Button Login Screen -->
+          <div button-form>
+            <!---Facebook button-->
+            <button ion-button default-button facebookButton text-capitalize icon-end (click)="onEvent('onFacebook')">
+            {{data.login.facebookLogin}}
+            <i icon-small class="icon icon-facebook"></i>
+        </button>
+            <!---Login button-->
+            <button ion-button default-button text-capitalize (click)="onEvent('onLogin')">{{data.login.login}}</button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+
+    <!--- SETTINGS REGISTER SCREEN -->
+    <ion-row *ngIf="isEnabled('register')" padding-left padding-right align-items-center>
+      <ion-col margin-bottom margin-top col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-item transparent no-margin no-padding no-lines>
+          <!---Logo-->
+          <img item-start [src]="data.logo">
+          <button item-end ion-button button-clear text-uppercase clear no-padding (click)="onEvent('onSkip')">{{data.skip}}</button>
+        </ion-item>
+      </ion-col>
+      <ion-col text-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <form margin-bottom>
+          <!-- Register Title -->
+          <h1 register-title no-margin padding-bottom text-wrap>{{data.register.title}}</h1>
+          <!--Form-->
+          <ion-item transparent>
+            <!---Input field username-->
+            <ion-label stacked>{{data.register.lableUsername}}</ion-label>
+            <ion-input required [placeholder]="data.register.username" type="text" [(ngModel)]="usernameRegister" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isUsernameValidRegister">{{data.register.errorUser}}</ion-label>
+          </ion-item>
+          <ion-item transparent>
+            <!---Input field password-->
+            <ion-label stacked>{{data.register.lablePassword}}</ion-label>
+            <ion-input required [placeholder]="data.register.password" type="password" [(ngModel)]="passwordRegister" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isPasswordValidRegister">{{data.register.errorPassword}}</ion-label>
+          </ion-item>
+          <ion-item transparent>
+            <!---Input field email-->
+            <ion-label stacked>{{data.register.lableEmail}}</ion-label>
+            <ion-input required [placeholder]="data.register.email" type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="emailRegister" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isEmailValidRegister">{{data.register.errorEmail}}</ion-label>
+          </ion-item>
+          <ion-item transparent>
+            <!---Input field country-->
+            <ion-label stacked>{{data.register.lableCountry}}</ion-label>
+            <ion-input required [placeholder]="data.register.country" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="countryRegister" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isCountryValidRegister">{{data.register.errorCountry}}</ion-label>
+          </ion-item>
+          <ion-item transparent>
+            <!---Input field city-->
+            <ion-label stacked>{{data.register.lableCity}}</ion-label>
+            <ion-input required [placeholder]="data.register.city" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="cityRegister" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isCityValidRegister">{{data.register.errorCity}}</ion-label>
+          </ion-item>
+          <!---Register button-->
+          <button ion-button block default-button text-capitalize margin-top (click)="onEvent('onRegister')">{{data.register.register}}</button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,53 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-fcm-with-dependecy-updated": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-ionic-webview": {
+            "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-local-notification": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-native-spinner": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.appyogi.woodcart"
+        }
+    }
+}

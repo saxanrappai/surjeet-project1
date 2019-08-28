@@ -1,0 +1,24 @@
+/*  #Style Profile - Profile 1
+================================================*/
+profile-layout-3 {
+  [profile] {
+    @extend .gradient;
+  }
+
+  [card-title] {
+    @include font-title;
+  }
+
+  .button-inner {
+    display: block;
+  }
+
+  [small-font] {
+    clear: both;
+    display: block;
+  }
+
+  .active {
+    color: theme-colors('textColors', 'accent');
+  }
+}

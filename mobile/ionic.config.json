@@ -1,0 +1,21 @@
+{
+  "name": "organic-food",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/index.php/api/get_products",
+      "proxyUrl": "http://myshop.guidersmap.com/index.php/api/get_products"
+    },
+    {
+      "path": "/index.php/api/get_categories",
+      "proxyUrl": "http://myshop.guidersmap.com/index.php/api/get_categories"
+    },
+    {
+      "path": "/index.php/api/my_order_list",
+      "proxyUrl": "http://myshop.guidersmap.com/index.php/api/my_order_list"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col col-12>
+      <ion-list no-margin>
+        <ul collapsible no-margin no-padding>
+          <li *ngFor="let group of data;">
+            <!-- List big image Header -->
+            <div collapsible-header (click)="toggleGroup(group)">
+              <ion-item no-lines item-divider>
+                <ion-avatar item-start>
+                  <img src="assets/images/background/green-bg.jpg" alt="title" />
+                </ion-avatar>
+                <h2 item-title>Order ID: {{group.sale_id}}</h2>
+                <h3 item-subtitle text-wrap>Total Quantity: {{group.quantity}}</h3>
+                <button ion-button round block style="background-color:grey !important" *ngIf="group.status==0">Order
+                  Pending</button>
+                <button ion-button round block style="background-color:green !important" *ngIf="group.status==1">Order
+                  Confirmed</button>
+                <button ion-button round block style="background-color:darkgreen !important" *ngIf="group.status==2">Out
+                  for Delivery</button>
+                <button ion-button round block style="background-color:darkred !important" *ngIf="group.status==3">Order
+                  cancelled</button>
+              </ion-item>
+            </div>
+            <!-- End List big image Header -->
+            <!-- List big image Body -->
+            <div item-accordion [ngClass]="{'active': isGroupShown(group) }" [hidden]="!isGroupShown(group)"
+              style="overflow: scroll;">
+              <!-- <h2 subitem-subtitle>Category: {{group.category_title[0]}}</h2> -->
+              <p style="color:white;font-size: 14px;margin:0px;"> Driver Details: </p>
+              <div style="margin-left:20px" transparent no-lines *ngIf="group.driver_details.length>0">
+                <ion-avatar item-start>
+                  <img style="width:50px;height:50px" [src]="displayImage(group.driver_details)" alt="title" />
+                </ion-avatar>
+                <p style="color:white">Name: {{group.driver_details[0].driver_name}}</p>
+                <p style="color:white">Vehicle No: {{group.driver_details[0].driver_vehicle_no}}</p>
+                <p style="color:white">Mobile Number: {{group.driver_details[0].driver_phone}}</p>
+              </div>
+              <div style="margin-left:20px" *ngIf="group.driver_details.length==0">
+                <p style="color:white">Not Allocated</p>
+              </div>
+              <h1 subitem-subtitle>Product List :</h1>
+              <ion-item style="margin:0px" transparent no-lines>
+                <ion-row>
+                  <h2 col-2 text-center style="color:white">PID</h2>
+                  <h2 col-5 text-center style="color:white">PName</h2>
+                  <h2 col-5 text-center style="color:white">PItems</h2>
+                </ion-row>
+                <!-- Title -->
+                <!-- <p subitem-subtitle text-wrap style="margin:0px !important" *ngFor="let item of group.product_list;"
+                  (click)="onEvent('onItemClick', item, $event)">{{item}}</p> -->
+
+                <ion-row subitem-subtitle text-wrap style="margin:0px !important"
+                  *ngFor="let item of group.product_list;let i = index">
+                  <p col-2 text-center style="color:white">{{group.pids[i]}}</p>
+                  <p col-5 text-center style="color:white">{{group.pTitles[i]}}</p>
+                  <p col-5 text-center style="color:white">{{item}}</p>
+                </ion-row>
+              </ion-item>
+              <!-- <button ion-button round block (click)="onEvent('onItemClick', group, $event)" *ngIf="1>=group.status"
+                style="background-color:darkred !important;width:200px;display:block;margin:auto;margin-bottom:10px">Cancel
+                Order</button> -->
+            </div><!-- End List big image Body -->
+          </li>
+        </ul>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

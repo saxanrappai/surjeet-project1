@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Orders</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="show">
+    <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>
+  </div>
+</ion-content>

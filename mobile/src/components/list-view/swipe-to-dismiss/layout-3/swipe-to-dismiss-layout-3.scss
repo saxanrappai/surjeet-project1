@@ -1,0 +1,47 @@
+/*  #Style Swipe To Dismiss - Full width image
+===========================================*/
+
+swipe-to-dismiss-layout-3 {
+  [background-size] {
+    position: relative;
+    height: 230px;
+    border-radius: $border-radius;
+    @extend .box-shadow;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      @include gradient-dark;
+    }
+
+
+    [title-block] {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 999;
+    }
+  }
+  // Settings Button Swipe
+  ion-item-options {
+    border-bottom: 1px solid transparent !important;
+    background-color: theme-colors('mainColors', 'accent');
+
+
+    button {
+      letter-spacing: 1px;
+      padding: 16px 16px 16px 32px !important;
+      font-size: $h4-font-size !important;
+
+      .button-inner {
+        padding: 10px 10px !important;
+        background-color: theme-colors('mainColors', 'accent') !important;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}

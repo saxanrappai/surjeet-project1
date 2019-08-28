@@ -1,0 +1,30 @@
+<!-- Theme Sticky List Header - Basic -->
+<ion-content>
+    <ion-grid no-padding *ngIf="data != null">
+      <ion-row>
+        <ion-col col-12>
+          <ion-list no-margin *ngFor="let item of data.items">
+            <!-- Header Top -->
+            <ion-item-divider text-capitalize no-margin no-lines header-title ion-affix
+              [content]="content">{{item.groupName}}
+            </ion-item-divider>
+            <ion-row>
+              <ion-col col-12 col-md-3 *ngFor="let element of item.items">
+                <ion-card no-margin (click)="onEvent('onItemClick', element.title, $event)">
+                  <!-- Avatar -->
+                  <img [src]="element.image" alt="{{element.title}}" />
+                  <ion-card-content>
+                    <!-- Title -->
+                    <h2 item-title text-capitalize>{{element.title}}</h2>
+                    <ion-icon icon-medium name="time"></ion-icon>1h 50min
+                    <ion-icon icon-medium name="pie"></ion-icon> 6 Servings
+                    <ion-icon icon-medium name="stats"></ion-icon> 456 cals
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

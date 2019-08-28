@@ -1,0 +1,12 @@
+/*  #Style Full gallery 1
+===========================================*/
+image-gallery-layout-1 {
+  ion-card {
+    img {
+     height: 180px;
+    }
+  }
+  ion-card-content {
+    background: theme-colors('mainColors', 'secondary');
+  }
+}

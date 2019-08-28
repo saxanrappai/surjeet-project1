@@ -1,0 +1,43 @@
+<!-- Theme Sticky List Header - Product -->
+<ion-content no-padding>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col col-12>
+        <ion-list *ngFor="let item of data.items">
+          <!--Text Header Top-->
+          <ion-list-header box-shadow no-lines header-title text-capitalize ion-affix [content]="content">
+            {{item.groupName}}
+          </ion-list-header>
+          <ion-card box-shadow transparent *ngFor="let element of item.items">
+            <!--Big Card -->
+            <div images-gallery>
+              <div big-image>
+                <img box-shadow [src]="element.image1" [alt]="element" />
+              </div>
+              <!--Gallery Card -->
+              <div list-images (click)="onEvent('onItemClick', element.subtitle, $event)">
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image2 + ')'}" title="{{element.title}}"></div>
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image3 + ')'}" title="{{element.title}}"></div>
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image4 + ')'}" title="{{element.title}}"></div>
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image5 + ')'}" title="{{element.title}}"></div>
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image6 + ')'}" title="{{element.title}}"></div>
+                <div box-shadow images background-size [ngStyle]="{'background-image': 'url(' + element.image7 + ')'}" title="{{element.title}}"></div>
+              </div>
+            </div>
+            <!-- Card Content -->
+            <ion-card-content>
+              <ion-item transparent>
+                <h1 card-title>BBQ Tuna Fritters</h1>
+                <span span-large>{{element.price}}</span>
+                <span span-small margin-left text-uppercase>{{element.subtitle}}</span>
+                <div item-content>
+                  <button box-shadow item-end ion-button default-button (click)="onEvent('onBuy', 'Buy', $event)">{{element.buy}}</button>
+                </div>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

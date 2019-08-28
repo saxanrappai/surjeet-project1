@@ -1,0 +1,33 @@
+<!--Theme Google Card - Styled cards-->
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row *ngIf="data != null">
+      <ion-col col-12 col-lg-6 col-xl-4 *ngFor="let item of data.items;let i = index">
+        <!-- Card -->
+        <ion-card padding (click)="onEvent('onItemClick', item, $event)">
+          <img [src]="item.image" />
+           <ion-card-header text-center>
+             <h2 card-title>{{item.title}}</h2>
+             <span ion-text font-bold text-capitalize color="primary">{{item.category}}</span>
+           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col no-padding text-right  *ngIf="item.like != null">
+                <button ion-button button-icon-clear icon-start clear (click)="onEvent('onLike', item, $event)">
+                  <ion-icon [ngClass]="{'active' : item.like.isActive}" [name]="item.like.icon"></ion-icon>
+                  {{item.like.number}}
+                </button>
+              </ion-col>
+              <ion-col no-padding text-left *ngIf="item.comment != null">
+                <button ion-button button-icon-clear icon-start clear (click)="onEvent('onComment', item, $event)">
+                  <ion-icon [ngClass]="{'active' : item.comment.isActive}" [name]="item.comment.icon"></ion-icon>
+                  {{item.comment.number}}
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

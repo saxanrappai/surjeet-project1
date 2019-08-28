@@ -1,0 +1,60 @@
+/*  #Style Search - Simple
+===========================================*/
+
+search-bar-layout-1 {
+  .toolbar-ios {
+    min-height: 64px;
+  }
+
+  .bar-button-default-ios,
+  .toolbar-title-ios {
+    padding-top: 20px;
+  }
+
+  [search-bar-section] {
+    padding: 0 10px;
+  }
+
+  [card-background-page] {
+    ion-card {
+      position: relative;
+      height: 250px;
+      border-radius: $border-radius;
+
+      &:before {
+        content: "";
+        position: absolute;
+        @include gradient-dark;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      img {
+        min-height: 215px;
+      }
+
+      [title-block] {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+            [card-title] {
+              color: theme-colors('textColors', 'accent');
+              z-index: 9999;
+              @include font-title;
+            }
+
+            [card-body-text] {
+              color: theme-colors('textColors', 'secondary') !important;
+              z-index: 9999;
+              margin-top: 10px;
+            }
+      }
+    }
+
+  }
+}

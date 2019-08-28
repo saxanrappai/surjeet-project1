@@ -1,0 +1,13 @@
+/*  #Style -- Segment - Segment Card
+===========================================*/
+segment-layout-2 {
+
+  [card-title] {
+    @include font-title;
+    line-height: 40px;
+  }
+
+  [card-body-text] {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+/*  #Style Google Card - Styled cards 2
+================================================*/
+google-card-layout-2 {
+  // Settings Card
+  ion-card {
+    box-shadow: none !important;
+    border-radius: $border-radius !important;
+    [card-title] {
+      @include font-title;
+      line-height: normal;
+    }
+  }
+}

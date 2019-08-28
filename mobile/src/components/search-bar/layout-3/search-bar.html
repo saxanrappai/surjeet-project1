@@ -1,0 +1,45 @@
+<!-- Theme Search bars - Search Field + Header 2 -->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title *ngIf="data != null">{{data.headerTitle}}</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-padding>
+    <div header-section padding transparent>
+      <!-- Header Big Title -->
+      <h1 *ngIf="data != null" padding-left ion-text color="accent" search-bar-title>{{data.title}}</h1>
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onEvent('onTextChange', $event)"></ion-searchbar>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<!--Content -->
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row *ngIf="data != null">
+      <!-- List Search-->
+      <ion-col col-12 col-lg-6 col-xl-4  *ngFor="let item of data.items;">
+          <ion-card box-shadow padding (click)="onEvent('onItemClick', item, $event)">
+            <img [src]="item.image" />
+             <ion-card-header>
+               <span font-bold ion-text small-font color="primary">{{item.time}}</span>
+               <h2 card-title>{{item.title}}</h2>
+               <p card-subtitle text-wrap>{{item.description}}</p>
+             </ion-card-header>
+            <ion-card-content>
+              <button ion-button button-icon-clear icon-start clear (click)="onEvent('onLikeClick', item, $event)">
+                <ion-icon [ngClass]="{'active' : item.like.isActive}" [name]="item.like.icon"></ion-icon>
+                {{item.like.number}}
+              </button>
+
+              <button ion-button button-icon-clear icon-start clear (click)="onEvent('onCommentClick', item, $event)">
+                <ion-icon [ngClass]="{'active' : item.comment.isActive}" [name]="item.comment.icon"></ion-icon>
+                {{item.comment.number}}
+              </button>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

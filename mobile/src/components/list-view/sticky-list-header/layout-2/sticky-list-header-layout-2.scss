@@ -1,0 +1,70 @@
+/*  #Style Sticky List Header - Product
+================================================*/
+sticky-list-header-layout-2 {
+  [big-image],
+  [list-images] {
+    width: 50%;
+  }
+
+  [ion-affix] {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    border-top: none !important;
+    color: theme-colors('textColors', 'accent');
+    line-height: 30px;
+    background-color: theme-colors('mainColors', 'primary');
+  }
+  // Settings Card
+  ion-card {
+    padding: 5px 5px 0 5px;
+    border-radius: 0 !important;
+    margin-top: 18px !important;
+    box-shadow: none !important;
+
+    img {
+      border-radius: $border-radius !important;
+      height: 100%;
+      width: calc(100% - 3px) !important;
+    }
+
+    [images-gallery] {
+      display: flex;
+      flex-direction: row;
+
+      [box-shadow] {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+      }
+    }
+
+    [list-images] {
+      [images] {
+        min-height: 80px;
+        float: left;
+        height: calc(33.3% - 4px) !important;
+        width: calc(50% - 6px);
+        margin: 3px;
+        border-radius: $border-radius;
+      }
+
+      [images]:nth-child(1),
+      [images]:nth-child(2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    [span-small] {
+        color: theme-colors('textColors', 'primary');
+    }
+
+    ion-card-content {
+      padding: 10px 0 0 0 !important;
+
+      [default-button] {
+        padding: 10px 20px !important;
+        font-size: $h4-font-size !important;
+        height: auto !important;
+      }
+    }
+  }
+}

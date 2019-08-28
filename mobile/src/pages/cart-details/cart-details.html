@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Order Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--Theme Google Card - Full Image Cards-->
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col no-padding col-12 col-md-6 *ngFor="let item of data;let i = index">
+        <ion-card background-size text-left>
+          <ion-item padding>
+            <h2>{{item.product_name}}</h2>
+            <p text-wrap [innerHTML]='item.fullText'></p>
+            <div item-content>
+              <!-- {{item.increament}} Qty -->
+              <button ion-button (click)="deleteFromCart(item.product_id)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </div>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer no-lines>
+  <ion-row>
+    <ion-col>
+      <button ion-button block default-button (click)="onEvent('onButtonClick', null, $event)">Place Order</button>
+    </ion-col>
+    <ion-col>
+
+      <button ion-button block default-button (click)="goBack()">Add More</button>
+    </ion-col>
+  </ion-row>
+
+</ion-footer>

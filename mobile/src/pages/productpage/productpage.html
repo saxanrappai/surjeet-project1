@@ -1,0 +1,26 @@
+<!--
+  Generated template for the ProductpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="show">
+    <expandable-layout-3 [data]="productsList.data" [events]="params.events"></expandable-layout-3>
+  </div>
+</ion-content>
+<ion-footer no-lines>
+  <ion-toolbar padding-bottom>
+    <!-- Footer Button -->
+    <button ion-button block default-button (click)="onEvent('onButtonClick', null, $event)">Go to Cart</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>376664871667-34oi054mclcuf43j9ia0u8jon31j6v4c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.376664871667-34oi054mclcuf43j9ia0u8jon31j6v4c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDAjkdLZoq-qTeI-txmmKB_k63wk4PWD8I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>376664871667</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appyogi.woodcart</string>
+	<key>PROJECT_ID</key>
+	<string>organic-food-green</string>
+	<key>STORAGE_BUCKET</key>
+	<string>organic-food-green.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:376664871667:ios:9b44fdbac446d4cc</string>
+	<key>DATABASE_URL</key>
+	<string>https://organic-food-green.firebaseio.com</string>
+</dict>
+</plist>

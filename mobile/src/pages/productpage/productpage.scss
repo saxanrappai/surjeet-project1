@@ -1,0 +1,60 @@
+page-productpage {
+/*  #Style Expandable - Filters Products
+===========================================*/
+  li {
+    list-style-type: none;
+  }
+  // Settings Expandable Filters Products - Body
+  .item-accordion {
+    height: 0;
+    background: transition;
+    display: block !important;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    overflow: hidden;
+
+    &.active {
+      height: 150px !important;
+    }
+
+    ion-item {
+      [round] {
+        text-align: center;
+        background: theme-colors('mainColors', 'secondary');
+        line-height: 40px;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #EAEAEA;
+        display: block;
+        margin: 0 10px;
+        font-weight: bold;
+
+        .icon:before {
+          font-weight: bold;
+        }
+      }
+
+      ion-label {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center !important;
+        background-color: transition;
+
+        [round]:nth-child(2) {
+          background: theme-colors('mainColors', 'accent') !important;
+          color: theme-colors('textColors', 'secondary');
+        }
+      }
+    }
+  }
+
+  .toolbar-background {
+    background-color: theme-colors('mainColors', 'secondary');
+  }
+  .footer-md::before {
+    background-image: none;
+  }
+
+
+}

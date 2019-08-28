@@ -1,0 +1,38 @@
+<!-- Themes Expandable - Full image with CTA -->
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col col-12 no-padding no-margin>
+        <ion-list>
+          <ul no-margin no-padding class="collapsible">
+            <li item-divider *ngFor="let group of data.items;">
+              <!-- Expandable Full image with CTA Header-->
+              <div class="collapsible-header" (click)="toggleGroup(group)">
+                <ion-item no-lines>
+                  <ion-avatar item-start>
+                    <img [src]="group.avatar" />
+                  </ion-avatar>
+                  <!-- Title Card -->
+                  <h1 ion-text text-wrap text-capitalize item-title>{{group.title}}</h1>
+                  <!-- Subtitle Card -->
+                  <h3 ion-text text-wrap text-capitalize item-subtitle>{{group.subtitle}}</h3>
+                </ion-item>
+
+              </div>
+              <!-- Expandable Full image with CTA Body -->
+              <div class="item-accordion" [ngClass]="{'active': isGroupShown(group) }" [hidden]="!isGroupShown(group)">
+                <ion-item no-lines transparent (click)="onEvent('onItemClick', group, $event)" *ngFor="let item of group.expandItems;">
+                    <!-- Titile -->
+                    <h2 item-title>{{item.title}}</h2>
+                    <p item-subtitle>{{item.description}}</p>
+                    <h2 margin-top item-title>{{item.contact}}</h2>
+                    <p item-subtitle>{{item.info}}</p>
+                </ion-item>
+              </div>
+            </li>
+          </ul>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,68 @@
+<!--Profile- Profile 1-->
+<ion-content *ngIf="data != null" background-size [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+  <ion-grid >
+    <ion-row>
+    <ion-col col-12>
+      <ion-card transparent text-center>
+        <ion-item transparent text-center>
+          <ion-avatar>
+            <img [src]="data.image" alt="">
+          </ion-avatar>
+          <h1 ion-text color="secondary">{{data.title}}</h1>
+          <p text-wrap ion-text color="secondary">{{data.subtitle}}</p>
+        </ion-item>
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button button-clear clear no-padding>
+              <span small-font font-bold ion-text color="secondary">{{data.valueFollowers}}</span>
+              <span ion-text text-capitalize color="secondary">{{data.followers}}</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button button-clear clear no-padding>
+              <span small-font font-bold ion-text color="secondary">{{data.valueFollowing}}</span>
+              <span ion-text text-capitalize color="secondary">{{data.following}}</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button button-clear clear no-padding>
+              <span small-font font-bold ion-text color="secondary">{{data.valueRecipes}}</span>
+              <span ion-text text-capitalize color="secondary">{{data.recipes}}</span>
+            </button>
+          </ion-col>
+          <!-- Social Button-->
+          <ion-col col-12 text-center>
+            <button ion-button icon-only button-icon (click)="onEvent('onFacebook', data, $event)">
+             <ion-icon [name]="data.iconFacebook"></ion-icon>
+            </button>
+            <button ion-button icon-only button-icon (click)="onEvent('onTwitter', data, $event)">
+              <ion-icon [name]="data.iconTwitter"></ion-icon>
+            </button>
+            <button ion-button icon-only button-icon (click)="onEvent('onInstagram', data, $event)">
+              <ion-icon [name]="data.iconInstagram"></ion-icon>
+            </button>
+          </ion-col>
+          <!-- Info Author-->
+          <ion-col col-12 text-left *ngIf="data != null">
+          <div description *ngFor="let item of data.items;let i = index">
+            <ion-card transparent padding>
+              <h1 item-text ion-text color="accent">{{item.about}}</h1>
+              <p text-wrap item-subtext padding-top>
+                {{item.description}}</p>
+              <h1 item-text padding-top ion-text color="accent">{{item.content}}</h1>
+              <ion-icon padding-top icon-medium [name]="item.iconPhone"></ion-icon>{{item.phone}}
+              <div clearfix></div>
+              <ion-icon padding-top icon-medium [name]="item.iconMail"></ion-icon>{{item.mail}}
+              <div clearfix></div>
+              <ion-icon padding-top icon-medium [name]="item.iconGlobe"></ion-icon>{{item.globe}}
+              </ion-card>
+              
+        
+          </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

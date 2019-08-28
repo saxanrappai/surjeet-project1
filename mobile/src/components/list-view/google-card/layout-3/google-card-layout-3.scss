@@ -1,0 +1,10 @@
+/*  #Style Google Card - Styled cards
+================================================*/
+google-card-layout-3 {
+  [card-title] {
+    @include font-title;
+  }
+  .active {
+    color: theme-colors('textColors', 'accent');
+  }
+}

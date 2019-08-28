@@ -1,0 +1,44 @@
+<!--Theme Gallery for Full gallery 1-->
+<ion-grid *ngIf="data != null">
+  <div segment-block transparent>
+    <ion-segment has-header [(ngModel)]="selectedItemPage">
+      <ion-segment-button text-capitalize value="0" (ionSelect)="changeDataSet(0)">
+        Veneer
+      </ion-segment-button>
+      <ion-segment-button text-capitalize value="1" (ionSelect)=" changeDataSet(1)">
+        Laminate
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- <ion-row no-padding> [style.backgroundImage]="'url(' + display_image + ')'" -->
+  <ion-row no-padding>
+    <ion-col col-12 padding-top>
+      <!-- <h1 header-title no-padding no-margin>{{title}}</h1> -->
+    </ion-col>
+    <div *ngIf="data[selectedItem].sub_cat">
+      <ion-col col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3
+        *ngFor="let group of data[selectedItem].sub_cat;let i = index;">
+        <ion-card box-shadow (click)="onEvent('onClick', group, $event)">
+          <img
+            [src]="(group.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+group.image" />
+          <ion-card-content>
+            <h2 gallery-title text-capitalize>{{group.title}}</h2>
+            <!-- <p gallery-subtitle>{{group.items.length}} image(s)</p> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </div>
+    <div *ngIf="!data[selectedItem].sub_cat">
+      <ion-col col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3>
+        <ion-card box-shadow>
+          <ion-card-content>
+            <h2 gallery-title text-capitalize>No Items</h2>
+            <!-- <p gallery-subtitle>{{group.items.length}} image(s)</p> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </div>
+
+  </ion-row>
+</ion-grid>
