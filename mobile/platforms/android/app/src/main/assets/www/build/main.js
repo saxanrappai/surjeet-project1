@@ -169,19 +169,19 @@ var map = {
 		57
 	],
 	"../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module": [
-		703,
+		754,
 		56
 	],
 	"../components/list-view/drag-and-drop/layout-1/drag-and-drop-layout-1.module": [
-		704,
+		703,
 		55
 	],
 	"../components/list-view/drag-and-drop/layout-2/drag-and-drop-layout-2.module": [
-		705,
+		704,
 		54
 	],
 	"../components/list-view/drag-and-drop/layout-3/drag-and-drop-layout-3.module": [
-		706,
+		705,
 		53
 	],
 	"../components/list-view/expandable/layout-1/expandable-layout-1.module": [
@@ -189,7 +189,7 @@ var map = {
 		52
 	],
 	"../components/list-view/expandable/layout-2/expandable-layout-2.module": [
-		707,
+		706,
 		51
 	],
 	"../components/list-view/expandable/layout-3/expandable-layout-3.module": [
@@ -197,47 +197,47 @@ var map = {
 		50
 	],
 	"../components/list-view/google-card/layout-1/google-card-layout-1.module": [
-		708,
+		707,
 		49
 	],
 	"../components/list-view/google-card/layout-2/google-card-layout-2.module": [
-		709,
+		708,
 		48
 	],
 	"../components/list-view/google-card/layout-3/google-card-layout-3.module": [
-		710,
+		709,
 		47
 	],
 	"../components/list-view/google-card/layout-4/google-card-layout-4.module": [
-		711,
+		710,
 		46
 	],
 	"../components/list-view/sticky-list-header/layout-1/sticky-list-header-layout-1.module": [
-		712,
+		711,
 		6
 	],
 	"../components/list-view/sticky-list-header/layout-2/sticky-list-header-layout-2.module": [
-		713,
+		712,
 		5
 	],
 	"../components/list-view/sticky-list-header/layout-3/sticky-list-header-layout-3.module": [
-		714,
+		713,
 		4
 	],
 	"../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module": [
-		715,
+		714,
 		45
 	],
 	"../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module": [
-		716,
+		715,
 		44
 	],
 	"../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module": [
-		717,
+		716,
 		43
 	],
 	"../components/login/layout-1/login-layout-1.module": [
-		718,
+		717,
 		42
 	],
 	"../components/login/layout-2/login-layout-2.module": [
@@ -245,31 +245,31 @@ var map = {
 		41
 	],
 	"../components/profile/layout-1/profile-layout-1.module": [
-		719,
+		718,
 		40
 	],
 	"../components/profile/layout-2/profile-layout-2.module": [
-		720,
+		719,
 		39
 	],
 	"../components/profile/layout-3/profile-layout-3.module": [
-		721,
+		720,
 		38
 	],
 	"../components/profile/layout-4/profile-layout-4.module": [
-		722,
+		721,
 		37
 	],
 	"../components/profile/layout-5/profile-layout-5.module": [
-		723,
+		722,
 		36
 	],
 	"../components/register/layout-1/register-layout-1.module": [
-		724,
+		723,
 		35
 	],
 	"../components/register/layout-2/register-layout-2.module": [
-		740,
+		724,
 		34
 	],
 	"../components/search-bar/layout-1/search-bar-layout-1.module": [
@@ -317,11 +317,11 @@ var map = {
 		23
 	],
 	"../components/select/layout-6/select-layout-6.module": [
-		737,
+		736,
 		22
 	],
 	"../components/spinner/spinner.module": [
-		736,
+		737,
 		21
 	],
 	"../components/splash-screen/layout-1/splash-screen-layout-1.module": [
@@ -337,39 +337,39 @@ var map = {
 		18
 	],
 	"../components/sub-image-gallery/layout-1/sub-image-gallery-layout-1.module": [
-		741,
+		740,
 		17
 	],
 	"../components/sub-image-gallery/layout-2/sub-image-gallery-layout-2.module": [
-		742,
+		741,
 		16
 	],
 	"../components/tabs/layout-1/tabs-layout-1.module": [
-		743,
+		742,
 		15
 	],
 	"../components/tabs/layout-2/tabs-layout-2.module": [
-		744,
+		743,
 		14
 	],
 	"../components/tabs/layout-3/tabs-layout-3.module": [
-		745,
+		744,
 		13
 	],
 	"../pages/cart-details/cart-details.module": [
-		746,
+		745,
 		11
 	],
 	"../pages/categorylist/categorylist.module": [
-		747,
+		746,
 		12
 	],
 	"../pages/home/home.module": [
-		748,
+		747,
 		0
 	],
 	"../pages/intro-page/intro-page.module": [
-		749,
+		748,
 		3
 	],
 	"../pages/login/login.module": [
@@ -377,23 +377,23 @@ var map = {
 		2
 	],
 	"../pages/main-product/main-product.module": [
-		750,
+		749,
 		9
 	],
 	"../pages/myorders/myorders.module": [
-		751,
+		750,
 		8
 	],
 	"../pages/product-details/product-details.module": [
-		752,
+		751,
 		10
 	],
 	"../pages/productpage/productpage.module": [
-		753,
+		752,
 		7
 	],
 	"../pages/splashscreen/splashscreen.module": [
-		754,
+		753,
 		1
 	]
 };
@@ -756,15 +756,14 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/alert/layout-1/alert-layout-1.module#AlertLayout1Module', name: 'AlertLayout1', segment: 'alert-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/alert/layout-2/alert-layout-2.module#AlertLayout2Module', name: 'AlertLayout2', segment: 'alert-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/alert/layout-3/alert-layout-3.module#AlertLayout3Module', name: 'AlertLayout3', segment: 'alert-layout-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/card-reader/layout-1/card-reader-layout-1.module#CardReaderLayout1Module', name: 'CardReaderLayout1', segment: 'card-reader-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/full-screen-gallery/full-screen-gallery.module#FullScreenGalleryModule', name: 'FullScreenGallery', segment: 'full-screen-gallery', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/card-reader/layout-1/card-reader-layout-1.module#CardReaderLayout1Module', name: 'CardReaderLayout1', segment: 'card-reader-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/image-gallery/layout-1/image-gallery-layout-1.module#ImageGalleryLayout1Module', name: 'ImageGalleryLayout1', segment: 'image-gallery-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/image-gallery/layout-2/image-gallery-layout-2.module#ImageGalleryLayout2Module', name: 'ImageGalleryLayout2', segment: 'image-gallery-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-1/appearance-animation-layout-1.module#AppearanceAnimationLayout1Module', name: 'AppearanceAnimationLayout1', segment: 'appearance-animation-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-2/appearance-animation-layout-2.module#AppearanceAnimationLayout2Module', name: 'AppearanceAnimationLayout2', segment: 'appearance-animation-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-3/appearance-animation-layout-3.module#AppearanceAnimationLayout3Module', name: 'AppearanceAnimationLayout3', segment: 'appearance-animation-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-4/appearance-animation-layout-4.module#AppearanceAnimationLayout4Module', name: 'AppearanceAnimationLayout4', segment: 'appearance-animation-layout-4', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module#AppearanceAnimationLayout5Module', name: 'AppearanceAnimationLayout5', segment: 'appearance-animation-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-1/drag-and-drop-layout-1.module#DragAndDropLayout1Module', name: 'DragAndDropLayout1', segment: 'drag-and-drop-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-2/drag-and-drop-layout-2.module#DragAndDropLayout2Module', name: 'DragAndDropLayout2', segment: 'drag-and-drop-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-3/drag-and-drop-layout-3.module#DragAndDropLayout3Module', name: 'DragAndDropLayout3', segment: 'drag-and-drop-layout-3', priority: 'low', defaultHistory: [] },
@@ -789,6 +788,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/profile/layout-4/profile-layout-4.module#ProfileLayout4Module', name: 'ProfileLayout4', segment: 'profile-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-5/profile-layout-5.module#ProfileLayout5Module', name: 'ProfileLayout5', segment: 'profile-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-1/register-layout-1.module#RegisterLayout1Module', name: 'RegisterLayout1', segment: 'register-layout-1', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-1/search-bar-layout-1.module#SearchBarLayout1Module', name: 'SearchBarLayout1', segment: 'search-bar-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-2/search-bar-layout-2.module#SearchBarLayout2Module', name: 'SearchBarLayout2', segment: 'search-bar-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-3/search-bar-layout-3.module#SearchBarLayout3Module', name: 'SearchBarLayout3', segment: 'search-bar-layout-3', priority: 'low', defaultHistory: [] },
@@ -800,12 +800,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/select/layout-3/select-layout-3.module#SelectLayout3Module', name: 'SelectLayout3', segment: 'select-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-4/select-layout-4.module#SelectLayout4Module', name: 'SelectLayout4', segment: 'select-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-5/select-layout-5.module#SelectLayout5Module', name: 'SelectLayout5', segment: 'select-layout-5', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/spinner/spinner.module#SpinnerModule', name: 'Spinner', segment: 'spinner', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-6/select-layout-6.module#SelectLayout6Module', name: 'SelectLayout6', segment: 'select-layout-6', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/spinner/spinner.module#SpinnerModule', name: 'Spinner', segment: 'spinner', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-1/splash-screen-layout-1.module#SplashScreenLayout1Module', name: 'SplashScreenLayout1', segment: 'splash-screen-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-2/splash-screen-layout-2.module#SplashScreenLayout2Module', name: 'SplashScreenLayout2', segment: 'splash-screen-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-3/splash-screen-layout-3.module#SplashScreenLayout3Module', name: 'SplashScreenLayout3', segment: 'splash-screen-layout-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/sub-image-gallery/layout-1/sub-image-gallery-layout-1.module#SubImageGalleryLayout1Module', name: 'SubImageGalleryLayout1', segment: 'sub-image-gallery-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/sub-image-gallery/layout-2/sub-image-gallery-layout-2.module#SubImageGalleryLayout2Module', name: 'SubImageGalleryLayout2', segment: 'sub-image-gallery-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/tabs/layout-1/tabs-layout-1.module#TabsLayout1Module', name: 'TabsLayout1', segment: 'tabs-layout-1', priority: 'low', defaultHistory: [] },
@@ -815,12 +814,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/categorylist/categorylist.module#CategorylistPageModule', name: 'CategorylistPage', segment: 'categorylist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/main-product/main-product.module#MainProductPageModule', name: 'MainProductPage', segment: 'main-product', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/myorders/myorders.module#MyordersPageModule', name: 'MyordersPage', segment: 'myorders', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/productpage/productpage.module#ProductpagePageModule', name: 'ProductpagePage', segment: 'productpage', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/splashscreen/splashscreen.module#SplashscreenPageModule', name: 'SplashscreenPage', segment: 'splashscreen', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module#AppearanceAnimationLayout5Module', name: 'AppearanceAnimationLayout5', segment: 'appearance-animation-layout-5', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__services_app_settings__["a" /* AppSettings */].FIREBASE_CONFIG),
@@ -926,19 +926,22 @@ var MyApp = /** @class */ (function () {
                     _this.rootPage = 'LoginPage';
                 }
             });
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            _this.firebase.getToken()
-                .then(function (token) { return console.log("The token is " + token); }) // save the token server-side and use it to push notifications to this device
-                .catch(function (error) { return console.error('Error getting token', error); });
-            _this.firebase.onNotification()
-                .subscribe(function (data) {
-                console.log("User opened a notification " + data);
-                _this.localNotifications.schedule([{
+            /* saxan
+                  // Okay, so the platform is ready and our plugins are available.
+                  // Here you can do any higher level native things you might need.
+                  this.firebase.getToken()
+                    .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+                    .catch(error => console.error('Error getting token', error));
+            
+                  this.firebase.onNotification()
+                    .subscribe(data => {
+                      console.log(`User opened a notification ${data}`);
+                      this.localNotifications.schedule([{
                         title: data.title,
                         text: data.body
-                    }]);
-            });
+                      }]);
+                    });
+            */
             _this.statusBar.styleDefault();
             localStorage.setItem("mailChimpLocal", "true");
             _this.globalProvider.initializeNetworkEvents();
@@ -995,7 +998,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/app/app.html"*/'<!---Settings Main Header-->\n\n<ion-split-pane when="md">\n\n  <!-- Menu Main Top -->\n\n  <ion-menu menu [content]="content" *ngIf="params != null">\n\n    <!-- Menu Main List -->\n\n    <ion-content transparent>\n\n      <ion-item text-center padding transparent no-lines>\n\n        <ion-avatar>\n\n          <img src="assets/images/background/green-bg.jpg" />\n\n        </ion-avatar>\n\n        <h3 margin-top ion-text text-wrap>{{params.title}}</h3>\n\n      </ion-item>\n\n      <ion-list no-margin>\n\n        <button transparent menuClose ion-item item-title no-lines item-divider *ngFor="let p of pages"\n\n          (click)="openPage(p)">\n\n          <ion-icon icon-small item-left>\n\n            <ion-icon name="{{p.icon}}"></ion-icon>\n\n          </ion-icon>\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false" main></ion-nav>\n\n</ion-split-pane>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/app/app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\app\app.html"*/'<!---Settings Main Header-->\n\n<ion-split-pane when="md">\n\n  <!-- Menu Main Top -->\n\n  <ion-menu menu [content]="content" *ngIf="params != null">\n\n    <!-- Menu Main List -->\n\n    <ion-content transparent>\n\n      <ion-item text-center padding transparent no-lines>\n\n        <ion-avatar>\n\n          <img src="assets/images/background/green-bg.jpg" />\n\n        </ion-avatar>\n\n        <h3 margin-top ion-text text-wrap>{{params.title}}</h3>\n\n      </ion-item>\n\n      <ion-list no-margin>\n\n        <button transparent menuClose ion-item item-title no-lines item-divider *ngFor="let p of pages"\n\n          (click)="openPage(p)">\n\n          <ion-icon icon-small item-left>\n\n            <ion-icon name="{{p.icon}}"></ion-icon>\n\n          </ion-icon>\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false" main></ion-nav>\n\n</ion-split-pane>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\app\app.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__services_menu_service__["a" /* MenuService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["w" /* Platform */],

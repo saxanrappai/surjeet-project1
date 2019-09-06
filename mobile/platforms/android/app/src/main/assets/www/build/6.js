@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 712:
+/***/ 711:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StickyListHeaderLayout1Module", function() { return StickyListHeaderLayout1Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sticky_list_header_layout_1__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sticky_list_header_layout_1__ = __webpack_require__(812);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ion_affix__ = __webpack_require__(777);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -412,7 +412,7 @@ rxjs_1.Observable.fromEvent = rxjs_1.fromEvent;
 
 /***/ }),
 
-/***/ 813:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -459,7 +459,7 @@ var StickyListHeaderLayout1 = /** @class */ (function () {
     ], StickyListHeaderLayout1.prototype, "content", void 0);
     StickyListHeaderLayout1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'sticky-list-header-layout-1',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/list-view/sticky-list-header/layout-1/sticky-list-header.html"*/'<!-- Theme Sticky List Header - Basic -->\n\n<ion-content>\n\n    <ion-grid no-padding *ngIf="data != null">\n\n      <ion-row>\n\n        <ion-col col-12>\n\n          <ion-list no-margin *ngFor="let item of data.items">\n\n            <!-- Header Top -->\n\n            <ion-item-divider text-capitalize no-margin no-lines header-title ion-affix\n\n              [content]="content">{{item.groupName}}\n\n            </ion-item-divider>\n\n            <ion-row>\n\n              <ion-col col-12 col-md-3 *ngFor="let element of item.items">\n\n                <ion-card no-margin (click)="onEvent(\'onItemClick\', element.title, $event)">\n\n                  <!-- Avatar -->\n\n                  <img [src]="element.image" alt="{{element.title}}" />\n\n                  <ion-card-content>\n\n                    <!-- Title -->\n\n                    <h2 item-title text-capitalize>{{element.title}}</h2>\n\n                    <ion-icon icon-medium name="time"></ion-icon>1h 50min\n\n                    <ion-icon icon-medium name="pie"></ion-icon> 6 Servings\n\n                    <ion-icon icon-medium name="stats"></ion-icon> 456 cals\n\n                  </ion-card-content>\n\n                </ion-card>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-list>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/list-view/sticky-list-header/layout-1/sticky-list-header.html"*/
+            selector: 'sticky-list-header-layout-1',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\sticky-list-header\layout-1\sticky-list-header.html"*/'<!-- Theme Sticky List Header - Basic -->\n\n<ion-content>\n\n    <ion-grid no-padding *ngIf="data != null">\n\n      <ion-row>\n\n        <ion-col col-12>\n\n          <ion-list no-margin *ngFor="let item of data.items">\n\n            <!-- Header Top -->\n\n            <ion-item-divider text-capitalize no-margin no-lines header-title ion-affix\n\n              [content]="content">{{item.groupName}}\n\n            </ion-item-divider>\n\n            <ion-row>\n\n              <ion-col col-12 col-md-3 *ngFor="let element of item.items">\n\n                <ion-card no-margin (click)="onEvent(\'onItemClick\', element.title, $event)">\n\n                  <!-- Avatar -->\n\n                  <img [src]="element.image" alt="{{element.title}}" />\n\n                  <ion-card-content>\n\n                    <!-- Title -->\n\n                    <h2 item-title text-capitalize>{{element.title}}</h2>\n\n                    <ion-icon icon-medium name="time"></ion-icon>1h 50min\n\n                    <ion-icon icon-medium name="pie"></ion-icon> 6 Servings\n\n                    <ion-icon icon-medium name="stats"></ion-icon> 456 cals\n\n                  </ion-card-content>\n\n                </ion-card>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-list>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\sticky-list-header\layout-1\sticky-list-header.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], StickyListHeaderLayout1);

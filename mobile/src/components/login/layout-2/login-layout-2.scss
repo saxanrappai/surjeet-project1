@@ -1,6 +1,7 @@
 /*  #Style Login + logo 2
 ================================================*/
-login-layout-2 {
+
+.login-layout-2 {
   [background-size] {
     position: relative;
     background-position: center !important;
@@ -14,11 +15,38 @@ login-layout-2 {
 
       ion-row {
         height: 100%;
+ion-col{
+        ion-item {
+          img.logoImg {
+           max-height: 5em;
+           
+          }
+}
+        }
+           ion-label.titleTxt{
+            color:#FFF;
+            font-weight: bold;
+            font-size:2.5em;
+          }
+
+
         // Settings Form
         form {
+
+          ion-item.btmline {
+            border-bottom: 2px solid #CCC;
+            width: 90%;
+            margin: 0 auto;
+
+            ion-icon {
+              color: #F2B226;
+              font-size: 1.5em;
+              margin-bottom: 1em;
+            }
+          }
+
           ion-item {
             padding-left: 0 !important;
-            padding-bottom: 15px !important;
 
             [error-field] {
               margin: 0 !important;
@@ -40,17 +68,51 @@ login-layout-2 {
             }
 
             ion-input {
-              background: theme-colors('mainColors', 'secondary') !important;
-              margin: 5px 10px 15px 10px !important;
+              background: transparent !important;
+              margin: 5px 10px 15px 0px !important;
+              /*
               border-radius: $border-radius;
               box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+              */
               padding: 5px 10px !important;
               z-index: 999;
 
               .input-cover {
                 display: none;
               }
-            }
+
+              input[type="text"] {
+                color: #FFF !important;
+                background: transparent !important;
+                font-size: 1.2em;
+              }
+
+              input[type="password"] {
+                color: #FFF !important;
+                background: transparent !important;
+                font-size: 1.2em;
+              }
+
+              ::-webkit-input-placeholder {
+                color: #F2B226 !important;
+                font-weight: 400 !important;
+              }
+
+              ::-moz-placeholder {
+                color: #F2B226 !important;
+                font-weight: 400 !important;
+              }
+
+              :-ms-input-placeholder {
+                color: #F2B226 !important;
+                font-weight: 400 !important;
+              }
+
+              :-moz-placeholder {
+                color: #F2B226 !important;
+                font-weight: 400 !important;
+              }
+            } 
           }
 
           [stacked] {
@@ -60,11 +122,14 @@ login-layout-2 {
 
           [login-section] {
             margin-bottom: 10px;
-            margin-top: 0px;
+            margin-top: 3em;
             display: flex;
 
             [default-button] {
-              width: calc(100% - 5px)!important;
+              width: calc(100% - 5px) ;
+              max-width:20em;
+              margin:0 auto;
+              border-radius:50px !important;
             }
 
             [facebookButton] {
@@ -97,7 +162,4 @@ login-layout-2 {
     }
   }
 }
-.logoImg{
-  width:100%;
-  max-height:5em;
-}
+ 

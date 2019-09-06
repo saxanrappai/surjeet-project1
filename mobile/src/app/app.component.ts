@@ -65,7 +65,7 @@ export class MyApp {
         }
 
       });
-
+/* saxan
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.firebase.getToken()
@@ -80,7 +80,7 @@ export class MyApp {
             text: data.body
           }]);
         });
-
+*/
       this.statusBar.styleDefault();
       localStorage.setItem("mailChimpLocal", "true");
       this.globalProvider.initializeNetworkEvents();

@@ -42,10 +42,13 @@
 /* # Global Font Family Section
 ================================================
 ================================================*/
-$font-family-md-base: 'Noto Sans', sans-serif;
-$font-family-ios-base: 'Noto Sans', sans-serif;
+$font-family-md-base: 'Noto Sans',
+sans-serif;
+$font-family-ios-base: 'Noto Sans',
+sans-serif;
 
-$font-family-title: 'Leckerli One', cursive;
+$font-family-title: 'Leckerli One',
+cursive;
 
 @mixin font-title {
   font-family: $font-family-title;
@@ -79,80 +82,74 @@ $item-ios-thumbnail-size: 130px;
 /* # Global Colors Section
 ================================================
 ================================================*/
-$palettes: (
-    // Also used for backgrounds.
-    mainColors: (
-      primary : #FFFFFF,
-      secondary: #F5F5F5,
-      accent : #97C93B,
-      borderColor: #D8D8D8
-    ),
-    // Used for text colors in all screens
-    textColors: (
-      primary: #30384C, //radi
-      secondary: #ffffff,
-      accent : #97C93B,
-      accentLight: #B2B2B2
-    )
-);
+$palettes: ( // Also used for backgrounds.
+  mainColors: (primary : #FFFFFF,
+    secondary: #F5F5F5,
+    accent : #F2B226,
+    borderColor: #D8D8D8),
+  // Used for text colors in all screens
+  textColors: (primary: #30384C, //radi
+    secondary: #ffffff,
+    accent : #000,
+    accentLight: #B2B2B2));
 
 /* # Global Opacity Section
 ================================================
 ================================================*/
-$global-opacity: (
-    'opacity0': 0,
-    'opacity10': 0.1,
-    'opacity20': 0.2,
-    'opacity30': 0.3,
-    'opacity40': 0.4,
-    'opacity50': 0.5,
-    'opacity60': 0.6,
-    'opacity80': 0.8,
-    'opacity90': 0.9,
-    'opacity100': 1
-);
+$global-opacity: ('opacity0': 0,
+  'opacity10': 0.1,
+  'opacity20': 0.2,
+  'opacity30': 0.3,
+  'opacity40': 0.4,
+  'opacity50': 0.5,
+  'opacity60': 0.6,
+  'opacity80': 0.8,
+  'opacity90': 0.9,
+  'opacity100': 1);
 
 /* # Global Function to print color Section
 ================================================
 ================================================*/
 @function theme-colors($name: 'blendModes', $variant: 'primary', $opacity: 1) {
-    // Get the color spectrum
-    $color-spectrum: map-get($palettes, $name);
-    // Get the color variant
-    $color: map-get($color-spectrum, $variant);
-    // Get the alpha setting
-    $alpha: if(type-of($opacity)=='number', $opacity, map-get($global-opacity, $opacity));
-    // Set the alpha of the color
-    @if $alpha {
-        $color: rgba($color, $alpha);
-    }
-    @return $color;
+  // Get the color spectrum
+  $color-spectrum: map-get($palettes, $name);
+  // Get the color variant
+  $color: map-get($color-spectrum, $variant);
+  // Get the alpha setting
+  $alpha: if(type-of($opacity)=='number', $opacity, map-get($global-opacity, $opacity));
+
+  // Set the alpha of the color
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
 }
 
-$colors: (
-  primary : #B2B2B2,
+$colors: (primary : #B2B2B2,
   secondary : #ffffff,
   accent : #97C93B,
 );
 
-.gradient{
-  background: rgb(140,198,63) !important; /* Old browsers */
-  background: -moz-linear-gradient(45deg, rgba(140,198,63,1) 0%, rgba(207,232,42,1) 100%) !important;
-  background: -webkit-linear-gradient(45deg, rgba(140,198,63,1) 0%,rgba(207,232,42,1) 100%) !important;
-  background: linear-gradient(45deg, rgba(140,198,63,1) 0%,rgba(207,232,42,1) 100%) !important;
+.gradient {
+  background: rgb(140, 198, 63) !important;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, rgba(140, 198, 63, 1) 0%, rgba(207, 232, 42, 1) 100%) !important;
+  background: -webkit-linear-gradient(45deg, rgba(140, 198, 63, 1) 0%, rgba(207, 232, 42, 1) 100%) !important;
+  background: linear-gradient(45deg, rgba(140, 198, 63, 1) 0%, rgba(207, 232, 42, 1) 100%) !important;
 }
 
 @mixin gradient-dark {
-  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(0,0,0,1) 100%);
-  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(0,0,0,1) 100%);
+  background: -moz-linear-gradient(top, rgba(30, 87, 153, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(30, 87, 153, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 /* # Global Settings Image Filetr Section
 ================================================
 ================================================*/
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 /* # Settings List Item Section
@@ -167,16 +164,16 @@ $list-md-border-color: theme-colors('mainColors', 'borderColor');
 ================================================
 ================================================*/
 //Settings Content for Android
-$background-color: theme-colors('mainColors', 'secondary');
+//$background-color: theme-colors('mainColors', 'secondary');
 //Settings Content for Ios
-$content-ios-outer-background: theme-colors('mainColors', 'secondary');
+//$content-ios-outer-background: theme-colors('mainColors', 'secondary');
 
 /* 12# Settings Divider Section
 ================================================
 ================================================*/
 
 [item-divider] {
-    margin-top: 2px !important;
+  margin-top: 2px !important;
 }
 
 [clear-fix] {
@@ -190,7 +187,7 @@ $content-ios-outer-background: theme-colors('mainColors', 'secondary');
 $border-radius: 8px;
 
 ion-thumbnail img {
-    border-radius: $border-radius !important;
+  border-radius: $border-radius !important;
 }
 
 /* # Settings Shadows Section
@@ -210,106 +207,111 @@ ion-thumbnail img {
 /* # Settings Color and Size Icon Section
 ================================================
 ================================================*/
-$icon-size:( 'icon-small': 17px, 'icon-medium': 22px, 'icon-large': 42px);
+$icon-size:('icon-small': 17px, 'icon-medium': 22px, 'icon-large': 42px);
+
 @function icon-size($key: 'icon-small') {
-    @return map-get($icon-size, $key);
+  @return map-get($icon-size, $key);
 }
 
 [icon-small] {
-    color: theme-colors('textColors', 'primary');
-    font-size: icon-size('icon-small') !important;
+  color: theme-colors('textColors', 'primary');
+  font-size: icon-size('icon-small') !important;
 }
 
 [icon-medium] {
-    color: theme-colors('textColors', 'accent') !important;
-    font-size: icon-size('icon-medium') !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: icon-size('icon-medium') !important;
 }
 
 [icon-large] {
-    color: theme-colors('textColors', 'primary') !important;
-    font-size: icon-size('icon-large') !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: icon-size('icon-large') !important;
 }
 
 /* # Settings Span Section
 ================================================
 ================================================*/
-$span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
+$span-size:('span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
+
 @function span-size($key: 'span-small') {
-    @return map-get($span-size, $key);
+  @return map-get($span-size, $key);
 }
+
 [span-small] {
-    color: theme-colors('textColors', 'accent');
-    font-size: span-size('span-small') !important;
-    font-weight: 700;
+  color: theme-colors('textColors', 'accent');
+  font-size: span-size('span-small') !important;
+  font-weight: 700;
 }
 
 [span-medium] {
-    color: theme-colors('textColors', 'primary');
-    font-size: span-size('span-medium') !important;
-    font-weight: 400;
-    line-height: 17px;
+  color: theme-colors('textColors', 'primary');
+  font-size: span-size('span-medium') !important;
+  font-weight: 400;
+  line-height: 17px;
 }
 
 [span-large] {
-    color: theme-colors('textColors', 'accent');
-    font-size: span-size('span-large') !important;
-    line-height: 22px;
-    font-weight: 400;
+  color: theme-colors('textColors', 'accent');
+  font-size: span-size('span-large') !important;
+  line-height: 22px;
+  font-weight: 400;
 }
 
 /* # Settings Header Section
 ================================================
 ================================================*/
+/*
 .header-md::after {
-    background-image: none !important;
+  background-image: none !important;
 }
 
 [header-section] {
-    background-color: theme-colors('mainColors', 'primary') !important;
-    border-top: none !important;
+  background-color: theme-colors('mainColors', 'primary') !important;
+  border-top: none !important;
 
-    ion-label {
-      margin: 13px 8px 5px 0 !important;
-    }
+  ion-label {
+    margin: 13px 8px 5px 0 !important;
+  }
 }
 
 [header-title] {
-    color: theme-colors('textColors', 'accent');
-    font-size: $h4-font-size !important;
-    font-weight: bold !important;
-    line-height: 24px;
-    margin-bottom: 9px !important;
-    padding-top: 10px;
+  color: theme-colors('textColors', 'accent');
+  font-size: $h2-font-size !important;
+  font-weight: bold !important;
+  line-height: 24px;
+  margin-bottom: 9px !important;
+  padding-top: 10px;
 }
 
 [header-subtitle] {
-    color: theme-colors('textColors', 'secondary') !important;
-    font-size: $h4-font-size;
-    letter-spacing: 1px;
-    font-weight: 300;
+  color: theme-colors('textColors', 'secondary') !important;
+  font-size: $h4-font-size;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
-
+*/
 /* # LIST VIEWS - Item Parameters Section
 ================================================
 ================================================*/
+/*
 [item-title] {
-    color: theme-colors('textColors', 'primary') !important;
-    font-size: $h4-font-size !important;
-    font-weight: 400 !important;
-    line-height: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: initial !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: $h4-font-size !important;
+  font-weight: 400 !important;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: initial !important;
 }
 
 [item-subtitle] {
-    color: theme-colors('textColors', 'primary') !important;
-    font-size: $h5-font-size !important;
-    font-weight: 300 !important;
-    letter-spacing: 1px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: initial !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: initial !important;
 }
 
 [small-font] {
@@ -320,56 +322,57 @@ $span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
 [font-bold] {
   font-weight: bold !important;
 }
-
+*/
 /* # LIST VIEWS - Subitem Parameters Section
 ================================================
 ================================================*/
+/*
 [subitem-title] {
-    color: theme-colors('textColors', 'secondary') !important;
-    font-size: $h4-font-size !important;
-    font-weight: 400 !important;
-    line-height: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  color: theme-colors('textColors', 'secondary') !important;
+  font-size: $h4-font-size !important;
+  font-weight: 400 !important;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 [subitem-subtitle] {
-    color: theme-colors('textColors', 'secondary') !important;
-    font-size: $h5-font-size !important;
-    font-weight: 400 !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  color: theme-colors('textColors', 'secondary') !important;
+  font-size: $h5-font-size !important;
+  font-weight: 400 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
+*/
 /* # Settings Button Section
 ================================================
 ================================================*/
 [default-button] {
-    background: theme-colors('mainColors', 'accent') !important;
-    color: theme-colors('textColors', 'secondary') !important;
-    font-size: $h5-font-size !important;
-    text-transform: capitalize !important;
-    font-weight: bold !important;
-    height: 50px !important;
-    border-radius: $border-radius !important;
+  background: theme-colors('mainColors', 'accent') !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  padding: 2em !important;
+  border-radius: $border-radius !important;
 }
 
 [button-clear] {
-    color: theme-colors('textColors', 'accent') !important;
-    font-size: $h5-font-size !important;
-    font-weight: 300 !important;
-    height: 50px !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
+  font-weight: 300 !important;
+  height: 50px !important;
 }
 
 [button-clear-outline] {
-    color: theme-colors('textColors', 'accent') !important;
-    background: theme-colors('mainColors', 'primary') !important;
-    font-size: $h5-font-size !important;
-    border: 1px solid theme-colors('mainColors', 'accent') !important;
-    padding: 15px 18px !important;
-    font-weight: bold !important;
-    height: 50px !important;
-    border-radius: $border-radius !important;
+  color: theme-colors('textColors', 'accent') !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  border: 1px solid theme-colors('mainColors', 'accent') !important;
+  padding: 15px 18px !important;
+  font-weight: bold !important;
+  height: 50px !important;
+  border-radius: $border-radius !important;
 }
 
 [button-action-shit] {
@@ -379,8 +382,10 @@ $span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
   color: theme-colors('textColors', 'accent') !important;
   box-shadow: none !important;
   background: transparent !important;
+
   ion-icon {
     font-size: $h1-font-size;
+
     &.ion-md-more:before {
       transform: rotate(90deg);
     }
@@ -388,23 +393,23 @@ $span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
 }
 
 [button-icon] {
-    background: theme-colors('mainColors', 'primary') !important;
-    color: theme-colors('textColors', 'primary') !important;
-    font-size: $h5-font-size !important;
-    font-weight: 700 !important;
-    height: auto !important;
-    box-shadow: none !important;
-    border-radius: $border-radius !important;
-    text-transform: capitalize !important;
-    padding: 6px 10px 6px 8px !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  font-weight: 700 !important;
+  height: auto !important;
+  box-shadow: none !important;
+  border-radius: $border-radius !important;
+  text-transform: capitalize !important;
+  padding: 6px 10px 6px 8px !important;
 }
 
 [button-icon-clear] {
-    background-color: transparent !important;
-    color: theme-colors('textColors', 'accentLight') !important;
-    padding: 5px !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
+  background-color: transparent !important;
+  color: theme-colors('textColors', 'accentLight') !important;
+  padding: 5px !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }
 
 
@@ -412,16 +417,16 @@ $span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
 ================================================
 ================================================*/
 [login-title] {
-    color: theme-colors('textColors', 'accent') !important;
-    font-size: $h4-font-size !important;
-    @include font-title;
-    font-weight: 400 !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h4-font-size !important;
+  @include font-title;
+  font-weight: 400 !important;
 }
 
 [login-subtitle] {
-    font-size: $h4-font-size !important;
-    font-weight: 400;
-    line-height: 19px;
+  font-size: $h4-font-size !important;
+  font-weight: 400;
+  line-height: 19px;
 }
 
 [register-title] {
@@ -436,74 +441,75 @@ $span-size:( 'span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
 ================================================*/
 $card-md-margin-bottom: 0px !default;
 $card-ios-margin-bottom: 0px !default;
+
 //$card-md-background-color: theme-colors('mainColors', 'primary') !important;
 //$card-ios-background-color: theme-colors('mainColors', 'primary') !important;
 [card-title] {
-    font-size: $h2-font-size !important;
-    font-weight: 400 !important;
-    line-height: 36px;
-    color: theme-colors('textColors', 'accent') !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: $h2-font-size !important;
+  font-weight: 400 !important;
+  line-height: 36px;
+  color: theme-colors('textColors', 'accent') !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 [card-subtitle] {
-    font-size: $h4-font-size  !important;
-    color: theme-colors('textColors', 'primary') !important;
-    font-weight: 400 !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: $h4-font-size !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-weight: 400 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 [card-body-text] {
-    font-size: $h5-font-size !important;
-    font-weight: 400 !important;
-    line-height: 20px !important;
-    color: theme-colors('textColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  color: theme-colors('textColors', 'primary') !important;
 }
 
 /* # Settings Parallax Section
 ================================================
 ================================================*/
 [parallax-title] {
-    color: theme-colors('textColors', 'accent');
-    font-size: $h1-font-size !important;
-    font-weight: bold !important;
-    line-height: 45px !important;
-    @include font-title;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+  color: theme-colors('textColors', 'accent');
+  font-size: $h1-font-size !important;
+  font-weight: bold !important;
+  line-height: 45px !important;
+  @include font-title;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 [parallax-subtitle] {
-    font-size: $h4-font-size !important;
-    font-weight: 400 !important;
-    line-height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: $h4-font-size !important;
+  font-weight: 400 !important;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 [parallax-description] {
-    font-size: $h4-font-size !important;
-    line-height: 24px !important;
-    font-weight: 400 !important;
+  font-size: $h4-font-size !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
 }
 
 /* # Settings Gallery Section
 ================================================
 ================================================*/
 [gallery-title] {
-    color: theme-colors('textColors', 'primary');
-    font-size: $h2-font-size !important;
-    line-height: 32px;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    word-wrap: initial !important;
+  color: theme-colors('textColors', 'primary');
+  font-size: $h2-font-size !important;
+  line-height: 32px;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-wrap: initial !important;
 }
 
 [gallery-subtitle] {
-    font-size: $h5-font-size !important;
-    color: theme-colors('textColors', 'primary');
+  font-size: $h5-font-size !important;
+  color: theme-colors('textColors', 'primary');
 }
 
 /* # Settings Checkbox Section
@@ -520,32 +526,34 @@ $checkbox-md-icon-size: $h4-font-size;
 $checkbox-md-icon-checkmark-color: theme-colors('mainColors', 'primary');
 // Settings for ios
 $checkbox-ios-background-color-on: theme-colors('mainColors', 'accent');
-$checkbox-ios-background-color-off:  theme-colors('mainColors', 'primary');
+$checkbox-ios-background-color-off: theme-colors('mainColors', 'primary');
 $checkbox-ios-icon-border-color-off: theme-colors('mainColors', 'borderColor');
 $checkbox-ios-icon-checkmark-color: theme-colors('mainColors', 'primary');
 $checkbox-ios-icon-border-color-on: transparent;
+
 .checkbox-md {
-    .checkbox-icon {
-        height: 20px !important;
-        width: 20px !important;
-    }
-    .checkbox-inner {
-        top: 1px !important;
-        left: 6px !important;
-        width: 6px !important;
-        height: 11px !important;
-    }
+  .checkbox-icon {
+    height: 20px !important;
+    width: 20px !important;
+  }
+
+  .checkbox-inner {
+    top: 1px !important;
+    left: 6px !important;
+    width: 6px !important;
+    height: 11px !important;
+  }
 }
 
 /* # Settings Wizard Section
 ================================================
 ================================================*/
 [wizard-title] {
-    font-size: $h4-font-size !important;
-    font-weight: 400;
-    @include font-title;
-    line-height: 32px;
-    color: theme-colors('textColors', 'secondary');
+  font-size: $h4-font-size !important;
+  font-weight: 400;
+  @include font-title;
+  line-height: 32px;
+  color: theme-colors('textColors', 'secondary');
 }
 
 [wizard-subtitle] {
@@ -556,10 +564,10 @@ $checkbox-ios-icon-border-color-on: transparent;
 }
 
 [wizard-description] {
-    font-size: $h5-font-size !important;
-    font-weight: 400;
-    line-height: 18px;
-    color: theme-colors('textColors', 'secondary');
+  font-size: $h5-font-size !important;
+  font-weight: 400;
+  line-height: 18px;
+  color: theme-colors('textColors', 'secondary');
 }
 
 /* # Settings Wizard Section
@@ -577,7 +585,7 @@ $text-input-ios-highlight-color-valid: transparent !important;
 
 //Settings text-input
 .text-input {
-  color:  theme-colors('textColors', 'primary') !important;
+  color: theme-colors('textColors', 'primary') !important;
   font-size: $h5-font-size;
   font-weight: 400;
   line-height: 17px;
@@ -618,9 +626,9 @@ $searchbar-ios-input-search-icon-color: theme-colors('textColors', 'accent');
 $searchbar-ios-input-clear-icon-color: theme-colors('textColors', 'accent');
 
 [search-bar-title] {
-    font-size: $h2-font-size !important;
-    font-weight: 400 !important;
-    margin-bottom: 10px !important;
+  font-size: $h2-font-size !important;
+  font-weight: 400 !important;
+  margin-bottom: 10px !important;
 }
 
 /* Radio Settings Section
@@ -670,28 +678,30 @@ $action-sheet-ios-button-background-activated: theme-colors('mainColors', 'prima
 ================================================
 ================================================*/
 [maps-title] {
-    color: theme-colors('mainColors', 'accent') !important;
-    font-size: 18px !important;
-    font-weight: 400 !important;
-    line-height: 20px !important;
+  color: theme-colors('mainColors', 'accent') !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
 }
 
 [map-content] {
-    [maps-description-title] {
-        font-size: $h4-font-size !important;
-        color: theme-colors('textColors', 'accent') !important;
-        font-weight: 400 !important;
-        line-height: 20px !important;
-    }
-    [maps-description] {
-        font-size: $h5-font-size !important;
-        font-weight: 300 !important;
-        line-height: 18px !important;
-    }
-    [maps-info-description] {
-      font-size: $h4-font-size !important;
-      line-height: 19px !important;
-    }
+  [maps-description-title] {
+    font-size: $h4-font-size !important;
+    color: theme-colors('textColors', 'accent') !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+  }
+
+  [maps-description] {
+    font-size: $h5-font-size !important;
+    font-weight: 300 !important;
+    line-height: 18px !important;
+  }
+
+  [maps-info-description] {
+    font-size: $h4-font-size !important;
+    line-height: 19px !important;
+  }
 }
 
 
@@ -710,6 +720,7 @@ $item-ios-divider-color: theme-colors('textColors', 'secondary');
 /* Settings Seggments Section
 ================================================
 ================================================*/
+/*
 $segment-button-md-border-bottom-color: theme-colors('mainColors', 'secondary') !important;
 $segment-button-md-border-color-activated: theme-colors('mainColors', 'accent') !important;
 //$segment-button-md-text-color-activated: theme-colors('textColors', 'accent') !important;
@@ -731,31 +742,54 @@ $segment-button-md-font-size: 17px;
   color: theme-colors('textColors', 'accent') !important;
 }
 
-
+*/
 /* Settings Toolbar Section
 ================================================
 ================================================*/
+/*
 //For Ios
 $toolbar-ios-title-text-color: theme-colors('textColors', 'secondary');
 $toolbar-ios-button-color: theme-colors('textColors', 'secondary');
 //For Android
-$toolbar-md-title-font-size: $h4-font-size !important;
+$toolbar-md-title-font-size: $h2-font-size !important;
 $toolbar-md-title-text-color: theme-colors('textColors', 'secondary');
-
+*/
+/*
 ion-navbar {
+
+  .toolbar-background {
+    background: #FFF;
+  }
+
+  ion-title {
+
+    color: #0A0907;
+  }
+}
+*/
+
+/*
+ion-navbar {
+  .toolbar-background {
+      background:#FFF;
+  }
   .toolbar-background {
       @extend .gradient;
   }
 }
 
+  */
+  /*
 .toolbar {
-    .toolbar-title {
-        font-weight: 400;
-    }
-}
- // Alert message
+  .toolbar-title {
+    font-weight: 400;
+  }
 
- //For Android
+}
+*/
+// Alert message
+
+//For Android
 $alert-md-title-font-size: 15px !important;
 //$alert-md-message-text-color: theme-colors('mainColors', 'accent') !important;
 $alert-md-input-border-color: theme-colors('mainColors', 'borderColor') !important;
@@ -797,96 +831,100 @@ $alert-ios-radio-label-text-color-checked: theme-colors('textColors', 'accent') 
     color: theme-colors('textColors', 'primary') !important;
     font-weight: 400;
   }
+
   .alert-button {
     color: theme-colors('textColors', 'primary') !important;
   }
+
   .item-radio {
     color: theme-colors('textColors', 'primary') !important;
   }
 }
 
-
+/*
 
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: theme-colors('textColors', 'accent') !important;
+   color: theme-colors('textColors', 'accent') !important;
   font-weight: 400 !important;
 
 }
 
 ::-moz-placeholder {
-  /* Firefox 19+ */
-  color: theme-colors('textColors', 'accent') !important;
+   color: theme-colors('textColors', 'accent') !important;
     font-weight: 400 !important;
 }
 
 :-ms-input-placeholder {
-  /* IE 10+ */
-  color: theme-colors('textColors', 'accent') !important;
+   color: theme-colors('textColors', 'accent') !important;
     font-weight: 400 !important;
 }
 
 :-moz-placeholder {
-  /* Firefox 18- */
-  color: theme-colors('textColors', 'accent') !important;
+   color: theme-colors('textColors', 'accent') !important;
   font-weight: 400 !important;
 }
-
+*/
 
 //Default Overview Ionic
 [has-header] .scroll-content {
+  /*
     top: 56px;
+    */
 }
-
+/*
 //Settings header for IOS
 .platform-ios {
-    [has-header] .scroll-content {
-        top: 64px !important;
-    }
-    .header-ios .toolbar-background-ios {
-        border-color: transparent;
-    }
-}
+  [has-header] .scroll-content {
+    top: 64px !important;
+  }
 
+  .header-ios .toolbar-background-ios {
+    border-color: transparent;
+  }
+}
+*/
 // Settings ion-reorder
 .item-md ion-reorder,
 .item-ios ion-reorder {
   opacity: 1 !important;
 }
-ion-reorder {
-    max-width: 50px;
-    border-left: none;
-    background: theme-colors('mainColors', 'secondary') !important;
 
-.ion-md-reorder, .ion-ios-reorder,  {
+ion-reorder {
+  max-width: 50px;
+  border-left: none;
+  background: theme-colors('mainColors', 'secondary') !important;
+
+  .ion-md-reorder,
+  .ion-ios-reorder,
+    {
     color: theme-colors('textColors', 'primary') !important;
   }
 }
 
 //Background Size
 [background-size] {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 [transparent] {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 [no-margin] {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 [no-padding] {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 /* Settings Color Select
 ================================================
 ================================================*/
 .select-text {
-    color: theme-colors('textColors', 'primary');
+  color: theme-colors('textColors', 'primary');
 }
 
 $select-md-icon-color: theme-colors('mainColors', 'accent');
@@ -899,7 +937,7 @@ $select-ios-icon-color: theme-colors('mainColors', 'accent');
 $range-md-tick-height: 11px;
 $range-md-tick-background-color: theme-colors('mainColors', 'accent') !important;
 $range-md-knob-background-color: theme-colors('mainColors', 'accent') !important;
-$range-md-bar-background-color: theme-colors('mainColors', 'secondary') ;
+$range-md-bar-background-color: theme-colors('mainColors', 'secondary');
 $range-md-bar-height: 2px;
 $range-md-knob-width: 28px;
 $range-md-knob-height: 28px;
@@ -908,7 +946,7 @@ $range-md-knob-height: 28px;
 $range-ios-tick-height-tick-height: 11px;
 $range-ios-tick-background-color: theme-colors('mainColors', 'accent');
 $range-ios-knob-background-color: theme-colors('mainColors', 'accent') !important;
-$range-ios-knob-box-shadow:  0 0px 8px theme-colors('mainColors', 'accent', 'opacity100') !important;
+$range-ios-knob-box-shadow: 0 0px 8px theme-colors('mainColors', 'accent', 'opacity100') !important;
 $range-ios-bar-background-color: theme-colors('mainColors', 'secondary');
 $range-ios-bar-height: 2px;
 $range-ios-knob-width: 28px;
@@ -922,6 +960,7 @@ $range-ios-knob-height: 28px;
 ================================================
 ================================================*/
 .info-dialog {
+
   .alert-head,
   .alert-message {
     text-align: center !important;
@@ -941,6 +980,7 @@ $range-ios-knob-height: 28px;
 ================================================
 ================================================*/
 .alert-warning {
+
   .alert-head,
   .alert-message {
     text-align: center !important;
@@ -960,7 +1000,7 @@ $range-ios-knob-height: 28px;
   }
 
 
-  .alert-button{
+  .alert-button {
     width: 100%;
     margin-bottom: 20px;
     background: theme-colors('mainColors', 'accent') !important;
@@ -969,9 +1009,9 @@ $range-ios-knob-height: 28px;
     display: block;
 
     .button-inner {
-        justify-content: center !important;
-      }
+      justify-content: center !important;
     }
+  }
 }
 
 /* Settings Alert Subscribe

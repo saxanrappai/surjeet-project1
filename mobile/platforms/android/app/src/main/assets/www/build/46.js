@@ -1,6 +1,6 @@
 webpackJsonp([46],{
 
-/***/ 711:
+/***/ 710:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleCardLayout4Module", function() { return GoogleCardLayout4Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_card_layout_4__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_card_layout_4__ = __webpack_require__(811);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,7 +42,7 @@ var GoogleCardLayout4Module = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 812:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79,7 +79,7 @@ var GoogleCardLayout4 = /** @class */ (function () {
     ], GoogleCardLayout4.prototype, "events", void 0);
     GoogleCardLayout4 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'google-card-layout-4',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/list-view/google-card/layout-4/google-card.html"*/'<!--Theme Google Card - Reviev cards-->\n\n<ion-content>\n\n  <ion-grid no-padding>\n\n    <ion-row *ngIf="data != null">\n\n      <ion-col col-12 col-lg-6 col-xl-4 *ngFor="let item of data.items;let i = index">\n\n        <!-- Card -->\n\n        <ion-card padding (click)="onEvent(\'onItemClick\', item, $event)">\n\n          <img [src]="item.image" />\n\n           <ion-card-header>\n\n             <span>{{item.time}}</span>\n\n             <h2 card-title>{{item.title}}</h2>\n\n             <p card-subtitle text-wrap>{{item.description}}</p>\n\n           </ion-card-header>\n\n          <ion-card-content no-padding>\n\n            <ion-row no-padding>\n\n              <ion-col col-auto no-padding *ngIf="item.like != null">\n\n                <button ion-button button-icon-clear icon-start text-capitalize clear small (click)="onEvent(\'onLike\', item, $event)">\n\n                  <ion-icon [ngClass]="{\'active\' : item.like.isActive}" [name]="item.like.icon"></ion-icon>\n\n                  {{item.like.number}} {{item.like.text}}\n\n                </button>\n\n              </ion-col>\n\n              <ion-col col-auto no-padding *ngIf="item.comment != null">\n\n                <button ion-button button-icon-clear icon-start text-capitalize clear small (click)="onEvent(\'onComment\', item, $event)">\n\n                <ion-icon  [ngClass]="{\'active\' : item.comment.isActive}" [name]="item.comment.icon"></ion-icon>\n\n                {{item.comment.number}} {{item.comment.text}}\n\n              </button>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/list-view/google-card/layout-4/google-card.html"*/
+            selector: 'google-card-layout-4',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\google-card\layout-4\google-card.html"*/'<!--Theme Google Card - Reviev cards-->\n\n<ion-content>\n\n  <ion-grid no-padding>\n\n    <ion-row *ngIf="data != null">\n\n      <ion-col col-12 col-lg-6 col-xl-4 *ngFor="let item of data.items;let i = index">\n\n        <!-- Card -->\n\n        <ion-card padding (click)="onEvent(\'onItemClick\', item, $event)">\n\n          <img [src]="item.image" />\n\n           <ion-card-header>\n\n             <span>{{item.time}}</span>\n\n             <h2 card-title>{{item.title}}</h2>\n\n             <p card-subtitle text-wrap>{{item.description}}</p>\n\n           </ion-card-header>\n\n          <ion-card-content no-padding>\n\n            <ion-row no-padding>\n\n              <ion-col col-auto no-padding *ngIf="item.like != null">\n\n                <button ion-button button-icon-clear icon-start text-capitalize clear small (click)="onEvent(\'onLike\', item, $event)">\n\n                  <ion-icon [ngClass]="{\'active\' : item.like.isActive}" [name]="item.like.icon"></ion-icon>\n\n                  {{item.like.number}} {{item.like.text}}\n\n                </button>\n\n              </ion-col>\n\n              <ion-col col-auto no-padding *ngIf="item.comment != null">\n\n                <button ion-button button-icon-clear icon-start text-capitalize clear small (click)="onEvent(\'onComment\', item, $event)">\n\n                <ion-icon  [ngClass]="{\'active\' : item.comment.isActive}" [name]="item.comment.icon"></ion-icon>\n\n                {{item.comment.number}} {{item.comment.text}}\n\n              </button>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\google-card\layout-4\google-card.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], GoogleCardLayout4);

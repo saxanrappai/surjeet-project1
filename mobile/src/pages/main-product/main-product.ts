@@ -49,6 +49,7 @@ export class MainProductPage {
   }
 
   initializeApp() {
+ /*
     this.platform.ready().then(() => {
       console.log('platform ready');
       this.nativeStorage.get('user_id').then((userID) => {
@@ -84,6 +85,7 @@ export class MainProductPage {
       });
 
     });
+    */
   }
 
 

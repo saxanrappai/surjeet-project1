@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-
 @IonicPage()
 @Component({
     selector: 'login-layout-2',
@@ -23,7 +22,7 @@ export class LoginLayout2 {
         "title": "Login to your account",
         "username": "Enter your username",
         "password": "Enter your password",
-        "login": "Log In",
+        "login": "LOGIN",
         "facebookLogin": "Login with",
         "register": "Register",
         "logo": "assets/images/logo/1.png",
@@ -31,7 +30,7 @@ export class LoginLayout2 {
         "errorPassword": "Field can't be empty"
     };
 
-    constructor() { }
+    constructor( ) { }
 
     onEvent = (event: string): void => {
         if (event == "onLogin" && !this.validate()) {
@@ -44,7 +43,6 @@ export class LoginLayout2 {
             });
         }
     }
-
     validate(): boolean {
         this.isUsernameValid = true;
         this.isPasswordValid = true;

@@ -323,7 +323,7 @@ var MyordersPage = /** @class */ (function () {
         });
     };
     MyordersPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\myorders\myorders.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>My Orders</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div *ngIf="show">\n\n    <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\myorders\myorders.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\myorders\myorders.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>My Orders</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div *ngIf="show">\n    <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\myorders\myorders.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_4__services_HttpService__["a" /* HttpService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],

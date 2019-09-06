@@ -100,7 +100,7 @@ var SplashScreenLayout3 = /** @class */ (function () {
     ], SplashScreenLayout3.prototype, "events", void 0);
     SplashScreenLayout3 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'splash-screen-layout-3',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/splash-screen/layout-3/splash-screen.html"*/'<!--Theme Splash screens - Logo + Title + Ken Burns-->\n\n<div id="splash-background-image">\n\n  <!-- <img splash-screen [src]="data.backgroundImage" /> -->\n\n  <img splash-screen src="assets/images/background/green-bg.jpg" />\n\n  <!-- <img logo [src]="data.logo" /> -->\n\n  <h2 font-bold header text-wrap></h2>\n\n</div>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/splash-screen/layout-3/splash-screen.html"*/
+            selector: 'splash-screen-layout-3',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\splash-screen\layout-3\splash-screen.html"*/'<!--Theme Splash screens - Logo + Title + Ken Burns-->\n\n<div id="splash-background-image">\n\n  <!-- <img splash-screen [src]="data.backgroundImage" /> -->\n\n  <img splash-screen src="assets/images/background/green-bg.jpg" />\n\n  <!-- <img logo [src]="data.logo" /> -->\n\n  <h2 font-bold header text-wrap></h2>\n\n</div>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\splash-screen\layout-3\splash-screen.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */]])
     ], SplashScreenLayout3);

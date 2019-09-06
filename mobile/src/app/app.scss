@@ -45,10 +45,6 @@
   }
 }
 
-ion-content{
-  background-image:url('../assets/back_image.jpg');
-  background-size: cover;
-}
 
 .primary {
   color: #FFF;
@@ -58,8 +54,9 @@ ion-content{
 .darkText {
   color: #000;
 }
-
-ion-header{
-  background-color:  #150D0B;
-  border:5px solid #FF0;
+ 
+.backbtn{
+  color:#FFF;
+  font-size:2.5em;
+  margin-top:.5em;
 }

@@ -646,39 +646,46 @@ var MainProductPage = /** @class */ (function () {
         this.initializeApp();
     }
     MainProductPage.prototype.initializeApp = function () {
-        var _this = this;
-        this.platform.ready().then(function () {
-            console.log('platform ready');
-            _this.nativeStorage.get('user_id').then(function (userID) {
-                console.log('native storage userid:' + userID);
-                _this.firebase.getToken()
-                    .then(function (token) {
-                    console.log("The token is " + token);
-                    _this.httpService.updateToken(userID, token)
-                        .subscribe(function (data) {
-                    });
-                })
-                    .catch(function (error) { return console.error('Error getting token', error); });
-                _this.firebase.onNotification()
-                    .subscribe(function (data) {
-                    console.log("User opened a notification " + data);
-                    _this.localNotifications.schedule([{
-                            title: data.title,
-                            text: data.body
-                        }]);
-                });
-                _this.firebase.onTokenRefresh()
-                    .subscribe(function (token) {
-                    console.log("Got a new token " + token);
-                    _this.httpService.updateToken(userID, token)
-                        .subscribe(function (data) {
-                    });
-                });
-            });
-        });
+        /*
+           this.platform.ready().then(() => {
+             console.log('platform ready');
+             this.nativeStorage.get('user_id').then((userID) => {
+               console.log('native storage userid:' + userID);
+               this.firebase.getToken()
+                 .then(token => {
+                   console.log(`The token is ${token}`);
+                   this.httpService.updateToken(userID, token)
+                     .subscribe(data => {
+       
+                     });
+                 })
+                 .catch(error => console.error('Error getting token', error));
+       
+               this.firebase.onNotification()
+                 .subscribe(data => {
+                   console.log(`User opened a notification ${data}`);
+                   this.localNotifications.schedule([{
+                     title: data.title,
+                     text: data.body
+                   }]);
+                 });
+       
+               this.firebase.onTokenRefresh()
+                 .subscribe((token: string) => {
+                   console.log(`Got a new token ${token}`);
+                   this.httpService.updateToken(userID, token)
+                     .subscribe(data => {
+       
+                     });
+                 });
+       
+             });
+       
+           });
+           */
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div *ngIf="show">\n\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n\n    </image-gallery-layout-1>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n \n\n\n\n\n\n\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
@@ -717,6 +724,7 @@ var MainProductPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -733,6 +741,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -740,7 +749,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams, httpService, nativeStorage, platform, firebase, toastCtrl) {
+    function LoginPage(navCtrl, navParams, httpService, nativeStorage, platform, firebase, toastCtrl, location) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -749,6 +758,7 @@ var LoginPage = /** @class */ (function () {
         this.platform = platform;
         this.firebase = firebase;
         this.toastCtrl = toastCtrl;
+        this.location = location;
         this.params = {};
         this.getEventsForTheme = function () {
             var that = _this;
@@ -829,9 +839,13 @@ var LoginPage = /** @class */ (function () {
             });
         });
     };
+    LoginPage.prototype.goBack = function () {
+        console.log(" clicked");
+        this.location.back();
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/' \n\n<ion-header>\n\n  <ion-toolbar class="primary">\n\n    <ion-buttons slot="start">\n\n      <ion-menu-button></ion-menu-button>\n\n    </ion-buttons>\n\n    <ion-title>Login</ion-title>\n\n  </ion-toolbar> \n\n</ion-header>\n\n\n\n \n\n<ion-content>\n\n  <!-- \n\n  <login-layout-2 [events]="params.events">\n\n  </login-layout-2>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/'<ion-header>\n  <ion-toolbar > \n      <ion-buttons slot="start">\n        <ion-back-button></ion-back-button>\n      </ion-buttons>\n    <ion-title>Login</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content class="loginPage">\n  \n  <login-layout-2 [events]="params.events">\n  </login-layout-2>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["u" /* NavParams */],
@@ -839,7 +853,8 @@ var LoginPage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["w" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_0__ionic_native_fcm__["a" /* FCM */],
-            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]])
+            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_common__["e" /* Location */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -16591,7 +16606,7 @@ var LoginLayout2 = /** @class */ (function () {
             "title": "Login to your account",
             "username": "Enter your username",
             "password": "Enter your password",
-            "login": "Log In",
+            "login": "LOGIN",
             "facebookLogin": "Login with",
             "register": "Register",
             "logo": "assets/images/logo/1.png",
@@ -16627,7 +16642,7 @@ var LoginLayout2 = /** @class */ (function () {
     ], LoginLayout2.prototype, "events", void 0);
     LoginLayout2 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'login-layout-2',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\login\layout-2\login.html"*/'<!-- Theme Login pages - Login + logo 2 -->\n\n<ion-content has-header >\n\n  <ion-grid no-padding *ngIf="data != null">\n\n    <ion-row padding-left padding-right align-items-center>\n\n      <!-- <ion-col text-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>\n\n        <img logo margin-top [src]="data.logo">\n\n      </ion-col> -->\n\n      <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 text-center>\n\n        <ion-item transparent text-center no-lines>\n\n          <!---Logo Title-->\n\n          <img src=\'../../../assets/veneer_logo.jpg\' class="logoImg"/>\n\n        </ion-item>\n\n        <form>\n\n          <!---Input field username-->\n\n          <ion-item margin-top transparent>\n\n            <ion-label stacked>{{data.labelUsername}}</ion-label>\n\n            <ion-input required type="text" [placeholder]="data.username" [(ngModel)]="username"\n\n              [ngModelOptions]="{standalone: true}"></ion-input>\n\n            <ion-label error-field no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>\n\n          </ion-item>\n\n          <!---Input field password-->\n\n          <ion-item transparent>\n\n            <ion-label stacked>{{data.labelPassword}}</ion-label>\n\n            <ion-input required type="password" [placeholder]="data.password" [(ngModel)]="password"\n\n              [ngModelOptions]="{standalone: true}"></ion-input>\n\n            <ion-label error-field no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label>\n\n          </ion-item>\n\n          <!-- <ion-item transparent>\n\n            <button ion-button button-clear text-capitalize clear no-padding no-margin float-right\n\n              (click)="onEvent(\'onForgot\')">{{data.forgotPassword}}</button>\n\n          </ion-item> -->\n\n          <div login-section>\n\n            <button ion-button default-button text-capitalize box-shadow\n\n              (click)="onEvent(\'onLogin\')">{{data.login}}</button>\n\n          </div>\n\n\n\n        </form>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\login\layout-2\login.html"*/
+            selector: 'login-layout-2',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\login\layout-2\login.html"*/'<!-- Theme Login pages - Login + logo 2 -->\n\n<ion-content has-header class="login-layout-2">\n\n  <ion-grid no-padding *ngIf="data != null">\n\n    <ion-row padding-left padding-right align-items-center>\n\n      <!-- <ion-col text-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>\n\n        <img logo margin-top [src]="data.logo">\n\n      </ion-col> -->\n\n \n\n<!--  \n\n      <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 text-center>\n\n\n\n<ion-row>\n\n<ion-col>\n\n\n\n  <ion-icon (click)="goBack()" name="arrow-back" class="backbtn"></ion-icon>\n\n</ion-col>\n\n<ion-col col-10 >\n\n \n\n          <ion-label class="titleTxt"> Login</ion-label>   \n\n\n\n\n\n</ion-col>\n\n\n\n</ion-row>\n\n\n\n      </ion-col>\n\n-->\n\n       \n\n\n\n\n\n          \n\n      <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 text-center>\n\n        <ion-item transparent text-center no-lines>\n\n          <!---Logo Title-->\n\n          <img src=\'../../../assets/veneer_logo.jpg\' class="logoImg" />\n\n        </ion-item>\n\n        <form>\n\n\n\n\n\n\n\n\n\n          <!---Input field username-->\n\n          <ion-item margin-top transparent class="btmline">\n\n            <ion-label position="floating">\n\n              <ion-icon name="mail" item-left></ion-icon>\n\n            </ion-label>\n\n            <ion-input class="loginInputFD" required type="text" [placeholder]="data.username" [(ngModel)]="username"\n\n              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>\n\n            <ion-label error-field no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>\n\n          </ion-item>\n\n\n\n          <!--\n\n  \n\n\n\n          <ion-item margin-top transparent>\n\n              <ion-icon name="mail" item-left></ion-icon>\n\n              <ion-input required type="text" [placeholder]="data.username" [(ngModel)]="username"\n\n                [ngModelOptions]="{standalone: true}"></ion-input>\n\n              <ion-label error-field no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>\n\n            </ion-item>\n\n-->\n\n\n\n\n\n          <!---Input field password-->\n\n\n\n          <ion-item margin-top transparent class="btmline">\n\n            <ion-label position="floating">\n\n              <ion-icon name="lock" item-left></ion-icon>\n\n            </ion-label>\n\n            <ion-input required type="password" [placeholder]="data.password" [(ngModel)]="password"\n\n              [ngModelOptions]="{standalone: true}"></ion-input>\n\n            <ion-label error-field no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label>\n\n          </ion-item>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n          <!-- \n\n          <ion-item transparent>\n\n            <ion-label stacked>{{data.labelPassword}}</ion-label>\n\n            <ion-input required type="password" [placeholder]="data.password" [(ngModel)]="password"\n\n              [ngModelOptions]="{standalone: true}"></ion-input>\n\n            <ion-label error-field no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label>\n\n          </ion-item>    \n\n         -->\n\n          <!-- <ion-item transparent>\n\n            <button ion-button button-clear text-capitalize clear no-padding no-margin float-right\n\n              (click)="onEvent(\'onForgot\')">{{data.forgotPassword}}</button>\n\n          </ion-item> -->\n\n          <ion-item margin-top transparent>\n\n            <div login-section>\n\n              <button ion-button default-button text-capitalize box-shadow\n\n                (click)="onEvent(\'onLogin\')">{{data.login}}</button>\n\n            </div>\n\n          </ion-item>\n\n\n\n        </form>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\login\layout-2\login.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], LoginLayout2);
@@ -16960,7 +16975,7 @@ var SplashscreenPage = /** @class */ (function () {
     };
     SplashscreenPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-splashscreen',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/'<ion-content>\n\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n\n  </splash-screen-layout-3>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/
+            selector: 'page-splashscreen',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/'<ion-content>\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n  </splash-screen-layout-3>\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4__services_menu_service__["a" /* MenuService */],

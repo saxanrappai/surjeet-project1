@@ -77,7 +77,7 @@ var SelectLayout5 = /** @class */ (function () {
     ], SelectLayout5.prototype, "events", void 0);
     SelectLayout5 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'select-layout-5',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/select/layout-5/select.html"*/'<ion-item no-lines *ngIf="data != null">\n\n    <ion-label>{{data.title}}</ion-label>\n\n    <ion-select [(ngModel)]="data.selectedItem" multiple="true" interface="action-sheet">\n\n        <ion-option *ngFor="let item of data.items; let i= index" [value]="item.id">{{item.title}}</ion-option>\n\n    </ion-select>\n\n</ion-item>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/select/layout-5/select.html"*/
+            selector: 'select-layout-5',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\select\layout-5\select.html"*/'<ion-item no-lines *ngIf="data != null">\n\n    <ion-label>{{data.title}}</ion-label>\n\n    <ion-select [(ngModel)]="data.selectedItem" multiple="true" interface="action-sheet">\n\n        <ion-option *ngFor="let item of data.items; let i= index" [value]="item.id">{{item.title}}</ion-option>\n\n    </ion-select>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\select\layout-5\select.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], SelectLayout5);

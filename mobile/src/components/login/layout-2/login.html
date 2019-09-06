@@ -1,38 +1,102 @@
 <!-- Theme Login pages - Login + logo 2 -->
-<ion-content has-header >
+<ion-content has-header class="login-layout-2">
   <ion-grid no-padding *ngIf="data != null">
     <ion-row padding-left padding-right align-items-center>
       <!-- <ion-col text-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <img logo margin-top [src]="data.logo">
       </ion-col> -->
+ 
+<!--  
+      <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 text-center>
+
+<ion-row>
+<ion-col>
+
+  <ion-icon (click)="goBack()" name="arrow-back" class="backbtn"></ion-icon>
+</ion-col>
+<ion-col col-10 >
+ 
+          <ion-label class="titleTxt"> Login</ion-label>   
+
+
+</ion-col>
+
+</ion-row>
+
+      </ion-col>
+-->
+       
+
+
+          
       <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 text-center>
         <ion-item transparent text-center no-lines>
           <!---Logo Title-->
-          <img src='../../../assets/veneer_logo.jpg' class="logoImg"/>
+          <img src='../../../assets/veneer_logo.jpg' class="logoImg" />
         </ion-item>
         <form>
+
+
+
+
           <!---Input field username-->
-          <ion-item margin-top transparent>
-            <ion-label stacked>{{data.labelUsername}}</ion-label>
-            <ion-input required type="text" [placeholder]="data.username" [(ngModel)]="username"
-              [ngModelOptions]="{standalone: true}"></ion-input>
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="mail" item-left></ion-icon>
+            </ion-label>
+            <ion-input class="loginInputFD" required type="text" [placeholder]="data.username" [(ngModel)]="username"
+              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
             <ion-label error-field no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>
           </ion-item>
+
+          <!--
+  
+
+          <ion-item margin-top transparent>
+              <ion-icon name="mail" item-left></ion-icon>
+              <ion-input required type="text" [placeholder]="data.username" [(ngModel)]="username"
+                [ngModelOptions]="{standalone: true}"></ion-input>
+              <ion-label error-field no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>
+            </ion-item>
+-->
+
+
           <!---Input field password-->
+
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="lock" item-left></ion-icon>
+            </ion-label>
+            <ion-input required type="password" [placeholder]="data.password" [(ngModel)]="password"
+              [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-label error-field no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label>
+          </ion-item>
+
+
+
+
+
+
+
+
+          <!-- 
           <ion-item transparent>
             <ion-label stacked>{{data.labelPassword}}</ion-label>
             <ion-input required type="password" [placeholder]="data.password" [(ngModel)]="password"
               [ngModelOptions]="{standalone: true}"></ion-input>
             <ion-label error-field no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label>
-          </ion-item>
+          </ion-item>    
+         -->
           <!-- <ion-item transparent>
             <button ion-button button-clear text-capitalize clear no-padding no-margin float-right
               (click)="onEvent('onForgot')">{{data.forgotPassword}}</button>
           </ion-item> -->
-          <div login-section>
-            <button ion-button default-button text-capitalize box-shadow
-              (click)="onEvent('onLogin')">{{data.login}}</button>
-          </div>
+          <ion-item margin-top transparent>
+            <div login-section>
+              <button ion-button default-button text-capitalize box-shadow
+                (click)="onEvent('onLogin')">{{data.login}}</button>
+            </div>
+          </ion-item>
 
         </form>
       </ion-col>

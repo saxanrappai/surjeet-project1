@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 749:
+/***/ 748:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IntroPageModule", function() { return IntroPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro_page__ = __webpack_require__(851);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro_page__ = __webpack_require__(850);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16029,14 +16029,14 @@ exports.registerDatabase = registerDatabase;
 
 /***/ }),
 
-/***/ 851:
+/***/ 850:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_intro_service__ = __webpack_require__(852);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_intro_service__ = __webpack_require__(851);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16069,7 +16069,7 @@ var IntroPage = /** @class */ (function () {
         });
     }
     IntroPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/intro-page/intro-page.html"*/'<!--Wizard component-->\n\n<ion-content no-margin no-padding *ngIf="params != null">\n\n    <wizard-layout-1 [data]="params.data" [events]="params.events">\n\n    </wizard-layout-1>\n\n</ion-content>'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/intro-page/intro-page.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\intro-page\intro-page.html"*/'<!--Wizard component-->\n\n<ion-content no-margin no-padding *ngIf="params != null">\n\n    <wizard-layout-1 [data]="params.data" [events]="params.events">\n\n    </wizard-layout-1>\n\n</ion-content>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\intro-page\intro-page.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_intro_service__["a" /* IntroService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["B" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__services_intro_service__["a" /* IntroService */]])
@@ -16081,7 +16081,7 @@ var IntroPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 852:
+/***/ 851:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

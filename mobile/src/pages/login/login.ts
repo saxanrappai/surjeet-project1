@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { ToastService } from '../../services/toast-service';
 import { MainProductPage } from '../main-product/main-product';
 import { Storage } from '@ionic/storage';
+import { Location } from '@angular/common';
 
 /**
  * Generated class for the LoginPage page.
@@ -33,9 +34,11 @@ export class LoginPage {
     private nativeStorage: Storage,
     private platform: Platform,
     private firebase: FCM,
-    private toastCtrl: ToastService) {
+    private toastCtrl: ToastService,
+    public location: Location) {
     this.params.events = this.getEventsForTheme();
 
+   
   }
 
   initializeApp() {
@@ -124,5 +127,11 @@ export class LoginPage {
       },
     };
   };
+
+  
+  goBack() {
+    console.log(" clicked");
+    this.location.back();
+  }
 
 }

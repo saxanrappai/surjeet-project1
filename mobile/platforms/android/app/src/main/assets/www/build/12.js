@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 747:
+/***/ 746:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategorylistPageModule", function() { return CategorylistPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorylist__ = __webpack_require__(848);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorylist__ = __webpack_require__(847);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var CategorylistPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 848:
+/***/ 847:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -203,7 +203,7 @@ var CategorylistPage = /** @class */ (function () {
     ], CategorylistPage.prototype, "content", void 0);
     CategorylistPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-            selector: 'page-category-list',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/categorylist/categorylist.html"*/'<!--Animation components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{global.category_title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<!--Content-->\n\n<ion-content>\n  <!--PAGE APPEARANCE ANIMATIONS - Fade in left-->\n  <!-- <appearance-animation-layout-1 [data]="data" [events]="events">\n  </appearance-animation-layout-1> -->\n\n  <!--Theme Appearance animations - Fade in left-->\n  <ion-grid no-padding>\n    <ion-row>\n      <ion-col col-12>\n        <ion-list no-margin>\n          <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"\n            (ionCancel)="onCancelSearch()">\n          </ion-searchbar>\n          <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of animateItems; let i = index;"\n            (click)="onitemclick(\'onItemClick\', item, $event)">\n            <ion-avatar item-start>\n              <img\n                [src]="(item.image == \'\') ? \'assets/images/background/placeholder.jpg\' : \'http://myshop.guidersmap.com/uploads/category/\'+item.image"\n                alt="{{item.title}}" />\n            </ion-avatar>\n            <h2 item-title>{{item.title}}</h2>\n            <!-- <ion-icon icon-small item-right>\n              <i class="icon" [ngClass]="{\'icon-heart\': item.favorite, \'icon-heart-outline\': !item.favorite}"></i>\n            </ion-icon> -->\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/categorylist/categorylist.html"*/,
+            selector: 'page-category-list',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\categorylist\categorylist.html"*/'<!--Animation components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{global.category_title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<!--Content-->\n\n<ion-content>\n  <!--PAGE APPEARANCE ANIMATIONS - Fade in left-->\n  <!-- <appearance-animation-layout-1 [data]="data" [events]="events">\n  </appearance-animation-layout-1> -->\n\n  <!--Theme Appearance animations - Fade in left-->\n  <ion-grid no-padding>\n    <ion-row>\n      <ion-col col-12>\n        <ion-list no-margin>\n          <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"\n            (ionCancel)="onCancelSearch()">\n          </ion-searchbar>\n          <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of animateItems; let i = index;"\n            (click)="onitemclick(\'onItemClick\', item, $event)">\n            <ion-avatar item-start>\n              <img\n                [src]="(item.image == \'\') ? \'assets/images/background/placeholder.jpg\' : \'http://myshop.guidersmap.com/uploads/category/\'+item.image"\n                alt="{{item.title}}" />\n            </ion-avatar>\n            <h2 item-title>{{item.title}}</h2>\n            <!-- <ion-icon icon-small item-right>\n              <i class="icon" [ngClass]="{\'icon-heart\': item.favorite, \'icon-heart-outline\': !item.favorite}"></i>\n            </ion-icon> -->\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\categorylist\categorylist.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1__services_toast_service__["a" /* ToastService */],
             __WEBPACK_IMPORTED_MODULE_0__services_HttpService__["a" /* HttpService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],

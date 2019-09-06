@@ -135,39 +135,46 @@ var MainProductPage = /** @class */ (function () {
         this.initializeApp();
     }
     MainProductPage.prototype.initializeApp = function () {
-        var _this = this;
-        this.platform.ready().then(function () {
-            console.log('platform ready');
-            _this.nativeStorage.get('user_id').then(function (userID) {
-                console.log('native storage userid:' + userID);
-                _this.firebase.getToken()
-                    .then(function (token) {
-                    console.log("The token is " + token);
-                    _this.httpService.updateToken(userID, token)
-                        .subscribe(function (data) {
-                    });
-                })
-                    .catch(function (error) { return console.error('Error getting token', error); });
-                _this.firebase.onNotification()
-                    .subscribe(function (data) {
-                    console.log("User opened a notification " + data);
-                    _this.localNotifications.schedule([{
-                            title: data.title,
-                            text: data.body
-                        }]);
-                });
-                _this.firebase.onTokenRefresh()
-                    .subscribe(function (token) {
-                    console.log("Got a new token " + token);
-                    _this.httpService.updateToken(userID, token)
-                        .subscribe(function (data) {
-                    });
-                });
-            });
-        });
+        /*
+           this.platform.ready().then(() => {
+             console.log('platform ready');
+             this.nativeStorage.get('user_id').then((userID) => {
+               console.log('native storage userid:' + userID);
+               this.firebase.getToken()
+                 .then(token => {
+                   console.log(`The token is ${token}`);
+                   this.httpService.updateToken(userID, token)
+                     .subscribe(data => {
+       
+                     });
+                 })
+                 .catch(error => console.error('Error getting token', error));
+       
+               this.firebase.onNotification()
+                 .subscribe(data => {
+                   console.log(`User opened a notification ${data}`);
+                   this.localNotifications.schedule([{
+                     title: data.title,
+                     text: data.body
+                   }]);
+                 });
+       
+               this.firebase.onTokenRefresh()
+                 .subscribe((token: string) => {
+                   console.log(`Got a new token ${token}`);
+                   this.httpService.updateToken(userID, token)
+                     .subscribe(data => {
+       
+                     });
+                 });
+       
+             });
+       
+           });
+           */
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div *ngIf="show">\n\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n\n    </image-gallery-layout-1>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n \n\n\n\n\n\n\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
@@ -344,7 +351,7 @@ var CartDetailsPage = /** @class */ (function () {
         }
     };
     CartDetailsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\cart-details\cart-details.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Order Details</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<!--Theme Google Card - Full Image Cards-->\n\n<ion-content>\n\n  <ion-grid no-padding>\n\n    <ion-row>\n\n      <ion-col no-padding col-12 col-md-6 *ngFor="let item of data;let i = index">\n\n        <ion-card background-size text-left>\n\n          <ion-item padding>\n\n            <h2>{{item.product_name}}</h2>\n\n            <p text-wrap [innerHTML]=\'item.fullText\'></p>\n\n            <div item-content>\n\n              <!-- {{item.increament}} Qty -->\n\n              <button ion-button (click)="deleteFromCart(item.product_id)">\n\n                <ion-icon name="trash"></ion-icon>\n\n              </button>\n\n            </div>\n\n          </ion-item>\n\n        </ion-card>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer no-lines>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button block default-button (click)="onEvent(\'onButtonClick\', null, $event)">Place Order</button>\n\n    </ion-col>\n\n    <ion-col>\n\n\n\n      <button ion-button block default-button (click)="goBack()">Add More</button>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\cart-details\cart-details.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\cart-details\cart-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Order Details</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<!--Theme Google Card - Full Image Cards-->\n<ion-content>\n  <ion-grid no-padding>\n    <ion-row>\n      <ion-col no-padding col-12 col-md-6 *ngFor="let item of data;let i = index">\n        <ion-card background-size text-left>\n          <ion-item padding>\n            <h2>{{item.product_name}}</h2>\n            <p text-wrap [innerHTML]=\'item.fullText\'></p>\n            <div item-content>\n              <!-- {{item.increament}} Qty -->\n              <button ion-button (click)="deleteFromCart(item.product_id)">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n            </div>\n          </ion-item>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer no-lines>\n  <ion-row>\n    <ion-col>\n      <button ion-button block default-button (click)="onEvent(\'onButtonClick\', null, $event)">Place Order</button>\n    </ion-col>\n    <ion-col>\n\n      <button ion-button block default-button (click)="goBack()">Add More</button>\n    </ion-col>\n  </ion-row>\n\n</ion-footer>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\cart-details\cart-details.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_HttpService__["a" /* HttpService */], __WEBPACK_IMPORTED_MODULE_0__services_toast_service__["a" /* ToastService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],

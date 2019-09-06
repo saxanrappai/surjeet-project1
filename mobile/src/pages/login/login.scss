@@ -1,3 +1,32 @@
-page-login {
+page-login {}
 
+ion-toolbar {
+    text-align: center;
+    font-weight: bold;
+}
+
+[ion-title] {
+    color: #FFF;
+    font-size: 5em;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+[header-title] {
+    text-align: center;
+}
+
+.toolbar-background-md {
+    background-image: url('../assets/back_image.jpg');
+}
+
+ion-content {
+    background-image: url('../assets/back_image.jpg');
+    background-size: cover;
+}
+
+ion-title {
+    
+    color: #FFF !important;
 }

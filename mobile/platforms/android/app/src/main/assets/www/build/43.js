@@ -1,6 +1,6 @@
 webpackJsonp([43],{
 
-/***/ 717:
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwipeToDismissLayout3Module", function() { return SwipeToDismissLayout3Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swipe_to_dismiss_layout_3__ = __webpack_require__(818);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swipe_to_dismiss_layout_3__ = __webpack_require__(817);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,7 +42,7 @@ var SwipeToDismissLayout3Module = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 818:
+/***/ 817:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92,7 +92,7 @@ var SwipeToDismissLayout3 = /** @class */ (function () {
     ], SwipeToDismissLayout3.prototype, "content", void 0);
     SwipeToDismissLayout3 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'swipe-to-dismiss-layout-3',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss.html"*/'<!-- Themes Swipe To Dismiss - Full width image -->\n\n<ion-content>\n\n  <ion-grid no-padding *ngIf="data != null">\n\n    <ion-row>\n\n      <ion-col col-12 align-self-end>\n\n        <ion-list padding no-margin>\n\n          <ion-item-sliding box-shadow margin-bottom *ngFor="let item of data.items" #slidingItem>\n\n            <ion-item no-lines background-size (click)="onEvent(\'onItemClick\', item.title, $event)"\n\n            [ngStyle]="{\'background-image\': \'url(\' + item.image + \')\'}">\n\n            <div title-block>\n\n              <!-- Subtitle -->\n\n              <p ion-text color="secondary">{{item.subtitle}}</p>\n\n              <!-- Title -->\n\n              <h1 card-title text-wrap>{{item.title}}</h1>\n\n            </div>\n\n            </ion-item>\n\n            <!---Action Button-->\n\n            <ion-item-options>\n\n              <button ion-button text-capitalize transparent (click)="delete(item)">\n\n              {{item.delate}}\n\n            </button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss.html"*/
+            selector: 'swipe-to-dismiss-layout-3',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\swipe-to-dismiss\layout-3\swipe-to-dismiss.html"*/'<!-- Themes Swipe To Dismiss - Full width image -->\n\n<ion-content>\n\n  <ion-grid no-padding *ngIf="data != null">\n\n    <ion-row>\n\n      <ion-col col-12 align-self-end>\n\n        <ion-list padding no-margin>\n\n          <ion-item-sliding box-shadow margin-bottom *ngFor="let item of data.items" #slidingItem>\n\n            <ion-item no-lines background-size (click)="onEvent(\'onItemClick\', item.title, $event)"\n\n            [ngStyle]="{\'background-image\': \'url(\' + item.image + \')\'}">\n\n            <div title-block>\n\n              <!-- Subtitle -->\n\n              <p ion-text color="secondary">{{item.subtitle}}</p>\n\n              <!-- Title -->\n\n              <h1 card-title text-wrap>{{item.title}}</h1>\n\n            </div>\n\n            </ion-item>\n\n            <!---Action Button-->\n\n            <ion-item-options>\n\n              <button ion-button text-capitalize transparent (click)="delete(item)">\n\n              {{item.delate}}\n\n            </button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\list-view\swipe-to-dismiss\layout-3\swipe-to-dismiss.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], SwipeToDismissLayout3);

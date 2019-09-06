@@ -225,19 +225,19 @@ var map = {
 		4
 	],
 	"../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module": [
-		722,
+		715,
 		45
 	],
 	"../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module": [
-		715,
+		716,
 		44
 	],
 	"../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module": [
-		716,
+		717,
 		43
 	],
 	"../components/login/layout-1/login-layout-1.module": [
-		717,
+		718,
 		42
 	],
 	"../components/login/layout-2/login-layout-2.module": [
@@ -245,19 +245,19 @@ var map = {
 		41
 	],
 	"../components/profile/layout-1/profile-layout-1.module": [
-		718,
+		719,
 		40
 	],
 	"../components/profile/layout-2/profile-layout-2.module": [
-		719,
+		720,
 		39
 	],
 	"../components/profile/layout-3/profile-layout-3.module": [
-		720,
+		721,
 		38
 	],
 	"../components/profile/layout-4/profile-layout-4.module": [
-		721,
+		722,
 		37
 	],
 	"../components/profile/layout-5/profile-layout-5.module": [
@@ -778,6 +778,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/list-view/sticky-list-header/layout-1/sticky-list-header-layout-1.module#StickyListHeaderLayout1Module', name: 'StickyListHeaderLayout1', segment: 'sticky-list-header-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/sticky-list-header/layout-2/sticky-list-header-layout-2.module#StickyListHeaderLayout2Module', name: 'StickyListHeaderLayout2', segment: 'sticky-list-header-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/sticky-list-header/layout-3/sticky-list-header-layout-3.module#StickyListHeaderLayout3Module', name: 'StickyListHeaderLayout3', segment: 'sticky-list-header-layout-3', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module#SwipeToDismissLayout1Module', name: 'SwipeToDismissLayout1', segment: 'swipe-to-dismiss-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module#SwipeToDismissLayout2Module', name: 'SwipeToDismissLayout2', segment: 'swipe-to-dismiss-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module#SwipeToDismissLayout3Module', name: 'SwipeToDismissLayout3', segment: 'swipe-to-dismiss-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/login/layout-1/login-layout-1.module#LoginLayout1Module', name: 'LoginLayout1', segment: 'login-layout-1', priority: 'low', defaultHistory: [] },
@@ -786,7 +787,6 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/profile/layout-2/profile-layout-2.module#ProfileLayout2Module', name: 'ProfileLayout2', segment: 'profile-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-3/profile-layout-3.module#ProfileLayout3Module', name: 'ProfileLayout3', segment: 'profile-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-4/profile-layout-4.module#ProfileLayout4Module', name: 'ProfileLayout4', segment: 'profile-layout-4', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module#SwipeToDismissLayout1Module', name: 'SwipeToDismissLayout1', segment: 'swipe-to-dismiss-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-5/profile-layout-5.module#ProfileLayout5Module', name: 'ProfileLayout5', segment: 'profile-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-1/register-layout-1.module#RegisterLayout1Module', name: 'RegisterLayout1', segment: 'register-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
@@ -926,19 +926,22 @@ var MyApp = /** @class */ (function () {
                     _this.rootPage = 'LoginPage';
                 }
             });
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            _this.firebase.getToken()
-                .then(function (token) { return console.log("The token is " + token); }) // save the token server-side and use it to push notifications to this device
-                .catch(function (error) { return console.error('Error getting token', error); });
-            _this.firebase.onNotification()
-                .subscribe(function (data) {
-                console.log("User opened a notification " + data);
-                _this.localNotifications.schedule([{
+            /* saxan
+                  // Okay, so the platform is ready and our plugins are available.
+                  // Here you can do any higher level native things you might need.
+                  this.firebase.getToken()
+                    .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+                    .catch(error => console.error('Error getting token', error));
+            
+                  this.firebase.onNotification()
+                    .subscribe(data => {
+                      console.log(`User opened a notification ${data}`);
+                      this.localNotifications.schedule([{
                         title: data.title,
                         text: data.body
-                    }]);
-            });
+                      }]);
+                    });
+            */
             _this.statusBar.styleDefault();
             localStorage.setItem("mailChimpLocal", "true");
             _this.globalProvider.initializeNetworkEvents();
