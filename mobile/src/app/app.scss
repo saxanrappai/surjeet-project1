@@ -44,3 +44,22 @@
     color: theme-colors('textColors', 'secondary');
   }
 }
+
+ion-content{
+  background-image:url('../assets/back_image.jpg');
+  background-size: cover;
+}
+
+.primary {
+  color: #FFF;
+  background-color:  #150D0B;
+}
+
+.darkText {
+  color: #000;
+}
+
+ion-header{
+  background-color:  #150D0B;
+  border:5px solid #FF0;
+}

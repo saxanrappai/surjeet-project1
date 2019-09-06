@@ -225,19 +225,19 @@ var map = {
 		4
 	],
 	"../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module": [
-		715,
+		722,
 		45
 	],
 	"../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module": [
-		716,
+		715,
 		44
 	],
 	"../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module": [
-		717,
+		716,
 		43
 	],
 	"../components/login/layout-1/login-layout-1.module": [
-		718,
+		717,
 		42
 	],
 	"../components/login/layout-2/login-layout-2.module": [
@@ -245,19 +245,19 @@ var map = {
 		41
 	],
 	"../components/profile/layout-1/profile-layout-1.module": [
-		719,
+		718,
 		40
 	],
 	"../components/profile/layout-2/profile-layout-2.module": [
-		720,
+		719,
 		39
 	],
 	"../components/profile/layout-3/profile-layout-3.module": [
-		721,
+		720,
 		38
 	],
 	"../components/profile/layout-4/profile-layout-4.module": [
-		722,
+		721,
 		37
 	],
 	"../components/profile/layout-5/profile-layout-5.module": [
@@ -269,51 +269,51 @@ var map = {
 		35
 	],
 	"../components/register/layout-2/register-layout-2.module": [
-		740,
+		725,
 		34
 	],
 	"../components/search-bar/layout-1/search-bar-layout-1.module": [
-		725,
+		726,
 		33
 	],
 	"../components/search-bar/layout-2/search-bar-layout-2.module": [
-		726,
+		727,
 		32
 	],
 	"../components/search-bar/layout-3/search-bar-layout-3.module": [
-		727,
+		728,
 		31
 	],
 	"../components/segment/layout-1/segment-layout-1.module": [
-		728,
+		729,
 		30
 	],
 	"../components/segment/layout-2/segment-layout-2.module": [
-		729,
+		730,
 		29
 	],
 	"../components/segment/layout-3/segment-layout-3.module": [
-		730,
+		731,
 		28
 	],
 	"../components/select/layout-1/select-layout-1.module": [
-		731,
+		732,
 		27
 	],
 	"../components/select/layout-2/select-layout-2.module": [
-		732,
+		733,
 		26
 	],
 	"../components/select/layout-3/select-layout-3.module": [
-		733,
+		734,
 		25
 	],
 	"../components/select/layout-4/select-layout-4.module": [
-		734,
+		735,
 		24
 	],
 	"../components/select/layout-5/select-layout-5.module": [
-		735,
+		736,
 		23
 	],
 	"../components/select/layout-6/select-layout-6.module": [
@@ -321,15 +321,15 @@ var map = {
 		22
 	],
 	"../components/spinner/spinner.module": [
-		736,
+		738,
 		21
 	],
 	"../components/splash-screen/layout-1/splash-screen-layout-1.module": [
-		738,
+		739,
 		20
 	],
 	"../components/splash-screen/layout-2/splash-screen-layout-2.module": [
-		739,
+		740,
 		19
 	],
 	"../components/splash-screen/layout-3/splash-screen-layout-3.module": [
@@ -778,7 +778,6 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/list-view/sticky-list-header/layout-1/sticky-list-header-layout-1.module#StickyListHeaderLayout1Module', name: 'StickyListHeaderLayout1', segment: 'sticky-list-header-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/sticky-list-header/layout-2/sticky-list-header-layout-2.module#StickyListHeaderLayout2Module', name: 'StickyListHeaderLayout2', segment: 'sticky-list-header-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/sticky-list-header/layout-3/sticky-list-header-layout-3.module#StickyListHeaderLayout3Module', name: 'StickyListHeaderLayout3', segment: 'sticky-list-header-layout-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module#SwipeToDismissLayout1Module', name: 'SwipeToDismissLayout1', segment: 'swipe-to-dismiss-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module#SwipeToDismissLayout2Module', name: 'SwipeToDismissLayout2', segment: 'swipe-to-dismiss-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module#SwipeToDismissLayout3Module', name: 'SwipeToDismissLayout3', segment: 'swipe-to-dismiss-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/login/layout-1/login-layout-1.module#LoginLayout1Module', name: 'LoginLayout1', segment: 'login-layout-1', priority: 'low', defaultHistory: [] },
@@ -787,8 +786,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/profile/layout-2/profile-layout-2.module#ProfileLayout2Module', name: 'ProfileLayout2', segment: 'profile-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-3/profile-layout-3.module#ProfileLayout3Module', name: 'ProfileLayout3', segment: 'profile-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-4/profile-layout-4.module#ProfileLayout4Module', name: 'ProfileLayout4', segment: 'profile-layout-4', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module#SwipeToDismissLayout1Module', name: 'SwipeToDismissLayout1', segment: 'swipe-to-dismiss-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-5/profile-layout-5.module#ProfileLayout5Module', name: 'ProfileLayout5', segment: 'profile-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-1/register-layout-1.module#RegisterLayout1Module', name: 'RegisterLayout1', segment: 'register-layout-1', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-1/search-bar-layout-1.module#SearchBarLayout1Module', name: 'SearchBarLayout1', segment: 'search-bar-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-2/search-bar-layout-2.module#SearchBarLayout2Module', name: 'SearchBarLayout2', segment: 'search-bar-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-3/search-bar-layout-3.module#SearchBarLayout3Module', name: 'SearchBarLayout3', segment: 'search-bar-layout-3', priority: 'low', defaultHistory: [] },
@@ -800,12 +801,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/select/layout-3/select-layout-3.module#SelectLayout3Module', name: 'SelectLayout3', segment: 'select-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-4/select-layout-4.module#SelectLayout4Module', name: 'SelectLayout4', segment: 'select-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-5/select-layout-5.module#SelectLayout5Module', name: 'SelectLayout5', segment: 'select-layout-5', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/spinner/spinner.module#SpinnerModule', name: 'Spinner', segment: 'spinner', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/select/layout-6/select-layout-6.module#SelectLayout6Module', name: 'SelectLayout6', segment: 'select-layout-6', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/spinner/spinner.module#SpinnerModule', name: 'Spinner', segment: 'spinner', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-1/splash-screen-layout-1.module#SplashScreenLayout1Module', name: 'SplashScreenLayout1', segment: 'splash-screen-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-2/splash-screen-layout-2.module#SplashScreenLayout2Module', name: 'SplashScreenLayout2', segment: 'splash-screen-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/splash-screen/layout-3/splash-screen-layout-3.module#SplashScreenLayout3Module', name: 'SplashScreenLayout3', segment: 'splash-screen-layout-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/sub-image-gallery/layout-1/sub-image-gallery-layout-1.module#SubImageGalleryLayout1Module', name: 'SubImageGalleryLayout1', segment: 'sub-image-gallery-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/sub-image-gallery/layout-2/sub-image-gallery-layout-2.module#SubImageGalleryLayout2Module', name: 'SubImageGalleryLayout2', segment: 'sub-image-gallery-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/tabs/layout-1/tabs-layout-1.module#TabsLayout1Module', name: 'TabsLayout1', segment: 'tabs-layout-1', priority: 'low', defaultHistory: [] },
@@ -815,12 +815,12 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/categorylist/categorylist.module#CategorylistPageModule', name: 'CategorylistPage', segment: 'categorylist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/main-product/main-product.module#MainProductPageModule', name: 'MainProductPage', segment: 'main-product', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/myorders/myorders.module#MyordersPageModule', name: 'MyordersPage', segment: 'myorders', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/productpage/productpage.module#ProductpagePageModule', name: 'ProductpagePage', segment: 'productpage', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/splashscreen/splashscreen.module#SplashscreenPageModule', name: 'SplashscreenPage', segment: 'splashscreen', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/splashscreen/splashscreen.module#SplashscreenPageModule', name: 'SplashscreenPage', segment: 'splashscreen', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__services_app_settings__["a" /* AppSettings */].FIREBASE_CONFIG),
@@ -995,7 +995,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/app/app.html"*/'<!---Settings Main Header-->\n\n<ion-split-pane when="md">\n\n  <!-- Menu Main Top -->\n\n  <ion-menu menu [content]="content" *ngIf="params != null">\n\n    <!-- Menu Main List -->\n\n    <ion-content transparent>\n\n      <ion-item text-center padding transparent no-lines>\n\n        <ion-avatar>\n\n          <img src="assets/images/background/green-bg.jpg" />\n\n        </ion-avatar>\n\n        <h3 margin-top ion-text text-wrap>{{params.title}}</h3>\n\n      </ion-item>\n\n      <ion-list no-margin>\n\n        <button transparent menuClose ion-item item-title no-lines item-divider *ngFor="let p of pages"\n\n          (click)="openPage(p)">\n\n          <ion-icon icon-small item-left>\n\n            <ion-icon name="{{p.icon}}"></ion-icon>\n\n          </ion-icon>\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false" main></ion-nav>\n\n</ion-split-pane>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/app/app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\app\app.html"*/'<!---Settings Main Header-->\n\n<ion-split-pane when="md">\n\n  <!-- Menu Main Top -->\n\n  <ion-menu menu [content]="content" *ngIf="params != null">\n\n    <!-- Menu Main List -->\n\n    <ion-content transparent>\n\n      <ion-item text-center padding transparent no-lines>\n\n        <ion-avatar>\n\n          <img src="assets/images/background/green-bg.jpg" />\n\n        </ion-avatar>\n\n        <h3 margin-top ion-text text-wrap>{{params.title}}</h3>\n\n      </ion-item>\n\n      <ion-list no-margin>\n\n        <button transparent menuClose ion-item item-title no-lines item-divider *ngFor="let p of pages"\n\n          (click)="openPage(p)">\n\n          <ion-icon icon-small item-left>\n\n            <ion-icon name="{{p.icon}}"></ion-icon>\n\n          </ion-icon>\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false" main></ion-nav>\n\n</ion-split-pane>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\app\app.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__services_menu_service__["a" /* MenuService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["w" /* Platform */],

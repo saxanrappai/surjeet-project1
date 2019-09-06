@@ -75,7 +75,7 @@ var TabsLayout3 = /** @class */ (function () {
     ], TabsLayout3.prototype, "tabRef", void 0);
     TabsLayout3 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'tabs-layout-3',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/tabs/layout-3/tabs.html"*/'<!-- Theme Tabs Header tab - text -->\n\n<ion-tabs #tabs tabsPlacement=\'top\' tabs-content>\n\n  <!-- Background -->\n\n  <ion-item  transparent text-center background-size no-lines [ngStyle]="{\'background-image\': \'url(\' + data.headerImage + \')\'}">\n\n    <h1 header-title>{{data.title}}</h1>\n\n   </ion-item>\n\n    <ion-tab [tabTitle]="item.title" [root]="item.page" *ngFor="let item of data.data;let i = index">\n\n    </ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/tabs/layout-3/tabs.html"*/
+            selector: 'tabs-layout-3',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\tabs\layout-3\tabs.html"*/'<!-- Theme Tabs Header tab - text -->\n\n<ion-tabs #tabs tabsPlacement=\'top\' tabs-content>\n\n  <!-- Background -->\n\n  <ion-item  transparent text-center background-size no-lines [ngStyle]="{\'background-image\': \'url(\' + data.headerImage + \')\'}">\n\n    <h1 header-title>{{data.title}}</h1>\n\n   </ion-item>\n\n    <ion-tab [tabTitle]="item.title" [root]="item.page" *ngFor="let item of data.data;let i = index">\n\n    </ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\tabs\layout-3\tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsLayout3);

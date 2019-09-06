@@ -592,7 +592,7 @@ var MainProductPage = /** @class */ (function () {
         });
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/main-product/main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/main-product/main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div *ngIf="show">\n\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n\n    </image-gallery-layout-1>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
@@ -745,7 +745,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/login/login.html"*/'<!--Fist Screen-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <login-layout-2 [events]="params.events">\n  </login-layout-2>\n</ion-content>\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/' \n\n<ion-header>\n\n  <ion-toolbar class="primary">\n\n    <ion-buttons slot="start">\n\n      <ion-menu-button></ion-menu-button>\n\n    </ion-buttons>\n\n    <ion-title>Login</ion-title>\n\n  </ion-toolbar> \n\n</ion-header>\n\n\n\n \n\n<ion-content>\n\n  <!-- \n\n  <login-layout-2 [events]="params.events">\n\n  </login-layout-2>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["u" /* NavParams */],
@@ -16534,7 +16534,7 @@ var SplashScreenLayout3 = /** @class */ (function () {
     ], SplashScreenLayout3.prototype, "events", void 0);
     SplashScreenLayout3 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'splash-screen-layout-3',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/splash-screen/layout-3/splash-screen.html"*/'<!--Theme Splash screens - Logo + Title + Ken Burns-->\n\n<div id="splash-background-image">\n\n  <!-- <img splash-screen [src]="data.backgroundImage" /> -->\n\n  <img splash-screen src="assets/images/background/green-bg.jpg" />\n\n  <!-- <img logo [src]="data.logo" /> -->\n\n  <h2 font-bold header text-wrap></h2>\n\n</div>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/splash-screen/layout-3/splash-screen.html"*/
+            selector: 'splash-screen-layout-3',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\splash-screen\layout-3\splash-screen.html"*/'<!--Theme Splash screens - Logo + Title + Ken Burns-->\n\n<div id="splash-background-image">\n\n  <!-- <img splash-screen [src]="data.backgroundImage" /> -->\n\n  <img splash-screen src="assets/images/background/green-bg.jpg" />\n\n  <!-- <img logo [src]="data.logo" /> -->\n\n  <h2 font-bold header text-wrap></h2>\n\n</div>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\splash-screen\layout-3\splash-screen.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */]])
     ], SplashScreenLayout3);
@@ -16798,7 +16798,7 @@ var SplashscreenPage = /** @class */ (function () {
     };
     SplashscreenPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-splashscreen',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/splashscreen/splashscreen.html"*/'<ion-content>\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n  </splash-screen-layout-3>\n</ion-content>\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/splashscreen/splashscreen.html"*/
+            selector: 'page-splashscreen',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/'<ion-content>\n\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n\n  </splash-screen-layout-3>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\splashscreen\splashscreen.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4__services_menu_service__["a" /* MenuService */],
@@ -17294,7 +17294,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/pages/home/home.html"*/'<!--Fist Screen-->\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{data.toolbarTitle}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header> -->\n\n<!-- Content With Menu-->\n\n<ion-content>\n\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n\n  </splash-screen-layout-3>\n\n</ion-content>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\home\home.html"*/'<!--Fist Screen-->\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{data.toolbarTitle}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header> -->\n\n<!-- Content With Menu-->\n\n<ion-content>\n\n  <splash-screen-layout-3 [data]="params.data" [events]="params.events">\n\n  </splash-screen-layout-3>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\home\home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_home_service__["a" /* HomeService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */],

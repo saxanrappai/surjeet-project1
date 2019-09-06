@@ -75,7 +75,7 @@ var TabsLayout2 = /** @class */ (function () {
     ], TabsLayout2.prototype, "tabRef", void 0);
     TabsLayout2 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'tabs-layout-2',template:/*ion-inline-start:"/var/www/html/surjeet-project1/mobile/src/components/tabs/layout-2/tabs.html"*/'<!-- Theme Tabs Footer tab - icons -->\n\n<ion-tabs #tabs tabsPlacement=\'bottom\'>\n\n    <ion-tab [tabIcon]="item.icon" [root]="item.page" *ngFor="let item of data;let i = index"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"/var/www/html/surjeet-project1/mobile/src/components/tabs/layout-2/tabs.html"*/
+            selector: 'tabs-layout-2',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\tabs\layout-2\tabs.html"*/'<!-- Theme Tabs Footer tab - icons -->\n\n<ion-tabs #tabs tabsPlacement=\'bottom\'>\n\n    <ion-tab [tabIcon]="item.icon" [root]="item.page" *ngFor="let item of data;let i = index"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\tabs\layout-2\tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsLayout2);
