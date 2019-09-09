@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "cordova-plugin-nativestorage@2.3.2",
+      "C:\\wamp64\\www\\surjeet-project1\\mobile"
+    ]
+  ],
   "_from": "cordova-plugin-nativestorage@2.3.2",
   "_id": "cordova-plugin-nativestorage@2.3.2",
   "_inBundle": false,
@@ -16,13 +22,11 @@
     "fetchSpec": "2.3.2"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-nativestorage/-/cordova-plugin-nativestorage-2.3.2.tgz",
-  "_shasum": "d6a1d50632aff2a70227102f68bc605e91aabca2",
-  "_spec": "cordova-plugin-nativestorage@2.3.2",
-  "_where": "/var/www/html/surjeet-project1/mobile/node_modules",
+  "_spec": "2.3.2",
+  "_where": "C:\\wamp64\\www\\surjeet-project1\\mobile",
   "author": {
     "name": "Gilles Callebaut",
     "email": "callebaut.gilles@gmail.com"
@@ -30,7 +34,6 @@
   "bugs": {
     "url": "https://github.com/TheCocoaProject/cordova-plugin-nativestorage/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Alok Rajiv"
@@ -51,7 +54,6 @@
       "osx"
     ]
   },
-  "deprecated": false,
   "description": "Native storage of variables in Android, iOS and Windows",
   "devDependencies": {
     "jshint": "^2.9.1"

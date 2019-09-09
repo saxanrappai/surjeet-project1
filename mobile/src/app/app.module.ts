@@ -37,11 +37,12 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { FCM } from '@ionic-native/fcm';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
-import { Network } from '@ionic-native/network';
+import { Network } from '@ionic-native/network'; 
 
 @NgModule({
   declarations: [
-    MyApp],
+    MyApp, 
+  ], 
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -51,7 +52,7 @@ import { Network } from '@ionic-native/network';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
     AngularFirestoreModule,
-    IonicImageViewerModule
+    IonicImageViewerModule,
     // AngularFireDatabaseModule, AngularFireAuthModule, AngularFirestoreModule,
   ],
   bootstrap: [IonicApp],

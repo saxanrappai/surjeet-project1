@@ -8,17 +8,17 @@ import { ImageGalleryLayout1Module } from '../../components/image-gallery/layout
 import { ProductpagePageModule } from '../productpage/productpage.module';
 import { ListViewExpandableService } from '../../services/list-view-expandable-service';
 import { ImageGalleryService } from '../../services/image-gallery-service';
-import { ToastService } from '../../services/toast-service';
-import { CommonFooterComponent } from '../../components/common-footer/common-footer';
+import { ToastService } from '../../services/toast-service'; 
+import { CommonfooterModule } from '../../components/common-footer/common-footer.module';
 
 @NgModule({
   declarations: [
-    MainProductPage,
-    CommonFooterComponent,
+    MainProductPage,  
   ],
   imports: [
+    CommonfooterModule,
     IonicPageModule.forChild(MainProductPage),
-    ImageGalleryLayout1Module
+    ImageGalleryLayout1Module,
   ],
 })
 export class MainProductPageModule { }

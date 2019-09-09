@@ -31241,21 +31241,25 @@ card-reader-layout-1 ion-list > ion-item:nth-child(1) {
   padding-top: 40px !important;
 }
 
-.tabbar {
+common-footer {
+  width: 100%;
+}
+
+common-footer .tabbar {
   opacity: 1;
   background: #2c1e2f !important;
   color: #FFF;
 }
 
-.tabbar ion-icon {
+common-footer .tabbar ion-icon {
   color: #FFF;
 }
 
-.tabs-md .tab-button-icon {
+common-footer .tabs-md .tab-button-icon {
   color: #FFF;
 }
 
-.tabs-md .tab-button-icon.active {
+common-footer .tabs-md .tab-button-icon.active {
   color: #f8b028;
 }
 
@@ -31510,6 +31514,11 @@ expandable-layout-3 .toolbar-background {
 
 expandable-layout-3 .footer-md::before {
   background-image: none;
+}
+
+expandable-layout-3 .cartIcon {
+  font-size: 2.5em;
+  color: #2c1e2f !important;
 }
 
 /*  #Style Google Card - Full Image Cards
@@ -31988,6 +31997,12 @@ login-layout-1 .scroll-content ion-grid [segment-block] .segment-button[aria-pre
   max-width: 20em;
   margin: 0 auto;
   border-radius: 50px !important;
+  background: #f2b226 !important;
+  color: black !important;
+  font-size: 15px !important;
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  padding: 1.5em !important;
 }
 
 .login-layout-2 .scroll-content ion-grid ion-row form [login-section] [facebookButton] {
@@ -32878,6 +32893,25 @@ page-categorylist .fade-in-left-item {
   animation: fadeInLeft 800ms;
 }
 
+.imageCats {
+  border: 1px solid #2c1e2f !important;
+  border-radius: 10px;
+  height: 100px !important;
+  width: 100px !important;
+  text-align: center;
+}
+
+.imageCats img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px !important;
+}
+
 /*  #Style First Screen (Home)
 ================================================*/
 page-home [default-background] {
@@ -32965,6 +32999,16 @@ ion-toolbar {
   font-weight: bold;
   font-size: 2em;
   text-align: center;
+}
+
+.tabbar {
+  opacity: 1;
+  background: #2c1e2f !important;
+  color: #FFF;
+}
+
+.tabs-md .tab-button-icon {
+  color: #FFF;
 }
 
 page-product-details {

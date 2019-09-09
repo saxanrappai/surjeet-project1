@@ -42,7 +42,7 @@ var LoginLayout2Module = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 692:
+/***/ 693:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -546,7 +546,7 @@ var MainProductPage = /** @class */ (function () {
             _this.productsList = data;
             _this.params.data = _this.productsList.data;
             _this.params.events = _this.getEventsForTheme();
-            console.log('cat list:' + JSON.stringify(_this.params.data));
+            //   console.log('cat list:' + JSON.stringify(this.params.data));
             _this.show = true;
         });
         this.initializeApp();
@@ -584,7 +584,7 @@ var MainProductPage = /** @class */ (function () {
         });
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n\n\n\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n\n  </div>\n\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n \n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content >\n\n \n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n\n  </div>\n\n\n\n</ion-content>\n\n\n  \n<ion-footer>\n    <ion-toolbar>\n\n<ion-tabs selectedIndex="0">\n    <ion-tab tabIcon="home"  > </ion-tab>\n    <ion-tab tabIcon="cart"></ion-tab>\n    <ion-tab tabIcon="search" ></ion-tab>\n    <ion-tab tabIcon="settings"></ion-tab> \n  </ion-tabs>\n\n\n</ion-toolbar>  \n</ion-footer>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],

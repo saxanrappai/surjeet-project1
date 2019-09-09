@@ -349,11 +349,11 @@ var map = {
 		15
 	],
 	"../components/tabs/layout-2/tabs-layout-2.module": [
-		744,
+		745,
 		14
 	],
 	"../components/tabs/layout-3/tabs-layout-3.module": [
-		745,
+		744,
 		13
 	],
 	"../pages/cart-details/cart-details.module": [
@@ -378,11 +378,11 @@ var map = {
 	],
 	"../pages/main-product/main-product.module": [
 		750,
-		9
+		7
 	],
 	"../pages/myorders/myorders.module": [
 		751,
-		8
+		9
 	],
 	"../pages/product-details/product-details.module": [
 		752,
@@ -390,7 +390,7 @@ var map = {
 	],
 	"../pages/productpage/productpage.module": [
 		753,
-		7
+		8
 	],
 	"../pages/splashscreen/splashscreen.module": [
 		754,
@@ -743,7 +743,7 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
@@ -809,8 +809,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/sub-image-gallery/layout-1/sub-image-gallery-layout-1.module#SubImageGalleryLayout1Module', name: 'SubImageGalleryLayout1', segment: 'sub-image-gallery-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/sub-image-gallery/layout-2/sub-image-gallery-layout-2.module#SubImageGalleryLayout2Module', name: 'SubImageGalleryLayout2', segment: 'sub-image-gallery-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/tabs/layout-1/tabs-layout-1.module#TabsLayout1Module', name: 'TabsLayout1', segment: 'tabs-layout-1', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/tabs/layout-2/tabs-layout-2.module#TabsLayout2Module', name: 'TabsLayout2', segment: 'tabs-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/tabs/layout-3/tabs-layout-3.module#TabsLayout3Module', name: 'TabsLayout3', segment: 'tabs-layout-3', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/tabs/layout-2/tabs-layout-2.module#TabsLayout2Module', name: 'TabsLayout2', segment: 'tabs-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cart-details/cart-details.module#CartDetailsPageModule', name: 'CartDetailsPage', segment: 'cart-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorylist/categorylist.module#CategorylistPageModule', name: 'CategorylistPage', segment: 'categorylist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
@@ -825,8 +825,7 @@ var AppModule = /** @class */ (function () {
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__services_app_settings__["a" /* AppSettings */].FIREBASE_CONFIG),
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["a" /* AngularFirestoreModule */],
-                __WEBPACK_IMPORTED_MODULE_24_ionic_img_viewer__["b" /* IonicImageViewerModule */]
-                // AngularFireDatabaseModule, AngularFireAuthModule, AngularFirestoreModule,
+                __WEBPACK_IMPORTED_MODULE_24_ionic_img_viewer__["b" /* IonicImageViewerModule */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* IonicApp */]],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */]],

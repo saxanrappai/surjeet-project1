@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "cordova-plugin-local-notification@0.9.0-beta.2",
+      "C:\\wamp64\\www\\surjeet-project1\\mobile"
+    ]
+  ],
   "_from": "cordova-plugin-local-notification@0.9.0-beta.2",
   "_id": "cordova-plugin-local-notification@0.9.0-beta.2",
   "_inBundle": false,
@@ -16,20 +22,17 @@
     "fetchSpec": "0.9.0-beta.2"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-local-notification/-/cordova-plugin-local-notification-0.9.0-beta.2.tgz",
-  "_shasum": "e3a0b4a35d11f95bb4f1e367d9baee9909cca695",
-  "_spec": "cordova-plugin-local-notification@0.9.0-beta.2",
-  "_where": "/var/www/html/surjeet-project1/mobile/node_modules",
+  "_spec": "0.9.0-beta.2",
+  "_where": "C:\\wamp64\\www\\surjeet-project1\\mobile",
   "author": {
     "name": "Sebastián Katzer"
   },
   "bugs": {
     "url": "https://github.com/katzer/cordova-plugin-local-notifications/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-local-notification",
     "platforms": [
@@ -38,7 +41,6 @@
       "windows"
     ]
   },
-  "deprecated": false,
   "description": "Schedules and queries for local notifications",
   "engines": [
     {

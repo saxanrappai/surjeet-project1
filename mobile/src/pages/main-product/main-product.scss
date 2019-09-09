@@ -1,5 +1,6 @@
-page-main-product {
+page-main-product { 
 
+    
 }
 
 .menuIcon , .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
@@ -16,4 +17,16 @@ page-main-product {
     font-weight:bold;
     font-size:2em;
     text-align: center;
+}
+
+.tabbar{
+    opacity:1;
+    background:#2c1e2f !important;
+    color:#FFF;
+  
+}
+
+.tabs-md .tab-button-icon{
+    
+    color:#FFF;
 }

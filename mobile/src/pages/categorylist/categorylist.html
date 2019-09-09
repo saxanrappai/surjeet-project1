@@ -18,13 +18,14 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col col-12>
+
         <ion-list no-margin>
           <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"
             (ionCancel)="onCancelSearch()">
           </ion-searchbar>
           <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of animateItems; let i = index;"
             (click)="onitemclick('onItemClick', item, $event)">
-            <ion-avatar item-start>
+            <ion-avatar item-start class="imageCats">
               <img
                 [src]="(item.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+item.image"
                 alt="{{item.title}}" />

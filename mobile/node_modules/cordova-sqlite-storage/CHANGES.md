@@ -1,5 +1,17 @@
 # Changes
 
+#### cordova-sqlite-storage 3.3.0
+
+- new default page & cache sizes with cordova-sqlite-storage-dependencies@2.1.0
+
+##### cordova-sqlite-storage-commoncore 1.0.0
+
+- additional EU string manipulation test cases
+
+#### cordova-sqlite-storage 3.2.1
+
+- cordova-sqlite-storage-dependencies@2.0.1 with SQLite 3.28.0 update for all supported platforms Android/iOS/macOS/Windows
+
 #### cordova-sqlite-storage 3.2.0
 
 - sqlite3_threadsafe() error handling on iOS/macOS

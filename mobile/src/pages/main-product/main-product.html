@@ -7,14 +7,9 @@
     <ion-title>Dashboard</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content >
 
-
-
-
-</ion-content>
-
-
+ 
   <div *ngIf="show">
     <image-gallery-layout-1 [data]="params.data" [events]="params.events">
     </image-gallery-layout-1>
@@ -23,5 +18,20 @@
 
 
 
+</ion-content>
 
-<common-footer [iconSelected]="home"></common-footer>
+
+  
+<ion-footer>
+    <ion-toolbar>
+
+<ion-tabs selectedIndex="0">
+    <ion-tab tabIcon="home"  > </ion-tab>
+    <ion-tab tabIcon="cart"></ion-tab>
+    <ion-tab tabIcon="search" ></ion-tab>
+    <ion-tab tabIcon="settings"></ion-tab> 
+  </ion-tabs>
+
+
+</ion-toolbar>  
+</ion-footer>

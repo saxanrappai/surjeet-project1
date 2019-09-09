@@ -18,9 +18,8 @@
     <expandable-layout-3 [data]="productsList.data" [events]="params.events"></expandable-layout-3>
   </div>
 </ion-content>
-<ion-footer no-lines>
-  <ion-toolbar padding-bottom>
-    <!-- Footer Button -->
-    <button ion-button block default-button (click)="onEvent('onButtonClick', null, $event)">Go to Cart</button>
-  </ion-toolbar>
-</ion-footer>
+
+<ion-footer>
+  
+    <common-footer [iconSelected]="home"></common-footer>
+      </ion-footer>

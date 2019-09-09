@@ -3290,74 +3290,72 @@ ion-thumbnail img {
 /* # Settings Button Section
 ================================================
 ================================================*/
+/*
 [default-button] {
-  background: #f2b226 !important;
-  color: black !important;
-  font-size: 15px !important;
+  background: theme-colors('mainColors', 'accent') !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
   text-transform: capitalize !important;
   font-weight: bold !important;
   padding: 2em !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
 }
 
 [button-clear] {
-  color: black !important;
-  font-size: 15px !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
   font-weight: 300 !important;
   height: 50px !important;
 }
 
 [button-clear-outline] {
-  color: black !important;
-  background: white !important;
-  font-size: 15px !important;
-  border: 1px solid #f2b226 !important;
+  color: theme-colors('textColors', 'accent') !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  border: 1px solid theme-colors('mainColors', 'accent') !important;
   padding: 15px 18px !important;
   font-weight: bold !important;
   height: 50px !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
 }
 
 [button-action-shit] {
   border-radius: 50% !important;
   height: 30px !important;
   width: 30px;
-  color: black !important;
-  -webkit-box-shadow: none !important;
+  color: theme-colors('textColors', 'accent') !important;
   box-shadow: none !important;
   background: transparent !important;
-}
 
-[button-action-shit] ion-icon {
-  font-size: 34px;
-}
+  ion-icon {
+    font-size: $h1-font-size;
 
-[button-action-shit] ion-icon.ion-md-more:before {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+    &.ion-md-more:before {
+      transform: rotate(90deg);
+    }
+  }
 }
 
 [button-icon] {
-  background: white !important;
-  color: #30384c !important;
-  font-size: 15px !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: $h5-font-size !important;
   font-weight: 700 !important;
   height: auto !important;
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
   text-transform: capitalize !important;
   padding: 6px 10px 6px 8px !important;
 }
 
 [button-icon-clear] {
   background-color: transparent !important;
-  color: #b2b2b2 !important;
+  color: theme-colors('textColors', 'accentLight') !important;
   padding: 5px !important;
   font-size: 15px !important;
   font-weight: 400 !important;
 }
-
+*/
 /* # Settings Login Section
 ================================================
 ================================================*/
@@ -31243,6 +31241,28 @@ card-reader-layout-1 ion-list > ion-item:nth-child(1) {
   padding-top: 40px !important;
 }
 
+common-footer {
+  width: 100%;
+}
+
+common-footer .tabbar {
+  opacity: 1;
+  background: #2c1e2f !important;
+  color: #FFF;
+}
+
+common-footer .tabbar ion-icon {
+  color: #FFF;
+}
+
+common-footer .tabs-md .tab-button-icon {
+  color: #FFF;
+}
+
+common-footer .tabs-md .tab-button-icon.active {
+  color: #f8b028;
+}
+
 /*  #Style Full gallery 1
 ===========================================*/
 image-gallery-layout-1 ion-card img {
@@ -31494,6 +31514,11 @@ expandable-layout-3 .toolbar-background {
 
 expandable-layout-3 .footer-md::before {
   background-image: none;
+}
+
+expandable-layout-3 .cartIcon {
+  font-size: 2.5em;
+  color: #2c1e2f !important;
 }
 
 /*  #Style Google Card - Full Image Cards
@@ -31972,6 +31997,12 @@ login-layout-1 .scroll-content ion-grid [segment-block] .segment-button[aria-pre
   max-width: 20em;
   margin: 0 auto;
   border-radius: 50px !important;
+  background: #f2b226 !important;
+  color: black !important;
+  font-size: 15px !important;
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  padding: 1.5em !important;
 }
 
 .login-layout-2 .scroll-content ion-grid ion-row form [login-section] [facebookButton] {
@@ -32862,6 +32893,25 @@ page-categorylist .fade-in-left-item {
   animation: fadeInLeft 800ms;
 }
 
+.imageCats {
+  border: 1px solid #2c1e2f !important;
+  border-radius: 10px;
+  height: 100px !important;
+  width: 100px !important;
+  text-align: center;
+}
+
+.imageCats img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px !important;
+}
+
 /*  #Style First Screen (Home)
 ================================================*/
 page-home [default-background] {
@@ -32949,6 +32999,16 @@ ion-toolbar {
   font-weight: bold;
   font-size: 2em;
   text-align: center;
+}
+
+.tabbar {
+  opacity: 1;
+  background: #2c1e2f !important;
+  color: #FFF;
+}
+
+.tabs-md .tab-button-icon {
+  color: #FFF;
 }
 
 page-product-details {

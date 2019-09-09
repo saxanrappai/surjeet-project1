@@ -1,6 +1,6 @@
 webpackJsonp([63],{
 
-/***/ 693:
+/***/ 689:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FullScreenGalleryModule", function() { return FullScreenGalleryModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__full_screen_gallery__ = __webpack_require__(793);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__full_screen_gallery__ = __webpack_require__(789);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,7 +42,7 @@ var FullScreenGalleryModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 793:
+/***/ 789:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ var FullScreenGallery = /** @class */ (function () {
     ], FullScreenGallery.prototype, "slider", void 0);
     FullScreenGallery = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'full-screen-gallery',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\full-screen-gallery\full-screen-gallery.html"*/'<!--Screen Gallery-->\n\n<ion-slides style="height:80% !important" #slider pager="true" [initialSlide]="data.index">\n\n    <ion-slide *ngFor="let item of data;">\n\n        <img [src]="item.url" #myImage style="width: 70%;height: 100%;border-radius: 5%;"\n\n            (click)="onImageClick(myImage)" />\n\n    </ion-slide>\n\n</ion-slides>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\full-screen-gallery\full-screen-gallery.html"*/
+            selector: 'full-screen-gallery',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\components\full-screen-gallery\full-screen-gallery.html"*/'<!--Screen Gallery-->\n\n<ion-slides  #slider pager="true" [initialSlide]="data.index" style="height:250px; padding:1em;width:100%;">\n\n    <ion-slide *ngFor="let item of data;" style="border-radius:10px;width:100%;height:100%;" [ngStyle]="{\'background-image\':\'url(\' + item.url + \')\'}"  (click)="onImageClick(myImage)" >\n\n\n\n\n\n <!--\n\n        <img [src]="item.url" #myImage style="width: 10%;"\n\n            (click)="onImageClick(myImage)" /> \n\n    -->\n\n    </ion-slide>\n\n</ion-slides>\n\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\components\full-screen-gallery\full-screen-gallery.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_img_viewer__["a" /* ImageViewerController */]])
     ], FullScreenGallery);
