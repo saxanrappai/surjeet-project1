@@ -23,7 +23,70 @@
 
   <full-screen-gallery [data]="params.data" class="imageSliderFSc"></full-screen-gallery>
 
- 
+
+
+  <ion-list>
+    <ion-list-header class="prdDetail">
+      {{product.title}}
+    </ion-list-header>
+
+    <ion-item> {{(product.product_description!='')?product.product_description:'-'}}</ion-item>
+
+    <ion-item class="otherDescr">
+
+
+        <ion-row>
+            <ion-col col-4 class="titleDescr">Category</ion-col>
+            <ion-col class="titleDetl">{{product.category_id}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col col-4 class="titleDescr">Size</ion-col>
+              <ion-col class="titleDetl">{{product.size}}</ion-col>
+            </ion-row>
+          
+
+
+            <ion-row>
+                <ion-col col-4 class="titleDescr"> {{product.unit}}</ion-col>
+                <ion-col class="titleDetl">{{product.unit_value}}</ion-col>
+              </ion-row>
+            
+  
+              <ion-row>
+                  <ion-col col-4 class="titleDescr"> Qty</ion-col>
+                  <ion-col col-4 class="titleDescr">   {{product.increament}} onb </ion-col>
+                  <ion-col col-2 class="titleDescr"> 
+                    
+
+                      <button ion-button icon-only class="cartChange" (click)="onIncrement(product, $event)" >
+                          <ion-icon name="add"></ion-icon> 
+                        </button>
+
+                  </ion-col> 
+                  <ion-col col-2 class="titleDescr"> 
+                    
+
+
+                      <button ion-button icon-only class="cartChange"  (click)="onDecrement(product, $event)">
+                          <ion-icon name="remove"></ion-icon> 
+                        </button>
+
+                  </ion-col> 
+                </ion-row>
+              
+    
+  
+
+
+
+
+
+
+    </ion-item> 
+  </ion-list>
+
+
   <div text-center class="item-accordion">
 
 
@@ -34,7 +97,7 @@
       </div>
       <button col-4 ion-button default-button (click)="showSizeChart()">sizes</button>
     </ion-item> -->
-
+<!-- 
     <ion-item transparent no-lines *ngIf="show">
       <div round (click)="onDecrement(product, $event)" style="margin-top:5px;">
         <ion-icon [name]="iconRemove"></ion-icon>
@@ -47,6 +110,14 @@
       </div>
       <button ion-button default-button *ngIf="show" (click)="addtoCart()">Add to Cart</button>
     </ion-item>
+-->
+
+
+
+
+
+
+
     <ion-item padding-top transparent no-lines *ngIf="!show">
       <div round>
         No Stock

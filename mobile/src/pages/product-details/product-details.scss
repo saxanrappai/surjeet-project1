@@ -46,6 +46,27 @@ page-product-details {
   .footer-md::before {
     background-image: none;
   }
+.prdDetail{
+  font-weight:bold;
+  font-size:1.5em;
+  color:#2c1e2f;
+}
+.otherDescr{
+  font-weight:bold;
+  font-size:1.2em;
+  color:#2c1e2f;
+  .titleDescr{
+    color:#999;
+    font-size:1.1em;
+  }
+  .titleDetl{
+    font-size:1.1em;
+    color:#2c1e2f;
 
+  }
+}
+.cartChange{
+  background-color: #2c1e2f;
+}
  
 }
