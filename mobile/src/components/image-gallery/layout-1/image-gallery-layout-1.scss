@@ -9,4 +9,29 @@ image-gallery-layout-1 {
   ion-card-content {
     background: theme-colors('mainColors', 'secondary');
   }
+
+  .segment-md .segment-button{
+    border: 1px solid #2c1e2f !important;
+    color:#2c1e2f ;
+    font-weight:500;
+    font-size:1.5em;
+  }
+  .segment-button.segment-activated{
+background-color:#2c1e2f;
+color:#FFF; 
+  }
+
+
+  .tileImage{
+    border-radius:10px;
+    max-height:150px;
+  }
 }
+
+  .footer{
+  .toolbar-background, .toolbar-background-md{
+    background:#2c1e2f;
+
+  }
+
+  }

@@ -35,10 +35,10 @@ var AppSettings = {
 "use strict";
 /* unused harmony export ConnectionStatusEnum */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_network__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_network__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -125,11 +125,11 @@ webpackEmptyAsyncContext.id = 252;
 
 var map = {
 	"../components/alert/layout-1/alert-layout-1.module": [
-		694,
+		695,
 		67
 	],
 	"../components/alert/layout-2/alert-layout-2.module": [
-		695,
+		694,
 		66
 	],
 	"../components/alert/layout-3/alert-layout-3.module": [
@@ -141,11 +141,11 @@ var map = {
 		64
 	],
 	"../components/full-screen-gallery/full-screen-gallery.module": [
-		689,
+		693,
 		63
 	],
 	"../components/image-gallery/layout-1/image-gallery-layout-1.module": [
-		690,
+		689,
 		62
 	],
 	"../components/image-gallery/layout-2/image-gallery-layout-2.module": [
@@ -169,75 +169,75 @@ var map = {
 		57
 	],
 	"../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module": [
-		754,
+		703,
 		56
 	],
 	"../components/list-view/drag-and-drop/layout-1/drag-and-drop-layout-1.module": [
-		703,
+		704,
 		55
 	],
 	"../components/list-view/drag-and-drop/layout-2/drag-and-drop-layout-2.module": [
-		704,
+		705,
 		54
 	],
 	"../components/list-view/drag-and-drop/layout-3/drag-and-drop-layout-3.module": [
-		705,
+		706,
 		53
 	],
 	"../components/list-view/expandable/layout-1/expandable-layout-1.module": [
-		691,
+		690,
 		52
 	],
 	"../components/list-view/expandable/layout-2/expandable-layout-2.module": [
-		706,
+		707,
 		51
 	],
 	"../components/list-view/expandable/layout-3/expandable-layout-3.module": [
-		692,
+		691,
 		50
 	],
 	"../components/list-view/google-card/layout-1/google-card-layout-1.module": [
-		707,
+		708,
 		49
 	],
 	"../components/list-view/google-card/layout-2/google-card-layout-2.module": [
-		708,
+		709,
 		48
 	],
 	"../components/list-view/google-card/layout-3/google-card-layout-3.module": [
-		709,
+		710,
 		47
 	],
 	"../components/list-view/google-card/layout-4/google-card-layout-4.module": [
-		710,
+		711,
 		46
 	],
 	"../components/list-view/sticky-list-header/layout-1/sticky-list-header-layout-1.module": [
-		711,
+		712,
 		6
 	],
 	"../components/list-view/sticky-list-header/layout-2/sticky-list-header-layout-2.module": [
-		712,
+		713,
 		5
 	],
 	"../components/list-view/sticky-list-header/layout-3/sticky-list-header-layout-3.module": [
-		713,
+		714,
 		4
 	],
 	"../components/list-view/swipe-to-dismiss/layout-1/swipe-to-dismiss-layout-1.module": [
-		714,
+		715,
 		45
 	],
 	"../components/list-view/swipe-to-dismiss/layout-2/swipe-to-dismiss-layout-2.module": [
-		715,
+		716,
 		44
 	],
 	"../components/list-view/swipe-to-dismiss/layout-3/swipe-to-dismiss-layout-3.module": [
-		716,
+		717,
 		43
 	],
 	"../components/login/layout-1/login-layout-1.module": [
-		717,
+		718,
 		42
 	],
 	"../components/login/layout-2/login-layout-2.module": [
@@ -245,23 +245,23 @@ var map = {
 		41
 	],
 	"../components/profile/layout-1/profile-layout-1.module": [
-		718,
+		719,
 		40
 	],
 	"../components/profile/layout-2/profile-layout-2.module": [
-		719,
+		720,
 		39
 	],
 	"../components/profile/layout-3/profile-layout-3.module": [
-		720,
+		721,
 		38
 	],
 	"../components/profile/layout-4/profile-layout-4.module": [
-		721,
+		722,
 		37
 	],
 	"../components/profile/layout-5/profile-layout-5.module": [
-		722,
+		724,
 		36
 	],
 	"../components/register/layout-1/register-layout-1.module": [
@@ -269,67 +269,67 @@ var map = {
 		35
 	],
 	"../components/register/layout-2/register-layout-2.module": [
-		724,
+		725,
 		34
 	],
 	"../components/search-bar/layout-1/search-bar-layout-1.module": [
-		725,
+		726,
 		33
 	],
 	"../components/search-bar/layout-2/search-bar-layout-2.module": [
-		726,
+		727,
 		32
 	],
 	"../components/search-bar/layout-3/search-bar-layout-3.module": [
-		727,
+		728,
 		31
 	],
 	"../components/segment/layout-1/segment-layout-1.module": [
-		728,
+		729,
 		30
 	],
 	"../components/segment/layout-2/segment-layout-2.module": [
-		729,
+		730,
 		29
 	],
 	"../components/segment/layout-3/segment-layout-3.module": [
-		730,
+		731,
 		28
 	],
 	"../components/select/layout-1/select-layout-1.module": [
-		731,
+		732,
 		27
 	],
 	"../components/select/layout-2/select-layout-2.module": [
-		732,
+		733,
 		26
 	],
 	"../components/select/layout-3/select-layout-3.module": [
-		733,
+		734,
 		25
 	],
 	"../components/select/layout-4/select-layout-4.module": [
-		734,
+		735,
 		24
 	],
 	"../components/select/layout-5/select-layout-5.module": [
-		735,
+		736,
 		23
 	],
 	"../components/select/layout-6/select-layout-6.module": [
-		736,
+		737,
 		22
 	],
 	"../components/spinner/spinner.module": [
-		737,
+		738,
 		21
 	],
 	"../components/splash-screen/layout-1/splash-screen-layout-1.module": [
-		738,
+		739,
 		20
 	],
 	"../components/splash-screen/layout-2/splash-screen-layout-2.module": [
-		739,
+		740,
 		19
 	],
 	"../components/splash-screen/layout-3/splash-screen-layout-3.module": [
@@ -337,63 +337,63 @@ var map = {
 		18
 	],
 	"../components/sub-image-gallery/layout-1/sub-image-gallery-layout-1.module": [
-		740,
+		741,
 		17
 	],
 	"../components/sub-image-gallery/layout-2/sub-image-gallery-layout-2.module": [
-		741,
+		742,
 		16
 	],
 	"../components/tabs/layout-1/tabs-layout-1.module": [
-		742,
+		743,
 		15
 	],
 	"../components/tabs/layout-2/tabs-layout-2.module": [
-		743,
+		744,
 		14
 	],
 	"../components/tabs/layout-3/tabs-layout-3.module": [
-		744,
+		745,
 		13
 	],
 	"../pages/cart-details/cart-details.module": [
-		745,
+		746,
 		11
 	],
 	"../pages/categorylist/categorylist.module": [
-		746,
+		747,
 		12
 	],
 	"../pages/home/home.module": [
-		747,
+		748,
 		0
 	],
 	"../pages/intro-page/intro-page.module": [
-		748,
+		749,
 		3
 	],
 	"../pages/login/login.module": [
-		693,
+		692,
 		2
 	],
 	"../pages/main-product/main-product.module": [
-		749,
+		750,
 		9
 	],
 	"../pages/myorders/myorders.module": [
-		750,
+		751,
 		8
 	],
 	"../pages/product-details/product-details.module": [
-		751,
+		752,
 		10
 	],
 	"../pages/productpage/productpage.module": [
-		752,
+		753,
 		7
 	],
 	"../pages/splashscreen/splashscreen.module": [
-		753,
+		754,
 		1
 	]
 };
@@ -473,7 +473,7 @@ var ToastService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -692,7 +692,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_loading_service__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(680);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_barcode_scanner__ = __webpack_require__(681);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_card_io__ = __webpack_require__(682);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_google_analytics__ = __webpack_require__(683);
@@ -704,7 +704,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_fcm__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_storage__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ionic_img_viewer__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_network__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_network__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -753,10 +753,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../components/alert/layout-1/alert-layout-1.module#AlertLayout1Module', name: 'AlertLayout1', segment: 'alert-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/alert/layout-2/alert-layout-2.module#AlertLayout2Module', name: 'AlertLayout2', segment: 'alert-layout-2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/alert/layout-1/alert-layout-1.module#AlertLayout1Module', name: 'AlertLayout1', segment: 'alert-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/alert/layout-3/alert-layout-3.module#AlertLayout3Module', name: 'AlertLayout3', segment: 'alert-layout-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/full-screen-gallery/full-screen-gallery.module#FullScreenGalleryModule', name: 'FullScreenGallery', segment: 'full-screen-gallery', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/card-reader/layout-1/card-reader-layout-1.module#CardReaderLayout1Module', name: 'CardReaderLayout1', segment: 'card-reader-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/image-gallery/layout-1/image-gallery-layout-1.module#ImageGalleryLayout1Module', name: 'ImageGalleryLayout1', segment: 'image-gallery-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/image-gallery/layout-2/image-gallery-layout-2.module#ImageGalleryLayout2Module', name: 'ImageGalleryLayout2', segment: 'image-gallery-layout-2', priority: 'low', defaultHistory: [] },
@@ -764,6 +763,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/list-view/appearance-animation/layout-2/appearance-animation-layout-2.module#AppearanceAnimationLayout2Module', name: 'AppearanceAnimationLayout2', segment: 'appearance-animation-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-3/appearance-animation-layout-3.module#AppearanceAnimationLayout3Module', name: 'AppearanceAnimationLayout3', segment: 'appearance-animation-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/appearance-animation/layout-4/appearance-animation-layout-4.module#AppearanceAnimationLayout4Module', name: 'AppearanceAnimationLayout4', segment: 'appearance-animation-layout-4', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module#AppearanceAnimationLayout5Module', name: 'AppearanceAnimationLayout5', segment: 'appearance-animation-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-1/drag-and-drop-layout-1.module#DragAndDropLayout1Module', name: 'DragAndDropLayout1', segment: 'drag-and-drop-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-2/drag-and-drop-layout-2.module#DragAndDropLayout2Module', name: 'DragAndDropLayout2', segment: 'drag-and-drop-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/list-view/drag-and-drop/layout-3/drag-and-drop-layout-3.module#DragAndDropLayout3Module', name: 'DragAndDropLayout3', segment: 'drag-and-drop-layout-3', priority: 'low', defaultHistory: [] },
@@ -786,8 +786,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/profile/layout-2/profile-layout-2.module#ProfileLayout2Module', name: 'ProfileLayout2', segment: 'profile-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-3/profile-layout-3.module#ProfileLayout3Module', name: 'ProfileLayout3', segment: 'profile-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/profile/layout-4/profile-layout-4.module#ProfileLayout4Module', name: 'ProfileLayout4', segment: 'profile-layout-4', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/profile/layout-5/profile-layout-5.module#ProfileLayout5Module', name: 'ProfileLayout5', segment: 'profile-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-1/register-layout-1.module#RegisterLayout1Module', name: 'RegisterLayout1', segment: 'register-layout-1', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/profile/layout-5/profile-layout-5.module#ProfileLayout5Module', name: 'ProfileLayout5', segment: 'profile-layout-5', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/register/layout-2/register-layout-2.module#RegisterLayout2Module', name: 'RegisterLayout2', segment: 'register-layout-2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-1/search-bar-layout-1.module#SearchBarLayout1Module', name: 'SearchBarLayout1', segment: 'search-bar-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/search-bar/layout-2/search-bar-layout-2.module#SearchBarLayout2Module', name: 'SearchBarLayout2', segment: 'search-bar-layout-2', priority: 'low', defaultHistory: [] },
@@ -814,13 +814,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/categorylist/categorylist.module#CategorylistPageModule', name: 'CategorylistPage', segment: 'categorylist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/main-product/main-product.module#MainProductPageModule', name: 'MainProductPage', segment: 'main-product', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/myorders/myorders.module#MyordersPageModule', name: 'MyordersPage', segment: 'myorders', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/productpage/productpage.module#ProductpagePageModule', name: 'ProductpagePage', segment: 'productpage', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/splashscreen/splashscreen.module#SplashscreenPageModule', name: 'SplashscreenPage', segment: 'splashscreen', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/list-view/appearance-animation/layout-5/appearance-animation-layout-5.module#AppearanceAnimationLayout5Module', name: 'AppearanceAnimationLayout5', segment: 'appearance-animation-layout-5', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../components/full-screen-gallery/full-screen-gallery.module#FullScreenGalleryModule', name: 'FullScreenGallery', segment: 'full-screen-gallery', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__services_app_settings__["a" /* AppSettings */].FIREBASE_CONFIG),
@@ -869,7 +869,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_menu_service__ = __webpack_require__(369);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_global_global__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

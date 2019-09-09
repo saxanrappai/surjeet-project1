@@ -926,22 +926,19 @@ var MyApp = /** @class */ (function () {
                     _this.rootPage = 'LoginPage';
                 }
             });
-            /* saxan
-                  // Okay, so the platform is ready and our plugins are available.
-                  // Here you can do any higher level native things you might need.
-                  this.firebase.getToken()
-                    .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
-                    .catch(error => console.error('Error getting token', error));
-            
-                  this.firebase.onNotification()
-                    .subscribe(data => {
-                      console.log(`User opened a notification ${data}`);
-                      this.localNotifications.schedule([{
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _this.firebase.getToken()
+                .then(function (token) { return console.log("The token is " + token); }) // save the token server-side and use it to push notifications to this device
+                .catch(function (error) { return console.error('Error getting token', error); });
+            _this.firebase.onNotification()
+                .subscribe(function (data) {
+                console.log("User opened a notification " + data);
+                _this.localNotifications.schedule([{
                         title: data.title,
                         text: data.body
-                      }]);
-                    });
-            */
+                    }]);
+            });
             _this.statusBar.styleDefault();
             localStorage.setItem("mailChimpLocal", "true");
             _this.globalProvider.initializeNetworkEvents();

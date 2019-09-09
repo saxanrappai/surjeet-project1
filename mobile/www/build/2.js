@@ -538,69 +538,58 @@ var MainProductPage = /** @class */ (function () {
                 },
             };
         };
-        this.toastCtrl.showLoader();
+        //this.toastCtrl.showLoader();
         this.products = this.httpService.getCategories();
         this.products
             .subscribe(function (data) {
-            _this.toastCtrl.dismissLoader();
+            // this.toastCtrl.dismissLoader();
             _this.productsList = data;
             _this.params.data = _this.productsList.data;
             _this.params.events = _this.getEventsForTheme();
-            console.log('cat list:' + JSON.stringify(_this.params.data));
+            //   console.log('cat list:' + JSON.stringify(this.params.data));
             _this.show = true;
         });
         this.initializeApp();
     }
     MainProductPage.prototype.initializeApp = function () {
-        /*
-           this.platform.ready().then(() => {
-             console.log('platform ready');
-             this.nativeStorage.get('user_id').then((userID) => {
-               console.log('native storage userid:' + userID);
-               this.firebase.getToken()
-                 .then(token => {
-                   console.log(`The token is ${token}`);
-                   this.httpService.updateToken(userID, token)
-                     .subscribe(data => {
-       
-                     });
-                 })
-                 .catch(error => console.error('Error getting token', error));
-       
-               this.firebase.onNotification()
-                 .subscribe(data => {
-                   console.log(`User opened a notification ${data}`);
-                   this.localNotifications.schedule([{
-                     title: data.title,
-                     text: data.body
-                   }]);
-                 });
-       
-               this.firebase.onTokenRefresh()
-                 .subscribe((token: string) => {
-                   console.log(`Got a new token ${token}`);
-                   this.httpService.updateToken(userID, token)
-                     .subscribe(data => {
-       
-                     });
-                 });
-       
-             });
-       
-           });
-           */
+        var _this = this;
+        this.platform.ready().then(function () {
+            console.log('platform ready');
+            _this.nativeStorage.get('user_id').then(function (userID) {
+                console.log('native storage userid:' + userID);
+                _this.firebase.getToken()
+                    .then(function (token) {
+                    console.log("The token is " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                })
+                    .catch(function (error) { return console.error('Error getting token', error); });
+                _this.firebase.onNotification()
+                    .subscribe(function (data) {
+                    console.log("User opened a notification " + data);
+                    _this.localNotifications.schedule([{
+                            title: data.title,
+                            text: data.body
+                        }]);
+                });
+                _this.firebase.onTokenRefresh()
+                    .subscribe(function (token) {
+                    console.log("Got a new token " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                });
+            });
+        });
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n \n\n\n\n\n\n\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n\n\n\n</ion-content>\n\n\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n\n  </div>\n\n\n\n\n<common-footer [iconSelected]="home"></common-footer>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_0__ionic_native_fcm__["a" /* FCM */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1__services_HttpService__["a" /* HttpService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_fcm__["a" /* FCM */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_fcm__["a" /* FCM */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_HttpService__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_HttpService__["a" /* HttpService */]) === "function" && _h || Object])
     ], MainProductPage);
     return MainProductPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=main-product.js.map

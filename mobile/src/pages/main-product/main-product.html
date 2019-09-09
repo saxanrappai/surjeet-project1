@@ -7,17 +7,21 @@
     <ion-title>Dashboard</ion-title>
   </ion-navbar>
 </ion-header>
- 
-
-
-
-
-
-
 <ion-content>
+
+
+
+
+</ion-content>
+
+
   <div *ngIf="show">
     <image-gallery-layout-1 [data]="params.data" [events]="params.events">
     </image-gallery-layout-1>
+
   </div>
 
-</ion-content>
+
+
+
+<common-footer [iconSelected]="home"></common-footer>

@@ -347,6 +347,7 @@ $span-size:('span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
 /* # Settings Button Section
 ================================================
 ================================================*/
+/*
 [default-button] {
   background: theme-colors('mainColors', 'accent') !important;
   color: theme-colors('textColors', 'accent') !important;
@@ -411,18 +412,19 @@ $span-size:('span-small': 14px, 'span-medium': 17px, 'span-large': 22px);
   font-size: 15px !important;
   font-weight: 400 !important;
 }
-
+*/
 
 /* # Settings Login Section
 ================================================
 ================================================*/
+/*
 [login-title] {
   color: theme-colors('textColors', 'accent') !important;
   font-size: $h4-font-size !important;
   @include font-title;
   font-weight: 400 !important;
 }
-
+*/
 [login-subtitle] {
   font-size: $h4-font-size !important;
   font-weight: 400;

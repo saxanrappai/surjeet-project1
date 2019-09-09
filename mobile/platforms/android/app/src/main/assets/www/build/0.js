@@ -42,17 +42,17 @@ var SplashScreenLayout3Module = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 747:
+/***/ 748:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__splashscreen_splashscreen__ = __webpack_require__(793);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__splashscreen_splashscreen__ = __webpack_require__(792);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_splash_screen_layout_3_splash_screen_layout_3_module__ = __webpack_require__(688);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home__ = __webpack_require__(848);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home__ = __webpack_require__(849);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_splash_screen_service__ = __webpack_require__(776);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_list_view_expandable_service__ = __webpack_require__(794);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -546,11 +546,11 @@ var MainProductPage = /** @class */ (function () {
                 },
             };
         };
-        this.toastCtrl.showLoader();
+        //this.toastCtrl.showLoader();
         this.products = this.httpService.getCategories();
         this.products
             .subscribe(function (data) {
-            _this.toastCtrl.dismissLoader();
+            // this.toastCtrl.dismissLoader();
             _this.productsList = data;
             _this.params.data = _this.productsList.data;
             _this.params.events = _this.getEventsForTheme();
@@ -560,46 +560,39 @@ var MainProductPage = /** @class */ (function () {
         this.initializeApp();
     }
     MainProductPage.prototype.initializeApp = function () {
-        /* saxan
-        this.platform.ready().then(() => {
-          console.log('platform ready');
-          this.nativeStorage.get('user_id').then((userID) => {
-            console.log('native storage userid:' + userID);
-            this.firebase.getToken()
-              .then(token => {
-                console.log(`The token is ${token}`);
-                this.httpService.updateToken(userID, token)
-                  .subscribe(data => {
-    
-                  });
-              })
-              .catch(error => console.error('Error getting token', error));
-    
-            this.firebase.onNotification()
-              .subscribe(data => {
-                console.log(`User opened a notification ${data}`);
-                this.localNotifications.schedule([{
-                  title: data.title,
-                  text: data.body
-                }]);
-              });
-    
-            this.firebase.onTokenRefresh()
-              .subscribe((token: string) => {
-                console.log(`Got a new token ${token}`);
-                this.httpService.updateToken(userID, token)
-                  .subscribe(data => {
-    
-                  });
-              });
-    
-          });
-    
+        var _this = this;
+        this.platform.ready().then(function () {
+            console.log('platform ready');
+            _this.nativeStorage.get('user_id').then(function (userID) {
+                console.log('native storage userid:' + userID);
+                _this.firebase.getToken()
+                    .then(function (token) {
+                    console.log("The token is " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                })
+                    .catch(function (error) { return console.error('Error getting token', error); });
+                _this.firebase.onNotification()
+                    .subscribe(function (data) {
+                    console.log("User opened a notification " + data);
+                    _this.localNotifications.schedule([{
+                            title: data.title,
+                            text: data.body
+                        }]);
+                });
+                _this.firebase.onTokenRefresh()
+                    .subscribe(function (token) {
+                    console.log("Got a new token " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                });
+            });
         });
-        */
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n\n\n\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n\n  </div>\n\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n \n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
@@ -759,7 +752,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/'<ion-header>\n  <ion-toolbar > \n      <ion-buttons slot="start">\n        <ion-back-button></ion-back-button>\n      </ion-buttons>\n    <ion-title>Login</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n  \n  <login-layout-2 [events]="params.events">\n  </login-layout-2>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/'<ion-header>\n  <ion-toolbar > \n      <ion-buttons slot="start">\n        <ion-back-button></ion-back-button>\n      </ion-buttons>\n    <ion-title>Login</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content class="loginPage">\n  \n  <login-layout-2 [events]="params.events">\n  </login-layout-2>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\login\login.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["u" /* NavParams */],
@@ -16755,7 +16748,7 @@ var LoginService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 793:
+/***/ 792:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17237,14 +17230,14 @@ var ListViewExpandableService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 848:
+/***/ 849:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_home_service__ = __webpack_require__(849);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_home_service__ = __webpack_require__(850);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_app_settings__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_menu_service__ = __webpack_require__(369);
@@ -17325,7 +17318,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 849:
+/***/ 850:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

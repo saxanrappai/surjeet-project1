@@ -1,6 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 745:
+/***/ 746:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartDetailsPageModule", function() { return CartDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_details__ = __webpack_require__(846);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_details__ = __webpack_require__(847);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,11 +121,11 @@ var MainProductPage = /** @class */ (function () {
                 },
             };
         };
-        this.toastCtrl.showLoader();
+        //this.toastCtrl.showLoader();
         this.products = this.httpService.getCategories();
         this.products
             .subscribe(function (data) {
-            _this.toastCtrl.dismissLoader();
+            // this.toastCtrl.dismissLoader();
             _this.productsList = data;
             _this.params.data = _this.productsList.data;
             _this.params.events = _this.getEventsForTheme();
@@ -135,46 +135,39 @@ var MainProductPage = /** @class */ (function () {
         this.initializeApp();
     }
     MainProductPage.prototype.initializeApp = function () {
-        /* saxan
-        this.platform.ready().then(() => {
-          console.log('platform ready');
-          this.nativeStorage.get('user_id').then((userID) => {
-            console.log('native storage userid:' + userID);
-            this.firebase.getToken()
-              .then(token => {
-                console.log(`The token is ${token}`);
-                this.httpService.updateToken(userID, token)
-                  .subscribe(data => {
-    
-                  });
-              })
-              .catch(error => console.error('Error getting token', error));
-    
-            this.firebase.onNotification()
-              .subscribe(data => {
-                console.log(`User opened a notification ${data}`);
-                this.localNotifications.schedule([{
-                  title: data.title,
-                  text: data.body
-                }]);
-              });
-    
-            this.firebase.onTokenRefresh()
-              .subscribe((token: string) => {
-                console.log(`Got a new token ${token}`);
-                this.httpService.updateToken(userID, token)
-                  .subscribe(data => {
-    
-                  });
-              });
-    
-          });
-    
+        var _this = this;
+        this.platform.ready().then(function () {
+            console.log('platform ready');
+            _this.nativeStorage.get('user_id').then(function (userID) {
+                console.log('native storage userid:' + userID);
+                _this.firebase.getToken()
+                    .then(function (token) {
+                    console.log("The token is " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                })
+                    .catch(function (error) { return console.error('Error getting token', error); });
+                _this.firebase.onNotification()
+                    .subscribe(function (data) {
+                    console.log("User opened a notification " + data);
+                    _this.localNotifications.schedule([{
+                            title: data.title,
+                            text: data.body
+                        }]);
+                });
+                _this.firebase.onTokenRefresh()
+                    .subscribe(function (token) {
+                    console.log("Got a new token " + token);
+                    _this.httpService.updateToken(userID, token)
+                        .subscribe(function (data) {
+                    });
+                });
+            });
         });
-        */
     };
     MainProductPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/'<!---Image gallery components-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" class="menuIcon"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n\n\n\n  <div *ngIf="show">\n    <image-gallery-layout-1 [data]="params.data" [events]="params.events">\n    </image-gallery-layout-1>\n\n  </div>\n\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n \n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\wamp64\www\surjeet-project1\mobile\src\pages\main-product\main-product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* Platform */],
@@ -190,7 +183,7 @@ var MainProductPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 846:
+/***/ 847:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

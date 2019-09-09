@@ -3290,86 +3290,83 @@ ion-thumbnail img {
 /* # Settings Button Section
 ================================================
 ================================================*/
+/*
 [default-button] {
-  background: #f2b226 !important;
-  color: black !important;
-  font-size: 15px !important;
+  background: theme-colors('mainColors', 'accent') !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
   text-transform: capitalize !important;
   font-weight: bold !important;
   padding: 2em !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
 }
 
 [button-clear] {
-  color: black !important;
-  font-size: 15px !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h5-font-size !important;
   font-weight: 300 !important;
   height: 50px !important;
 }
 
 [button-clear-outline] {
-  color: black !important;
-  background: white !important;
-  font-size: 15px !important;
-  border: 1px solid #f2b226 !important;
+  color: theme-colors('textColors', 'accent') !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  font-size: $h5-font-size !important;
+  border: 1px solid theme-colors('mainColors', 'accent') !important;
   padding: 15px 18px !important;
   font-weight: bold !important;
   height: 50px !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
 }
 
 [button-action-shit] {
   border-radius: 50% !important;
   height: 30px !important;
   width: 30px;
-  color: black !important;
-  -webkit-box-shadow: none !important;
+  color: theme-colors('textColors', 'accent') !important;
   box-shadow: none !important;
   background: transparent !important;
-}
 
-[button-action-shit] ion-icon {
-  font-size: 34px;
-}
+  ion-icon {
+    font-size: $h1-font-size;
 
-[button-action-shit] ion-icon.ion-md-more:before {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+    &.ion-md-more:before {
+      transform: rotate(90deg);
+    }
+  }
 }
 
 [button-icon] {
-  background: white !important;
-  color: #30384c !important;
-  font-size: 15px !important;
+  background: theme-colors('mainColors', 'primary') !important;
+  color: theme-colors('textColors', 'primary') !important;
+  font-size: $h5-font-size !important;
   font-weight: 700 !important;
   height: auto !important;
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 8px !important;
+  border-radius: $border-radius !important;
   text-transform: capitalize !important;
   padding: 6px 10px 6px 8px !important;
 }
 
 [button-icon-clear] {
   background-color: transparent !important;
-  color: #b2b2b2 !important;
+  color: theme-colors('textColors', 'accentLight') !important;
   padding: 5px !important;
   font-size: 15px !important;
   font-weight: 400 !important;
 }
-
+*/
 /* # Settings Login Section
 ================================================
 ================================================*/
+/*
 [login-title] {
-  color: black !important;
-  font-size: 17px !important;
-  font-family: "Leckerli One", cursive;
-  font-weight: 400 !important;
-  font-size: 32px !important;
+  color: theme-colors('textColors', 'accent') !important;
+  font-size: $h4-font-size !important;
+  @include font-title;
   font-weight: 400 !important;
 }
-
+*/
 [login-subtitle] {
   font-size: 17px !important;
   font-weight: 400;
@@ -31244,6 +31241,24 @@ card-reader-layout-1 ion-list > ion-item:nth-child(1) {
   padding-top: 40px !important;
 }
 
+.tabbar {
+  opacity: 1;
+  background: #2c1e2f !important;
+  color: #FFF;
+}
+
+.tabbar ion-icon {
+  color: #FFF;
+}
+
+.tabs-md .tab-button-icon {
+  color: #FFF;
+}
+
+.tabs-md .tab-button-icon.active {
+  color: #f8b028;
+}
+
 /*  #Style Full gallery 1
 ===========================================*/
 image-gallery-layout-1 ion-card img {
@@ -31252,6 +31267,27 @@ image-gallery-layout-1 ion-card img {
 
 image-gallery-layout-1 ion-card-content {
   background: whitesmoke;
+}
+
+image-gallery-layout-1 .segment-md .segment-button {
+  border: 1px solid #2c1e2f !important;
+  color: #2c1e2f;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+image-gallery-layout-1 .segment-button.segment-activated {
+  background-color: #2c1e2f;
+  color: #FFF;
+}
+
+image-gallery-layout-1 .tileImage {
+  border-radius: 10px;
+  max-height: 150px;
+}
+
+.footer .toolbar-background, .footer .toolbar-background-md {
+  background: #2c1e2f;
 }
 
 /*  #Style Full gallery 2
@@ -32878,12 +32914,16 @@ page-home [default-background] a {
   z-index: 9999;
 }
 
-ion-toolbar {
-  text-align: center;
-  font-weight: bold;
+page-login ion-content {
+  background-image: url("../assets/back_image.jpg");
+  background-size: cover;
 }
 
-[ion-title] {
+page-login .toolbar-background-md {
+  background-image: url("../assets/back_image.jpg");
+}
+
+page-login [ion-title] {
   color: #FFF;
   font-size: 5em;
   width: 100%;
@@ -32891,25 +32931,40 @@ ion-toolbar {
   text-align: center;
 }
 
+page-login ion-title {
+  color: #FFF !important;
+}
+
+page-login .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFF !important;
+}
+
+ion-toolbar {
+  text-align: center;
+  font-weight: bold;
+}
+
 [header-title] {
   text-align: center;
 }
 
-.toolbar-background-md {
-  background-image: url("../assets/back_image.jpg");
+.menuIcon, .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  color: #2c1e2f;
+  font-weight: bold;
+  font-size: 2em;
 }
 
-ion-content {
-  background-image: url("../assets/back_image.jpg");
-  background-size: cover;
+.bar-button-menutoggle-md ion-icon {
+  font-size: 1.2em;
 }
 
-ion-title {
-  color: #FFF !important;
-}
-
-.menuIcon {
-  color: #FFF;
+.toolbar-title-md {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
 }
 
 page-product-details {

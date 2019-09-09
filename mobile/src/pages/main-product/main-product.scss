@@ -1,5 +1,19 @@
 page-main-product {
+
 }
-.menuIcon{
-    color : #FFF;
+
+.menuIcon , .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    color:#2c1e2f;
+    font-weight:bold;
+    font-size:2em;
+
+}
+.bar-button-menutoggle-md ion-icon{
+    
+    font-size:1.2em;
+}
+.toolbar-title-md{
+    font-weight:bold;
+    font-size:2em;
+    text-align: center;
 }

@@ -33,15 +33,15 @@ export class MainProductPage {
     private firebase: FCM,
     private localNotifications: LocalNotifications,
     private toastCtrl: ToastService, private httpService: HttpService) {
-    this.toastCtrl.showLoader();
+    //this.toastCtrl.showLoader();
     this.products = this.httpService.getCategories();
     this.products
       .subscribe(data => {
-        this.toastCtrl.dismissLoader();
+       // this.toastCtrl.dismissLoader();
         this.productsList = data;
         this.params.data = this.productsList.data;
         this.params.events = this.getEventsForTheme();
-        console.log('cat list:' + JSON.stringify(this.params.data));
+     //   console.log('cat list:' + JSON.stringify(this.params.data));
         this.show = true;
       });
     this.initializeApp();
@@ -49,7 +49,6 @@ export class MainProductPage {
   }
 
   initializeApp() {
- /*
     this.platform.ready().then(() => {
       console.log('platform ready');
       this.nativeStorage.get('user_id').then((userID) => {
@@ -85,7 +84,6 @@ export class MainProductPage {
       });
 
     });
-    */
   }
 
 

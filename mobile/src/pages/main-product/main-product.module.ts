@@ -9,10 +9,12 @@ import { ProductpagePageModule } from '../productpage/productpage.module';
 import { ListViewExpandableService } from '../../services/list-view-expandable-service';
 import { ImageGalleryService } from '../../services/image-gallery-service';
 import { ToastService } from '../../services/toast-service';
+import { CommonFooterComponent } from '../../components/common-footer/common-footer';
 
 @NgModule({
   declarations: [
     MainProductPage,
+    CommonFooterComponent,
   ],
   imports: [
     IonicPageModule.forChild(MainProductPage),
