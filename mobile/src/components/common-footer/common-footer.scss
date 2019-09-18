@@ -17,5 +17,19 @@ width:100%;
     .tabs-md .tab-button-icon.active{
         color:#f8b028;
     }   
-    
+    .footerBar{
+        display:flex;
+    }
+    ion-tab {
+        display: block;
+        border: 1px solid red;
+        width: 25%;
+        color: #FFF;
+    }
+    .tab-menu{
+        color:#FFF;
+    }
+    ion-icon{
+        font-size:2em;
+    }
 }

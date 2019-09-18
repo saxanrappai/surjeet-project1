@@ -1,0 +1,42 @@
+ 
+<!-- Theme Login pages - Login + logo 2 -->
+<ion-content has-header >
+  <ion-grid >
+    <ion-row class="mainRow"  align-items-center> 
+ 
+      <ion-col no-padding col-12 col-sm-12 col-md-12 text-center class="logoDiv">
+        <ion-item transparent text-center no-lines>
+          <!---Logo Title-->
+          <img src='../../../assets/veneer_logo.jpg' class="logoImg" />
+        </ion-item> 
+      </ion-col>
+<ion-col class="landingButtons" align-items-center>
+
+    <ion-row>
+        <ion-col class="alignCenter">
+
+<button  ion-button default-button text-capitalize box-shadow
+(click)="gotoPage('LoginPage')" class="loginBtn">Login</button>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="alignCenter forgotLink">Forgot your Password ?</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="alignCenter">
+  
+<button  ion-button default-button text-capitalize box-shadow
+(click)="gotoPage('RegisterPage')" class="signBtn">Join for Free</button>
+
+          </ion-col>
+      </ion-row>
+
+
+ 
+</ion-col>
+
+ 
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -3,3 +3,69 @@ page-cart-details {
         color: theme-colors('textColors', 'accent');
     }
 }
+
+    .fulscrn{
+        height:100vh;
+    }
+    .display-table{
+        display:table;
+        height:100%;
+    }
+    .display-row{
+display:table-row;
+    }
+    .display-cell{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .emptycart{
+        height:50%;
+        max-height: 200px;
+    }
+    .emptymsg{
+        font-size:1.5em;
+    }
+    .returnbutton{
+        
+  background:#f2b226 !important;
+  width:80%;
+  max-width:400px;
+  color:#2c1e2f;
+  border-radius:50px;
+  font-weight:bold;
+  padding:2em;
+  margin-top:5em;
+    }
+    .rightIcons{
+        width:50px;
+        padding:.5em;
+    }
+
+    .optionIcons{
+        color:#FFF;
+        font-size:1.3em;
+    background: #999;
+    padding: 2px;
+    border-radius: 5px;
+    }
+    .optionIcons.trash{
+        background: rgb(61, 61, 61);
+
+    }
+    .quantityStock{
+        font-size:1.2em;
+        color:#000;
+        font-weight:bold;
+    }
+
+    .itemPending{ 
+        background: #337ab7;
+        color: #FFF;
+        padding: 5px;
+        }
+        .itemAproved{ 
+        background: #4cae4c;
+        color: #FFF;
+        padding: 5px;
+        }

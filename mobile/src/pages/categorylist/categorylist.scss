@@ -5,8 +5,8 @@ page-categorylist {
         -o-animation: fadeInLeft 800ms;
         animation: fadeInLeft 800ms;
     }
-}
 
+}
 .imageCats{
     border: 1px solid #2c1e2f !important; 
     border-radius:10px;
@@ -18,7 +18,7 @@ page-categorylist {
         height:100%;
     }
 }
-ion-avatar img{
+ion-avatar.imageCats img{
     width:100% !important;
     height:100% !important;
     border-radius:10px !important;

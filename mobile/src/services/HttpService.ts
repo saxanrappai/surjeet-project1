@@ -70,4 +70,10 @@ export class HttpService {
     return this.http.get('http://myshop.guidersmap.com/index.php/api/app_login', { params });
   }
 
+  doRegister(formData): Observable<any> {
+    let params = new HttpParams().set('user_name', formData.username).set('user_mobile', formData.mobile).set('user_email', formData.email).set('password', formData.password);
+    console.log("params",params);
+    return this.http.get('http://myshop.guidersmap.com/index.php/api/signup', { params });
+  }
+
 }

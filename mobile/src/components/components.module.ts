@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { ComponentsCommonFooterComponent } from './components-common-footer/components-common-footer';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; 
+import { CommonFooterComponent } from './common-footer/common-footer';
 @NgModule({
-	declarations: [ComponentsCommonFooterComponent],
+	declarations: [CommonFooterComponent],
 	imports: [],
-	exports: [ComponentsCommonFooterComponent]
+	exports: [CommonFooterComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule {}

@@ -158,4 +158,13 @@ export class CartDetailsPage {
       }
     }
   }
+  returntoShop(){
+    
+    this.navCtrl.push("MainProductPage");
+  }
+  editFromCart(product){
+    this.navCtrl.push("ProductDetailsPage", {
+      'product': JSON.stringify(product)
+    });
+  }
 }

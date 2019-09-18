@@ -7,6 +7,7 @@ import { LoadingService } from './loading-service';
 import { SplashscreenPage } from '../pages/splashscreen/splashscreen';
 import { LoginService } from './login-service';
 import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
 
 @Injectable()
 export class SplashScreenService implements IService {
@@ -67,7 +68,7 @@ export class SplashScreenService implements IService {
         return {
             "onRedirect": function () {
                 // navCtrl.pop();
-                navCtrl.setRoot(LoginPage);
+                navCtrl.setRoot(LandingPage);
 
             }
         };

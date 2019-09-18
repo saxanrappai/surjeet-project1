@@ -5,13 +5,15 @@ import { IonicPageModule } from 'ionic-angular';
 import { CategorylistPage } from './categorylist';
 import { ListViewAppearanceAnimationService } from '../../services/list-view-appearance-animation-service';
 import { ToastService } from '../../services/toast-service';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
     CategorylistPage
   ],
   imports: [
-    IonicPageModule.forChild(CategorylistPage)
+    IonicPageModule.forChild(CategorylistPage),
+    ComponentsModule
   ],
   exports: [
     CategorylistPage

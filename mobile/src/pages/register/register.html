@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="iontitle"> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content has-header>
+  <form>
+    <ion-grid>
+
+
+
+      <ion-row class="mainRow" align-items-center>
+
+        <ion-col no-padding col-12 col-sm-12 col-md-12 text-center >
+          <ion-item transparent text-center no-lines>
+            <!---Logo Title-->
+            <img src='../../../assets/veneer_logo.jpg' class="logoImg" />
+          </ion-item>
+
+        </ion-col>
+
+
+
+
+
+        <ion-col no-padding col-12 col-sm-12 col-md-12 text-center>
+
+
+
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="person" item-left></ion-icon>
+            </ion-label>
+            <ion-input required class="loginInputFD" required type="text" placeholder="Full name" [(ngModel)]="data.username" name="username"
+              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+            <ion-label error-field no-margin *ngIf="!data.isUsernameValid">{{data.errorUser}}</ion-label>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col no-padding col-12 col-sm-12 col-md-12 text-center>
+
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="phone-portrait" item-left></ion-icon>
+            </ion-label>
+            <ion-input required class="loginInputFD" name="mobile" required type="number" placeholder="Mobile" [(ngModel)]="data.mobile"
+              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+            <ion-label error-field no-margin *ngIf="!data.isMobileValid">{{data.errorMobile}}</ion-label>
+          </ion-item>
+
+        </ion-col>
+
+
+        <ion-col no-padding col-12 col-sm-12 col-md-12 text-center>
+
+
+
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="mail" item-left></ion-icon>
+            </ion-label>
+            <ion-input required class="loginInputFD" name="email" required type="email" placeholder="Email" [(ngModel)]="data.email"
+              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+            <ion-label error-field no-margin *ngIf="!data.isEmailValid">{{data.errorEmail}}</ion-label>
+          </ion-item>
+
+        </ion-col>
+
+
+        <ion-col no-padding col-12 col-sm-12 col-md-12 text-center>
+
+
+
+          <ion-item margin-top transparent class="btmline">
+            <ion-label position="floating">
+              <ion-icon name="lock" item-left></ion-icon>
+            </ion-label>
+            <ion-input required class="loginInputFD" name="password" required type="password" placeholder="Password" [(ngModel)]="data.password"
+              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+            <ion-label error-field no-margin *ngIf="!data.isPasswordValid">{{data.errorPassword}}</ion-label>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col class="alignCenter">
+
+          <input type="submit" ion-button default-button text-capitalize box-shadow 
+            class="loginBtn" value="Join" (click)="registerUser()"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+</ion-content>

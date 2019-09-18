@@ -1,0 +1,55 @@
+page-landing {
+
+  ion-content {
+    background-image: url('../assets/back_image.jpg');
+    background-size: cover;
+}
+ion-grid,ion-row.mainRow{
+  height:100%;
+}
+.logoDiv{
+  height: 65%;
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+}
+
+img.logoImg {
+  max-height: 5em;
+  
+ }
+ .landingButtons{
+   
+  height:100%;
+
+.forgotLink{
+  color:#FFF;
+  font-weight: bold;
+  padding: 1em;
+}
+  .loginBtn{
+    
+  background:#f2b226 !important;
+  color:#2c1e2f;
+  border-radius:50px;
+  font-weight:bold;
+  padding: 2em;
+  width:100%;
+  max-width:150px;
+  }
+  
+  .signBtn{
+    
+    background:#fffcf5 !important;
+    color:#2c1e2f;
+    border-radius:50px;
+    font-weight:bold;
+    padding: 2em;
+    width:100%;
+    max-width:150px;
+    }
+  .alignCenter{
+    text-align:center;
+  }
+ }
+}

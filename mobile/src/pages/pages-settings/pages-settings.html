@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+  
+  <ion-list class="profileDetails">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/images/background/green-bg.jpg" class="avatar">
+      </ion-avatar>
+      <h2>Profile Name</h2>
+     </ion-item>
+  </ion-list>
+
+
+
+
+
+
+
+
+
+  <ion-list *ngFor="let menu of data;" class="menuList" >
+    <ion-item>
+      <ion-icon name="{{menu.icon}}" item-start></ion-icon>
+        {{menu.title}}
+    </ion-item>
+  </ion-list>
+
+
+  <div   style="text-align:center;">
+
+    <button ion-button class="logoutButton" (click)="logout()">LOGOUT</button>
+  
+  </div>
+
+
+
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar>
+  <common-footer></common-footer>
+  </ion-toolbar>
+</ion-footer>
+   

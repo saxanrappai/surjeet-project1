@@ -59,9 +59,10 @@ export class MyApp {
       this.nativeStorage.get('loggedin').then((isLoggedIn) => {
         console.log('native storage:' + isLoggedIn);
         if (isLoggedIn != null && isLoggedIn) {
-          this.rootPage = 'MainProductPage';
+         this.rootPage = 'MainProductPage';
+       //   this.rootPage = 'RegisterPage';
         } else {
-          this.rootPage = 'LoginPage';
+          this.rootPage = 'LandingPage';
         }
 
       });
@@ -106,7 +107,7 @@ export class MyApp {
     console.log('open page:' + JSON.stringify(page));
     if (page.title == 'Logout') {
       this.nativeStorage.set('loggedin', false);
-      this.nav.setRoot('LoginPage');
+      this.nav.setRoot('LandingPage');
     } else if (page.title == 'My Orders') {
       this.nav.setRoot('MyordersPage');
     } else {

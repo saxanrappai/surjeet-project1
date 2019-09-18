@@ -1,0 +1,145 @@
+page-register {
+
+  ion-content {
+    background-image: url('../assets/back_image.jpg');
+    background-size: cover;
+  }
+
+  .toolbar-background-md {
+    background-image: url('../assets/back_image.jpg');
+  }
+
+  ion-title.iontitle,
+  .toolbar-title-md {
+    color: #FFF;
+  }
+
+  .logoDiv {
+    height: 65%;
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  img.logoImg {
+    max-height: 5em;
+margin:2em;
+  }
+
+  ion-grid,
+  ion-row.mainRow {
+    height: 100%;
+  }
+
+  form {
+
+    ion-item.btmline {
+      border-bottom: 2px solid #CCC;
+      width: 90%;
+      margin: 0 auto;
+
+      ion-icon {
+        color: #F2B226;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+    }
+
+    ion-item {
+      padding-left: 0 !important;
+
+    }
+  }
+
+  .loginBtn{
+    
+    background:#f2b226 !important;
+    color:#2c1e2f;
+    border-radius:50px;
+    font-weight:bold;
+    width:100%;
+    margin:1em;
+    max-width:150px;
+    height: 3em;
+    }
+    .alignCenter{
+      text-align:center;
+    }
+    
+    ion-item {
+      padding-left: 0 !important;
+
+      [error-field] {
+        margin: 0 !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        right: 5px !important;
+        font-size: $h6-font-size;
+        color: rgb(255, 0, 0) !important;
+      }
+
+      .item-inner {
+        border-bottom: none !important;
+        box-shadow: none !important;
+        padding-right: 0 !important;
+      }
+
+      ion-label {
+        margin: 0 5px !important;
+      }
+
+      ion-input {
+        background: transparent !important;
+        margin: 5px 10px 15px 0px !important;
+        /*
+        border-radius: $border-radius;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+        */
+        padding: 5px 10px !important;
+        z-index: 999;
+
+        .input-cover {
+          display: none;
+        }
+
+        input[type="text"] {
+          color: #FFF !important;
+          background: transparent !important;
+          font-size: 1.2em;
+        }
+
+        input[type="password"] {
+          color: #FFF !important;
+          background: transparent !important;
+          font-size: 1.2em;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #F2B226 !important;
+          font-weight: 400 !important;
+        }
+
+        ::-moz-placeholder {
+          color: #F2B226 !important;
+          font-weight: 400 !important;
+        }
+
+        :-ms-input-placeholder {
+          color: #F2B226 !important;
+          font-weight: 400 !important;
+        }
+
+        :-moz-placeholder {
+          color: #F2B226 !important;
+          font-weight: 400 !important;
+        }
+      } 
+    }
+
+    .text-input {
+      color:#FFF;
+      font-size: $h5-font-size;
+      font-weight: 400;
+      line-height: 17px;
+    }
+}

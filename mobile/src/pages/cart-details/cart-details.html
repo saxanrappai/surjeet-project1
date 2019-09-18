@@ -3,30 +3,76 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Order Details</ion-title>
+    <ion-title>Your Orders</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!--Theme Google Card - Full Image Cards-->
 <ion-content>
+ 
+
+
+  <ion-grid class='display-table' *ngIf="data == ''" >
+    <ion-row class='display-row'>
+      <ion-col class='display-cell'> 
+         <img src="../../assets/emptycart.png" class="emptycart"/>
+         <br/>
+       <div class="emptymsg">Your cart is currently empty</div>  
+       <div >
+        
+      <button ion-button class="returnbutton"    (click)="returntoShop()">RETURN TO SHOP</button> 
+
+       </div>  
+       </ion-col> 
+    </ion-row>
+  </ion-grid>
+
+  
+<!-- 
+category_id: "89"
+deal_price: ""
+displayImage: "http://myshop.guidersmap.com/uploads/products/1B835B98-A11B-4622-97D2-0171C0F361AC.jpeg"
+end_date: ""
+end_time: ""
+in_stock: "1"
+increament: 3
+mrp: "0"
+price: "0"
+product_description: ""
+product_id: "144"
+product_image: "["1B835B98-A11B-4622-97D2-0171C0F361AC.jpeg","85443278-4CC1-40D9-98BC-A4EB7A1E28C9.jpeg"]"
+product_name: "15139"
+rewards: "0"
+size: "2.44x1.22"
+start_date: ""
+start_time: ""
+status: "0"
+stock: "0"
+title: "American Walnut Crown"
+unit: "QTY"
+unit_value: "11"
+-->
 
 
 
-
-
-
-
-  <ion-list no-margin>
+  <ion-list no-margin *ngIf="data != null">
     <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of data;let i = index">
       <ion-avatar item-start class="imageCats">
         <img [src]="(item.displayImage == '') ? 'assets/images/background/placeholder.jpg' : item.displayImage"
           alt="{{item.title}}" />
       </ion-avatar>
       <h2 item-title>{{item.product_name}}</h2>
-      <p text-wrap [innerHTML]='item.fullText'></p>
-      <ion-icon icon-small item-right  (click)="deleteFromCart(item.product_id)">
-          <ion-icon name="trash"></ion-icon> 
+      <p>Available Product : {{item.stock}}</p>
+      <p>Status : <span  *ngIf="item.status == 0" class='itemPending'> PENDING</span><span  *ngIf="item.status > 0" class='itemAproved'> APPROVED</span></p>
+      <p class='quantityStock'>Qty : {{item.increament}}</p>
+<div class="rightIcons" item-right >
+      <ion-icon icon-small  class="optionIcons" (click)="editFromCart(item)">
+          <ion-icon name="create"></ion-icon> 
       </ion-icon>
+      <ion-icon icon-small item-right class="optionIcons trash"  (click)="deleteFromCart(item.product_id)">
+          <ion-icon name="trash"></ion-icon> 
+      </ion-icon></div>
+
     </ion-item>
   </ion-list>
 
@@ -74,17 +120,9 @@
 
 -->
 
-
-<ion-footer>
+<ion-footer >
   <ion-toolbar>
-
-    <ion-tabs selectedIndex="0">
-      <ion-tab tabIcon="home" (click)="goBack()"> </ion-tab>
-      <ion-tab tabIcon="cart"></ion-tab>
-      <ion-tab tabIcon="search"></ion-tab>
-      <ion-tab tabIcon="settings"></ion-tab>
-    </ion-tabs>
-
-
+  <common-footer></common-footer>
   </ion-toolbar>
 </ion-footer>
+   

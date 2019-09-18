@@ -6,20 +6,27 @@
           <li *ngFor="let group of data;">
             <!-- List big image Header -->
             <div collapsible-header (click)="toggleGroup(group)">
-              <ion-item no-lines item-divider>
+              <ion-item item-divider>
                 <ion-avatar item-start>
                   <img src="assets/images/background/green-bg.jpg" alt="title" />
                 </ion-avatar>
                 <h2 item-title>Order ID: {{group.sale_id}}</h2>
                 <h3 item-subtitle text-wrap>Total Quantity: {{group.quantity}}</h3>
-                <button ion-button round block style="background-color:grey !important" *ngIf="group.status==0">Order
-                  Pending</button>
-                <button ion-button round block style="background-color:green !important" *ngIf="group.status==1">Order
-                  Confirmed</button>
-                <button ion-button round block style="background-color:darkgreen !important" *ngIf="group.status==2">Out
-                  for Delivery</button>
-                <button ion-button round block style="background-color:darkred !important" *ngIf="group.status==3">Order
-                  cancelled</button>
+
+                <p> Status: 
+                  <button ion-button class="statusBtn"  style="background-color:#337ab7 !important" *ngIf="group.status==0">Order
+                    Pending</button>
+                  <button ion-button class="statusBtn"   style="background-color:rgb(15, 187, 15) !important" *ngIf="group.status==1">Order
+                    Confirmed</button>
+                  <button ion-button class="statusBtn"   style="background-color:rgb(0, 83, 0) !important" *ngIf="group.status==2">Out
+                    for Delivery</button>
+                  <button ion-button class="statusBtn"   style="background-color:rgb(170, 24, 19) !important" *ngIf="group.status==3">Order
+                    cancelled</button> 
+                </p>
+
+
+
+
               </ion-item>
             </div>
             <!-- End List big image Header -->

@@ -9,16 +9,16 @@ import { ProductpagePageModule } from '../productpage/productpage.module';
 import { ListViewExpandableService } from '../../services/list-view-expandable-service';
 import { ImageGalleryService } from '../../services/image-gallery-service';
 import { ToastService } from '../../services/toast-service'; 
-import { CommonfooterModule } from '../../components/common-footer/common-footer.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
     MainProductPage,  
   ],
-  imports: [
-    CommonfooterModule,
+  imports: [ 
     IonicPageModule.forChild(MainProductPage),
     ImageGalleryLayout1Module,
+    ComponentsModule
   ],
 })
 export class MainProductPageModule { }
