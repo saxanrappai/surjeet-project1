@@ -16,6 +16,10 @@
     {
       "path": "/index.php/api/my_order_list",
       "proxyUrl": "http://myshop.guidersmap.com/index.php/api/my_order_list"
+    },
+    {
+      "path": "/index.php/api/signup",
+      "proxyUrl": "http://myshop.guidersmap.com/index.php/api/signup"
     }
   ]
 }

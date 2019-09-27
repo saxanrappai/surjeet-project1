@@ -23,3 +23,22 @@ ion-avatar.imageCats img{
     height:100% !important;
     border-radius:10px !important;
 }
+.subListClass{
+    border:1px solid #FFF;
+    padding:1em 1em 1em 2em; 
+    display: none;
+    border-right:.5em solid #f2b226;
+    border-left:.5em solid #f2b226; 
+    ion-item{
+         
+    }
+} 
+.subListClass.active{   
+    display: block;
+} 
+.subListClass.inactive{      
+    display: none;
+} 
+.listClass{
+    border-top:2px solid #CCC;
+} 

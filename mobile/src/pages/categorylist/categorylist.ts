@@ -1,10 +1,29 @@
-import { HttpService } from './../../services/HttpService';
-import { ToastService } from './../../services/toast-service';
-import { ListViewAppearanceAnimationService } from './../../services/list-view-appearance-animation-service';
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, Content } from 'ionic-angular';
-import { GlobalProvider } from '../../providers/global/global';
-import { Observable } from 'rxjs';
+import {
+  HttpService
+} from './../../services/HttpService';
+import {
+  ToastService
+} from './../../services/toast-service';
+import {
+  ListViewAppearanceAnimationService
+} from './../../services/list-view-appearance-animation-service';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  Platform,
+  Content
+} from 'ionic-angular';
+import {
+  GlobalProvider
+} from '../../providers/global/global';
+import {
+  Observable
+} from 'rxjs';
 
 /**
  * Generated class for the CategorylistPage page.
@@ -33,7 +52,7 @@ export class CategorylistPage {
     this.global.count++;
     this.data = this.navParams.get('data');
     this.global.category_title = this.navParams.get('title');
-    console.log('cat data:' + this.data);
+    console.log('cat data:' , this.data);
     // let events = this.getEventsForTheme();
     this.animateItems = [];
     for (let i = 0; i < this.data.length; i++) {
@@ -48,22 +67,34 @@ export class CategorylistPage {
 
   onitemclick(event: string, item: any, e: any) {
 
+
+    console.log("item",item);
+
+
+    if (item.selected == 'inactive' || item.selected == undefined) {
+      item.selected = 'active';
+ 
+    } else {
+      item.selected = 'inactive';
+
+    }
+    /*
     if (item.sub_cat && item.sub_cat.length > 0) {
+      
       this.navCtrl.push('CategorylistPage', {
         'title': item.title,
         'data': item.sub_cat
-      });
-
-    } else {
-      // products: Observable<any>;
-      // productsList: GetProducts;
-
+      }); 
+      
+    } else { 
       this.toastCtrl.showLoader();
       let products = this.httpService.getproducts(item.id);
       products
         .subscribe(data => {
           this.toastCtrl.dismissLoader();
           let productsList = data;
+
+          
           if (productsList.data && productsList.data.length > 0) {
             this.navCtrl.push('ProductpagePage', {
               'products': productsList
@@ -71,17 +102,39 @@ export class CategorylistPage {
           } else {
             this.toastCtrl.presentToast('No Products Available');
           }
-        });
-      // that.navCtrl.push('ProductpagePage', {
-      //   'cat_id': item.id
-      // });
+          
+        }); 
 
     }
+    */
   }
   onEvent(event: string, item: any, e: any) {
     // if (this.events[event]) {
     //   this.events[event](item);
     // }
+  }
+  onSubItemCLick(subId: any){
+
+console.log(subId);
+
+this.toastCtrl.showLoader();
+let products = this.httpService.getproducts(subId);
+products
+  .subscribe(data => {
+    this.toastCtrl.dismissLoader();
+    let productsList = data;
+
+    
+    if (productsList.data && productsList.data.length > 0) {
+      this.navCtrl.push('ProductpagePage', {
+        'products': productsList
+      });
+    } else {
+      this.toastCtrl.presentToast('No Products Available');
+    }
+    
+  }); 
+
   }
 
   onItemClick(event: string, item: any, e: any) {
@@ -123,7 +176,7 @@ export class CategorylistPage {
   //   }
   // }
 
-  search(search?: any) {
+  search(search ? : any) {
     let dataSearch = [];
     if (search.target.value == '') {
       this.animateItems = this.data;

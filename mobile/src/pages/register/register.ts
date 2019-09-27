@@ -54,9 +54,8 @@ let vm= this;
 
     this.httpService.doRegister(this.data)
     .subscribe(result => {
-      console.log("data", result);
+      console.log("result from signup", result);
       vm.toastCtrl.presentToast(result.message);
-
     });
 
 
