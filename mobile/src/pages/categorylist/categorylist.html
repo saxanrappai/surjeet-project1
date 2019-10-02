@@ -39,26 +39,54 @@
             <div class="subListClass {{item.selected}}">
 
 
-              <ion-list>
 
 
 
-                <ion-item  *ngFor="let sub of item.sub_cat; let s = index;"> 
+                <div *ngIf="item.productsList">
+
+                    <div class='itemList'  *ngFor="let products of item.productsList; let s = index;" > 
+
+
+                      
+              <ion-avatar   class="imageCats" (click)="onClickShowProductCart(products)">
+                  <img [src]="products.displayImage[0]"
+                    alt="Product ID: {{products.product_id}}" />
+                </ion-avatar>
+
+                      <!--
+                        <ion-slides pager>
+                            <ion-slide class="imgPr" *ngFor="let sub of products.displayImage; let i = index;"[style.background-image]="'url(' + (sub ) + ')'" >
+                              <h2>Product ID: {{products.product_id}}</h2>
+                             </ion-slide> 
+                          
+                          </ion-slides>
+                        -->
+
+                        </div>
+
+                  
+                    </div>
+
+
+              <!-- 
+              <ion-slides class="sliderProd" pager  *ngIf="productsList">
+              <ion-slide  *ngFor="let sub of productsList.product_image; let s = index;" >
+                <h2>{{sub.title}}</h2>
+              </ion-slide>
+            </ion-slides>
+
+              <ion-list *ngIf="productsList">
+                <ion-item  *ngFor="let sub of productsList; let s = index;"> 
                   <ion-avatar item-start>
-                    <img  [src]="(sub.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+sub.image"
+                    <img  [src]="(sub.product_image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+sub.product_image"
                     alt="{{sub.title}}">
                   </ion-avatar>
                   <h2>{{sub.title}}</h2>
-                  <p>{{item.title}} </p>
-                  <button ion-button clear item-end (click)="onSubItemCLick(   sub.id )" >View</button>
+                  <p>{{sub.product_title}} </p>
+                  <button ion-button clear item-end (click)="onSubItemCLick(   sub.product_id )" >View</button>
                 </ion-item>
-
-
-
-
               </ion-list>
-
-
+            -->
             </div>
           </ng-container>
         </ion-list>

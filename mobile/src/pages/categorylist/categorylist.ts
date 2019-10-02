@@ -43,13 +43,14 @@ export class CategorylistPage {
   content: Content;
   animateItems: any = [];
   animateClass: any;
+  productsList: any;
   data: any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastService,
     public httpService: HttpService, private platform: Platform,
     public global: GlobalProvider) {
     console.log('enter');
-    this.global.count++;
+    //this.global.count++;
     this.data = this.navParams.get('data');
     this.global.category_title = this.navParams.get('title');
     console.log('cat data:' , this.data);
@@ -70,7 +71,7 @@ export class CategorylistPage {
 
     console.log("item",item);
 
-
+/*
     if (item.selected == 'inactive' || item.selected == undefined) {
       item.selected = 'active';
  
@@ -78,7 +79,7 @@ export class CategorylistPage {
       item.selected = 'inactive';
 
     }
-    /*
+    */ 
     if (item.sub_cat && item.sub_cat.length > 0) {
       
       this.navCtrl.push('CategorylistPage', {
@@ -87,26 +88,64 @@ export class CategorylistPage {
       }); 
       
     } else { 
+      if(item.selected == 'inactive' || item.selected == undefined ){
+
+        item.selected = 'active'; 
+      if( item.productsList == undefined){
       this.toastCtrl.showLoader();
       let products = this.httpService.getproducts(item.id);
       products
         .subscribe(data => {
+          item.productsList = data.data;
+          console.log("productsList",item.productsList);
+           
           this.toastCtrl.dismissLoader();
-          let productsList = data;
+          if (item.productsList && item.productsList.length > 0) {
+ 
+            item.productsList.forEach(element => { 
+              
+      element.increament = '0';
+      if (element.unit_value.includes(',')) {
+        let qtys = element.unit_value.split(',');
+        let qty = 0;
+        qtys.forEach(unit => {
+          qty = qty + Number(unit);
+        });
+        element.unit_value_total = String(qty);
+      }
+              if (element.product_image != '') {
+                if (element.product_image.includes("[")) {
+                  let images = JSON.parse(element.product_image);
 
-          
-          if (productsList.data && productsList.data.length > 0) {
+                  element.displayImage= new Array();
+
+                  images.forEach(img => {
+                    element.displayImage.push('http://myshop.guidersmap.com/uploads/products/' + img);
+                  });  
+                } else {
+                  element.displayImage = Array( 'http://myshop.guidersmap.com/uploads/products/' + element.product_image); ;
+                }
+              } else {
+                element.displayImage = 'assets/images/background/placeholder.jpg';
+              } 
+            });
+            console.log("productsList",this.productsList);
+            /*
             this.navCtrl.push('ProductpagePage', {
               'products': productsList
             });
+            */
           } else {
             this.toastCtrl.presentToast('No Products Available');
-          }
-          
+            item.selected = 'inactive';
+          } 
         }); 
+      }
+      }else{
+        item.selected = 'inactive';
 
-    }
-    */
+      }
+    } 
   }
   onEvent(event: string, item: any, e: any) {
     // if (this.events[event]) {
@@ -123,8 +162,7 @@ products
   .subscribe(data => {
     this.toastCtrl.dismissLoader();
     let productsList = data;
-
-    
+   
     if (productsList.data && productsList.data.length > 0) {
       this.navCtrl.push('ProductpagePage', {
         'products': productsList
@@ -132,11 +170,16 @@ products
     } else {
       this.toastCtrl.presentToast('No Products Available');
     }
-    
   }); 
-
   }
+  onClickShowProductCart(paramsData){
 
+    console.log("paramsData",paramsData);
+  
+    this.navCtrl.push("ProductDetailsPage", {
+      'product': JSON.stringify(paramsData)
+    });  
+  }
   onItemClick(event: string, item: any, e: any) {
     // let that = this;
     // if (item.sub_cat) {

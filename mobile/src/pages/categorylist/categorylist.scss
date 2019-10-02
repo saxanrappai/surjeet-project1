@@ -23,15 +23,12 @@ ion-avatar.imageCats img{
     height:100% !important;
     border-radius:10px !important;
 }
-.subListClass{
-    border:1px solid #FFF;
-    padding:1em 1em 1em 2em; 
+.subListClass{ 
     display: none;
+    /*
     border-right:.5em solid #f2b226;
     border-left:.5em solid #f2b226; 
-    ion-item{
-         
-    }
+    */
 } 
 .subListClass.active{   
     display: block;
@@ -42,3 +39,18 @@ ion-avatar.imageCats img{
 .listClass{
     border-top:2px solid #CCC;
 } 
+.sliderProd{ 
+    height:200px;
+}
+.itemList{
+    float:left;
+    margin:1em 1px 1em 1px; 
+    /*
+    height:50vh;
+    max-height:250px;
+    */
+}
+.imgPr{
+    margin:.5em;
+    border:1px solid #CCC;
+}
