@@ -58,7 +58,7 @@ unit_value: "11"
   <ion-list no-margin *ngIf="data != null">
     <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of data;let i = index">
       <ion-avatar item-start class="imageCats">
-        <img [src]="(item.displayImage == '') ? 'assets/images/background/placeholder.jpg' : item.displayImage"
+        <img [src]="(item.displayImage == '') ? 'assets/images/background/placeholder.jpg' : item.displayImage[0]"
           alt="{{item.title}}" />
       </ion-avatar>
       <h2 item-title>{{item.product_name}}</h2>

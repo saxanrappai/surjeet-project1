@@ -3196,7 +3196,7 @@ function sent_order(){
 
                      $filter .=" and products.product_id = '".$key."' "; 
 
-                        $q = $this->db->query("Select dp.*,products.*, ( ifnull (producation.p_qty,0) - ifnull(consuption.c_qty,0)) as stock ,categories.title from products 
+                        $q = $this->db->query("Select  products.*, ( ifnull (producation.p_qty,0) - ifnull(consuption.c_qty,0)) as stock ,categories.title from products 
 
                         inner join categories on categories.id = products.category_id
 
@@ -3204,8 +3204,8 @@ function sent_order(){
 
                         left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
 
-                        left join deal_product dp on dp.product_id=products.product_id where 1 ".$filter);
-
+                        where 1 ".$filter);
+//left join deal_product dp on dp.product_id=products.product_id 
                         
 
                         $product =$q->result();
@@ -3460,7 +3460,7 @@ function sent_order_bkp(){
 
                      $filter .=" and products.product_id = '".$key."' "; 
 
-                        $q = $this->db->query("Select dp.*,products.*, ( ifnull (producation.p_qty,0) - ifnull(consuption.c_qty,0)) as stock ,categories.title from products 
+                        $q = $this->db->query("Select products.*, ( ifnull (producation.p_qty,0) - ifnull(consuption.c_qty,0)) as stock ,categories.title from products 
 
                         inner join categories on categories.id = products.category_id
 
@@ -3468,8 +3468,9 @@ function sent_order_bkp(){
 
                         left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
 
-                        left join deal_product dp on dp.product_id=products.product_id where 1 ".$filter);
-
+                        where 1 ".$filter);
+                        //dp.*
+//left join deal_product dp on dp.product_id=products.product_id 
                         
 
                         $product =$q->result();
