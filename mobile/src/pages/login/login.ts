@@ -86,19 +86,24 @@ export class LoginPage {
           .subscribe(data => {
             that.toastCtrl.dismissLoader();
             if (data.response) {
-              if (data.data.user_login_type == 2) {
+             // if (data.data.user_login_type == 2) {
                 that.nativeStorage.set('loggedin', true);
                 that.nativeStorage.set('user_id', data.data.user_id);
                 that.initializeApp();
                 that.navCtrl.setRoot('MainProductPage');
+                /*
               } else {
                 that.toastCtrl.presentToast('You dont have an access to login, Please contact admin.');
               }
+              */
 
             } else {
               that.toastCtrl.presentToast(data.error);
             }
 
+          },function(){
+            that.toastCtrl.presentToast("Error occured, Please try again!!"); 
+            that.toastCtrl.dismissLoader();
           });
       },
       onForgot: function () {

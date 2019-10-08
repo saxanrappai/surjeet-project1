@@ -21,7 +21,7 @@
         *ngFor="let group of data[selectedItem].sub_cat;let i = index;">
         <ion-card box-shadow (click)="onEvent('onClick', group, $event)">
           <img class="tileImage"
-            [src]="(group.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+group.image" />
+            [src]="(group.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+group.image" />
           <ion-card-content>
             <h2 gallery-title text-capitalize>{{group.title}}</h2>
             <!-- <p gallery-subtitle>{{group.items.length}} image(s)</p> -->

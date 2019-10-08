@@ -27,55 +27,55 @@ export class HttpService {
 
   getproducts(cat_id: string): Observable<any> {
     let params = new HttpParams().set('cat_id', cat_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/get_products', { params });
+    return this.http.get('http://lakud.com/index.php/api/get_products', { params });
   }
 
   getUserData(user_id: string): Observable<any> {
     let params = new HttpParams().set('user_id', user_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/get_user_data', { params });
+    return this.http.get('http://lakud.com/index.php/api/get_user_data', { params });
   }
 
   getCategories(): Observable<any> {
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/get_categories');
+    return this.http.get('http://lakud.com/index.php/api/get_categories');
   }
 
   getOrderList(user_id: string): Observable<any> {
     let params = new HttpParams().set('user_id', user_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/my_order_list', { params });
+    return this.http.get('http://lakud.com/index.php/api/my_order_list', { params });
   }
 
   cancelOrder(sale_id: string, user_id: string): Observable<any> {
     let params = new HttpParams().set('user_id', user_id).set('sale_id', sale_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/cancel_order_by_id', { params });
+    return this.http.get('http://lakud.com/index.php/api/cancel_order_by_id', { params });
   }
 
   updateToken(userId: string, token: string): Observable<any> {
     let params = new HttpParams().set('user_id', userId).set('token', token);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/update_token', { params });
+    return this.http.get('http://lakud.com/index.php/api/update_token', { params });
   }
 
   send_order(products: any, str_id: any) {
     let params = new HttpParams().set('id', JSON.stringify(products)).set('store_id', str_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/sent_order', { params });
+    return this.http.get('http://lakud.com/index.php/api/sent_order', { params });
   }
 
   check_order(products: any, str_id: any) {
     let params = new HttpParams().set('id', JSON.stringify(products)).set('store_id', str_id);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/check_order', { params });
+    return this.http.get('http://lakud.com/index.php/api/check_order', { params });
   }
 
 
   doLogin(email: any, password: any): Observable<any> {
     let params = new HttpParams().set('user_email', email).set('password', password);
     console.log("params",params);
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/app_login', { params });
+    return this.http.get('http://lakud.com/index.php/api/app_login', { params });
   }
 
   doRegister(formData): Observable<any> {
     let params = new HttpParams().set('user_name', formData.username).set('user_mobile', formData.mobile).set('user_email', formData.email).set('password', formData.password);
     console.log("params",params);
 
-    return this.http.get('http://myshop.guidersmap.com/index.php/api/signup', { params });
+    return this.http.get('http://lakud.com/index.php/api/signup', { params });
   }
 
 }

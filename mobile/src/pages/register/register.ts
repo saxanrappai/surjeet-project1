@@ -1,7 +1,17 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HttpService } from '../../services/HttpService';
-import { ToastService } from '../../services/toast-service';
+import {
+  Component
+} from '@angular/core';
+import {
+  IonicPage,
+  NavController,
+  NavParams
+} from 'ionic-angular';
+import {
+  HttpService
+} from '../../services/HttpService';
+import {
+  ToastService
+} from '../../services/toast-service';
 
 /**
  * Generated class for the RegisterPage page.
@@ -19,44 +29,42 @@ export class RegisterPage {
 
   public username: string;
   public password: string;
-data ={
-  username:'',
-  mobile:'',
-  email:'',
-  password:'',
-  errorUser:'Please try again',
-  errorMobile:'Please try again',
-  errorEmail:'Please try again',
-  errorPassword:'Please try again',
-  isUsernameValid:true,
-  isMobileValid:true,
-  isEmailValid:true,
+  data = {
+    username: '',
+    mobile: '',
+    email: '',
+    password: '',
+    errorUser: 'Please try again',
+    errorMobile: 'Please try again',
+    errorEmail: 'Please try again',
+    errorPassword: 'Please try again',
+    isUsernameValid: true,
+    isMobileValid: true,
+    isEmailValid: true,
     isPasswordValid: true,
-  
 
-}
+
+  }
   private isUsernameValid: boolean = true;
   private isPasswordValid: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public httpService: HttpService,
     private toastCtrl: ToastService,
-    ) {
-  }
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  registerUser(){
-    console.log("clicked",this.data);
-let vm= this;
-
+  registerUser() {
+    console.log("clicked", this.data);
+    let vm = this;
     this.httpService.doRegister(this.data)
-    .subscribe(result => {
-      console.log("result from signup", result);
-      vm.toastCtrl.presentToast(result.message);
-    });
+      .subscribe(result => {
+        console.log("result from signup", result);
+        vm.toastCtrl.presentToast(result.message);
+      });
 
 
 

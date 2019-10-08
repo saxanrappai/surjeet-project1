@@ -23,9 +23,9 @@ export class ExpandableLayout1 {
 
   displayImage(driverDetails: any) {
     if (driverDetails.length > 0) {
-      return 'http://myshop.guidersmap.com//uploads/profile/' + driverDetails[0].driver_image;
+      return 'http://lakud.com//uploads/profile/' + driverDetails[0].driver_image;
     } else {
-      return 'http://myshop.guidersmap.com//uploads/profile/driver.png';
+      return 'http://lakud.com//uploads/profile/driver.png';
     }
   }
 

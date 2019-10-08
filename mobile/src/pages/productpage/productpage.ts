@@ -45,9 +45,9 @@ export class ProductpagePage {
       if (element.product_image != '') {
         if (element.product_image.includes("[")) {
           let images = JSON.parse(element.product_image);
-          element.displayImage = 'http://myshop.guidersmap.com/uploads/products/' + images[0];
+          element.displayImage = 'http://lakud.com/uploads/products/' + images[0];
         } else {
-          element.displayImage = 'http://myshop.guidersmap.com/uploads/products/' + element.product_image;
+          element.displayImage = 'http://lakud.com/uploads/products/' + element.product_image;
         }
       } else {
         element.displayImage = 'assets/images/background/placeholder.jpg';

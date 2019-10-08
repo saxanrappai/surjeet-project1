@@ -53,10 +53,50 @@ class Api extends CI_Controller {
 /* user registration */               
 public function signup(){
       header("Access-Control-Allow-Origin: *");
-       $data = array(); 
-            $_POST = $_REQUEST;      
+
+            $_POST = $_REQUEST;   
+            
+            $flag=true;
+
+            if(($this->input->post('user_name')!='') && ($this->input->post('user_mobile')!='') && ($this->input->post('user_email')!='') &&($this->input->post('password')!='') ){
+
+
+                $q = $this->db->query("select * from registers where user_email = '".$this->input->post("user_email")."'  limit 1");
+                $user = $q->row();
+                
+                if(empty($user)){
+                    
+                
+                $this->db->insert("registers", array("user_phone"=>$this->input->post("user_mobile"),
+                "user_fullname"=>$this->input->post("user_name"),
+                 "user_email"=>$this->input->post("user_email"),
+                 "user_password"=>md5($this->input->post("password")), 
+                "status" => 1
+                ));
+$user_id =  $this->db->insert_id();  
+$data["responce"] = true; 
+$data["message"] = "User Register Sucessfully..";
+
+                }else{
+                    $data["responce"] = false; 
+                    $data["message"] = "User Already Exist.";
+                    
+
+                }
+
+
+
+            }else{
+                
+                $data["responce"] = false;  
+                $data["error"] = strip_tags($this->form_validation->error_string());
+                
+                
+            }
+
+      /*
                 $this->load->library('form_validation');
-                /* add registers table validation */
+
                 $this->form_validation->set_rules('user_name', 'Full Name', 'trim|required');
                 $this->form_validation->set_rules('user_mobile', 'Mobile Number', 'trim|required|is_unique[registers.user_phone]');
                 $this->form_validation->set_rules('user_email', 'User Email', 'trim|required|is_unique[registers.user_email]');
@@ -83,7 +123,7 @@ public function signup(){
                     $data["message"] = "User Register Sucessfully..";
                     
                   }
-           
+           */
                      echo json_encode($data);
 }     
 
@@ -228,64 +268,63 @@ public function update_userdata(){
                      echo json_encode($data);
 }           
 /* user login json */
-     
-public function login(){
+public function login() {
+$data = array();
+$_POST = $_REQUEST;
+$this -> load -> library('form_validation');
+$this -> form_validation -> set_rules(
+'user_email',
+'Email Id',
+        'trim|required'
+    );
+    $this -> form_validation -> set_rules('password', 'Password', 'trim|required');
+
+    if ($this -> form_validation -> run() == FALSE) {
+        $data["responce"] = false;
+        $data["error"] = strip_tags($this -> form_validation -> error_string());
+
+    } else {
+        //users.user_email='".$this->input->post('user_email')."' or
+        $q = $this -> db -> query(
+            "Select * from registers where(user_email='".$this -> input -> post('user_email')."' ) and user_password='".md5($this -> input -> post('password'))."' Limit 1"
+        );
+
+        if ($q -> num_rows() > 0) {
+            $row = $q -> row();
+            if ($row -> status == "0") {
+                $data["responce"] = false;
+                $data["error"] = 'Your account currently inactive.Please Contact Admin';
+
+            } else {
+                $data["responce"] = true;
+                $data["data"] = array(
+                    "user_id" => $row -> user_id,
+                    "user_fullname" => $row -> user_fullname,
+                    "user_email" => $row -> user_email,
+                    "user_phone" => $row -> user_phone,
+                    "user_image" => $row -> user_image
+                );
+
+            }
+        } else {
+            $data["responce"] = false;
+            $data["error"] = 'Invalide Username or Passwords';
+        }
+
+    }
+    echo json_encode($data);
+
+}
+public function app_login() {
+             header("Access-Control-Allow-Origin: *");
             $data = array(); 
-            $_POST = $_REQUEST;      
-                $this->load->library('form_validation');
-                 $this->form_validation->set_rules('user_email', 'Email Id',  'trim|required');
-                 $this->form_validation->set_rules('password', 'Password', 'trim|required');
-               
-                if ($this->form_validation->run() == FALSE) 
-                {
-                    $data["responce"] = false;  
-                    $data["error"] =  strip_tags($this->form_validation->error_string());
-                    
-                }else
-                {
-                   //users.user_email='".$this->input->post('user_email')."' or
-                 $q = $this->db->query("Select * from registers where(user_email='".$this->input->post('user_email')."' ) and user_password='".md5($this->input->post('password'))."' Limit 1");
-                    
+             $q = $this->db->query("Select * from registers where user_email='".$_GET['user_email']."'  and user_password=md5('".$_GET['password']."') ");//Limit 1");
+                     
                     
                     if ($q->num_rows() > 0)
                     {
                         $row = $q->row(); 
                         if($row->status == "0")
-                        {
-                                $data["responce"] = false;  
-                              $data["error"] = 'Your account currently inactive.Please Contact Admin';
-                            
-                        }
-                       
-                        else
-                        {
-                              $data["responce"] = true;  
-              $data["data"] = array("user_id"=>$row->user_id,"user_fullname"=>$row->user_fullname,
-                "user_email"=>$row->user_email,"user_phone"=>$row->user_phone,"user_image"=>$row->user_image) ;
-                               
-                        }
-                    }
-                    else
-                    {
-                              $data["responce"] = false;  
-                              $data["error"] = 'Invalide Username or Passwords';
-                    }
-                   
-                    
-                }
-           echo json_encode($data);
-            
-        }
-        public function app_login(){
-             header("Access-Control-Allow-Origin: *");
-            $data = array(); 
-             $q = $this->db->query("Select * from users where user_email='".$_GET['user_email']."'  and user_password=md5('".$_GET['password']."') Limit 1");
-                    
-                    
-                    if ($q->num_rows() > 0)
-                    {
-                        $row = $q->row(); 
-                        if($row->user_status == "0")
                         {
                                 $data["response"] = false;  
                               $data["error"] = 'Your account currently inactive.Please Contact Admin';
@@ -303,11 +342,20 @@ public function login(){
                     {
                               $data["response"] = false;  
                               $data["error"] = 'Invalid Username or Password';
-                    }
-                   
+                    } 
           echo json_encode($data);
             
         }
+
+
+
+
+
+
+
+
+
+
           function city()
                    {
                      $q = $this->db->query("SELECT * FROM `city`");

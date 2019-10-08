@@ -120,10 +120,10 @@ export class CategorylistPage {
                   element.displayImage= new Array();
 
                   images.forEach(img => {
-                    element.displayImage.push('http://myshop.guidersmap.com/uploads/products/' + img);
+                    element.displayImage.push('http://lakud.com/uploads/products/' + img);
                   });  
                 } else {
-                  element.displayImage = Array( 'http://myshop.guidersmap.com/uploads/products/' + element.product_image); ;
+                  element.displayImage = Array( 'http://lakud.com/uploads/products/' + element.product_image); ;
                 }
               } else {
                 element.displayImage = 'assets/images/background/placeholder.jpg';

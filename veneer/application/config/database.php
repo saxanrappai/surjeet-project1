@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'nk_veneer',
-	'password' => 't%W30=oWX87l',
-	'database' => 'guidersmap_com_guidersmap_com',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'veneer',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

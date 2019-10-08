@@ -60,7 +60,7 @@ export class ProductDetailsPage {
         for (let index = 0; index < this.images.length; index++) {
           const element = this.images[index];
           if (element != null) {
-            let im = { url: 'http://myshop.guidersmap.com/uploads/products/' + element, type: 'jpg' };
+            let im = { url: 'http://lakud.com/uploads/products/' + element, type: 'jpg' };
             this.imArray.push(im);
           }
           if (index == (this.images.length - 1)) {
@@ -69,11 +69,11 @@ export class ProductDetailsPage {
 
         }
         // this.images.forEach(element => {
-        //   let im = { url: 'http://myshop.guidersmap.com/uploads/products/' + element, type: 'jpg' };
+        //   let im = { url: 'http://lakud.com/uploads/products/' + element, type: 'jpg' };
         //   this.imArray.push(im);
         // });
       } else {
-        let im = { url: 'http://myshop.guidersmap.com/uploads/products/' + this.product.product_image, type: 'jpg' };
+        let im = { url: 'http://lakud.com/uploads/products/' + this.product.product_image, type: 'jpg' };
         this.imArray.push(im);
         this.params.data = this.imArray;
       }

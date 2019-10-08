@@ -49,7 +49,7 @@ export class ImageGalleryLayout1 implements OnChanges, AfterViewInit {
     this.data = changes['data'].currentValue;
     this.items = this.data[0].sub_cat;
     this.title = this.data[0].title;
-    this.display_image = (this.data[0].image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/' + this.data[0].image;
+    this.display_image = (this.data[0].image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/' + this.data[0].image;
     // this.changeDataSet(this.selectedItem);
   }
 

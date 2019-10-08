@@ -30,7 +30,7 @@
               class="listClass  {{item.selected}}">
               <ion-avatar item-start class="imageCats">
                 <img
-                  [src]="(item.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+item.image"
+                  [src]="(item.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+item.image"
                   alt="{{item.title}}" />
               </ion-avatar>
               <h2 item-title>{{item.title}}</h2> 
@@ -78,7 +78,7 @@
               <ion-list *ngIf="productsList">
                 <ion-item  *ngFor="let sub of productsList; let s = index;"> 
                   <ion-avatar item-start>
-                    <img  [src]="(sub.product_image == '') ? 'assets/images/background/placeholder.jpg' : 'http://myshop.guidersmap.com/uploads/category/'+sub.product_image"
+                    <img  [src]="(sub.product_image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+sub.product_image"
                     alt="{{sub.title}}">
                   </ion-avatar>
                   <h2>{{sub.title}}</h2>

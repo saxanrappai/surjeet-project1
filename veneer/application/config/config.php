@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://myshop.guidersmap.com/';
+$config['base_url'] = 'http://localhost/surjeet-project1/veneer/';
 $config['theme_admin'] = "theme/admin";
 $config['new_theme'] = "new_theme";
 

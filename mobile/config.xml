@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.appyogi.woodcart" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.appyogi.woodcart" version="1.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>WoodCart</name>
     <description>WoodCart</description>
     <author email="venkat.gsvs@gmail.com" href="http://triyams.com/">Triyams</author>
@@ -9,7 +9,7 @@
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
-    <allow-navigation href="http://myshop.guidersmap.com/*" />
+    <allow-navigation href="http://lakud.com/*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="ScrollEnabled" value="false" />
