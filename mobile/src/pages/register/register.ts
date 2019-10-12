@@ -64,9 +64,11 @@ export class RegisterPage {
       .subscribe(result => {
         console.log("result from signup", result);
         vm.toastCtrl.presentToast(result.message);
+        if (result.responce == true) {
+          setTimeout(() => {
+            this.navCtrl.push('LoginPage');
+          }, 3000);
+        }
       });
-
-
-
   }
 }

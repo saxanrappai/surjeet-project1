@@ -42,13 +42,15 @@ export class MainProductPage {
         this.params.data = this.productsList.data;
         this.params.events = this.getEventsForTheme();
      //   console.log('cat list:' + JSON.stringify(this.params.data));
+     console.log(">>>>>>>>>> this.params", this.params);
+     
         this.show = true;
       });
     this.initializeApp();
 
   }
 
-  initializeApp() {
+  initializeApp() { 
     this.platform.ready().then(() => {
       console.log('platform ready');
       this.nativeStorage.get('user_id').then((userID) => {
@@ -83,7 +85,7 @@ export class MainProductPage {
 
       });
 
-    });
+    }); 
   }
 
 

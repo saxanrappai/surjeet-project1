@@ -12,21 +12,51 @@ class Api extends CI_Controller {
                 $this->load->helper('sms_helper');
                  $this->load->helper(array('form', 'url'));
                  $this->db->query("SET time_zone='+05:30'");
+                 $this->getallprod=[];
         }
         public function index(){
             echo json_encode(array("api"=>"welcome"));
         }
-        public function get_categories(){
+
+
+
+
+        public function getallproducts(){
              header("Access-Control-Allow-Origin: *");
-            $parent = 0 ;
-            if($this->input->post("parent")){
-                $parent    = $this->input->post("parent");
-            }
-        $categories = $this->get_categories_short($parent,0,$this) ;
-        $data["responce"] = true;
-        $data["data"] = $categories;
-        echo json_encode($data);
+            $parent = 0 ;  
+ 
+        $q = $this->db->query("SELECT c.id as cid, p.product_id as pid,  c.*, p.* FROM products  as p, categories as c where p.`category_id` = c.id order by c.title asc ");
         
+       
+       foreach($q->result() as $row){
+
+
+        array_push($this->getallprod,$row);    
+       }
+
+
+        $data["responce"] = true;
+       $data["data"] =  $this->getallprod;
+
+
+
+
+
+
+ echo json_encode($data);
+        
+    }
+    public function get_categories(){
+         header("Access-Control-Allow-Origin: *");
+        $parent = 0 ;
+        if($this->input->post("parent")){
+            $parent    = $this->input->post("parent");
+        }
+    $categories = $this->get_categories_short($parent,0,$this) ;
+    $data["responce"] = true;
+    $data["data"] = $categories;
+    echo json_encode($data);
+    
     }
      public function get_categories_short($parent,$level,$th){
             $q = $th->db->query("Select a.*, ifnull(Deriv1.Count , 0) as Count, ifnull(Total1.PCount, 0) as PCount FROM `categories` a  LEFT OUTER JOIN (SELECT `parent`, COUNT(*) AS Count FROM `categories` GROUP BY `parent`) Deriv1 ON a.`id` = Deriv1.`parent` 
@@ -36,9 +66,15 @@ class Api extends CI_Controller {
                         $return_array = array();
                         
                         foreach($q->result() as $row){
-                                    if ($row->Count > 0) {
+                                    if ($row->Count > 0) { 
                                         $sub_cat =  $this->get_categories_short($row->id, $level + 1,$th);
-                                        $row->sub_cat = $sub_cat;       
+                                        $this->getallprod[]=$sub_cat;
+                                        $row->sub_cat = $sub_cat;  
+
+ 
+                                    
+
+
                                     } elseif ($row->Count==0) {
                                     
                                     }

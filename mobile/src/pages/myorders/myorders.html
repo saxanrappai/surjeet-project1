@@ -8,7 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="show">
-    <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>
-  </div>
+    <div *ngIf="show; then templateName">
+      <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>
+    </div>
+  
+    <ng-template #templateName>
+        <ion-list>
+            <ion-item>
+              <ion-label>No Orders</ion-label>
+            </ion-item>
+            </ion-list>
+    </ng-template>
+
+
+
+
+
+
 </ion-content>

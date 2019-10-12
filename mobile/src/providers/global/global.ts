@@ -19,6 +19,7 @@ export class GlobalProvider {
 
   public selectedProducts: any = [];
   public category_title = '';
+  public searchPage_title = 'Search';
   public data: any = [];
   public count: number = 0;
   previousStatus;

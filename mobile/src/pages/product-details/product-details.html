@@ -10,17 +10,17 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{product.product_name}}</ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="showSizeChart()" clear>
-        <ion-icon name="information-circle" style="zoom:1.5;" float-right>
-        </ion-icon>
-      </button>
-    </ion-buttons>
+  
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding style='margin-top:5px;'>
-
+  
+    <button ion-button (click)="showSizeChart()" clear class='infoIcon'>
+        <ion-icon name="information-circle" style="zoom:1.5;" float-right>
+        </ion-icon>
+      </button>
+ 
   <full-screen-gallery [data]="params.data" class="imageSliderFSc"></full-screen-gallery>
 
 
@@ -109,38 +109,10 @@
 
 
   <div text-center class="item-accordion">
-
-
-    <!-- <ion-item>
-      <div col-8>
-        <div> {{product.product_name}}</div>
-        <div> {{(product.product_description!='')?product.product_description:'-'}}</div>
-      </div>
-      <button col-4 ion-button default-button (click)="showSizeChart()">sizes</button>
-    </ion-item> -->
-<!-- 
-    <ion-item transparent no-lines *ngIf="show">
-      <div round (click)="onDecrement(product, $event)" style="margin-top:5px;">
-        <ion-icon [name]="iconRemove"></ion-icon>
-      </div>
-      <div round style="margin-top:5px;">
-        {{product.increament}}
-      </div>
-      <div round (click)="onIncrement(product, $event)" style="margin-top:5px;">
-        <ion-icon [name]="iconAdd"></ion-icon>
-      </div>
-      <button ion-button default-button *ngIf="show" (click)="addtoCart()">Add to Cart</button>
-    </ion-item>
--->
-
-
-
-
-
-
+ 
 
     <ion-item padding-top transparent no-lines *ngIf="!show">
-      <div round>
+      <div  >
         No Stock
       </div>
     </ion-item>

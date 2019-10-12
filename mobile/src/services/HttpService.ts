@@ -35,6 +35,10 @@ export class HttpService {
     return this.http.get('http://lakud.com/index.php/api/get_user_data', { params });
   }
 
+  getallproducts(): Observable<any> {
+    return this.http.get('http://lakud.com/index.php/api/getallproducts');
+  }
+
   getCategories(): Observable<any> {
     return this.http.get('http://lakud.com/index.php/api/get_categories');
   }

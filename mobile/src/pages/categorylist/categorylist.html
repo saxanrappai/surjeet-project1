@@ -19,7 +19,7 @@
     <ion-row>
       <ion-col col-12>
 
-        <ion-list>
+        <ion-list full-lines>
           <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"
             (ionCancel)="onCancelSearch()">
           </ion-searchbar>
@@ -27,7 +27,7 @@
           <ng-container *ngFor="let item of animateItems; let i = index;">
 
             <ion-item item-divider [ngClass]="animateClass" (click)="onitemclick('onItemClick', item, $event)"
-              class="listClass  {{item.selected}}">
+              class="    {{item.selected}}">
               <ion-avatar item-start class="imageCats">
                 <img
                   [src]="(item.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+item.image"

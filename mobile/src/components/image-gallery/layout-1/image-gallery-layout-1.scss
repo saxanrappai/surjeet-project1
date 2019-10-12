@@ -3,7 +3,7 @@
 image-gallery-layout-1 {
   ion-card {
     img {
-     height: 180px;
+     height: 100%;
     }
   }
   ion-card-content {
@@ -23,9 +23,19 @@ color:#FFF;
 
 
   .tileImage{
-    border-radius:10px;
-    max-height:150px;
-  }
+    border-radius:5px;
+    max-height:125px;
+  } 
+  .card-content-md {
+    padding: 6px 0px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+.card-header-md {
+  font-size: 1.6rem;
+  color: #222;
+  padding: 0;
+}
 }
 
   .footer{

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.appyogi.woodcart" version="1.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.appyogi.woodcart" version="1.2.3" xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>WoodCart</name>
     <description>WoodCart</description>
     <author email="venkat.gsvs@gmail.com" href="http://triyams.com/">Triyams</author>
@@ -15,10 +16,22 @@
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="24" />
     <preference name="BackupWebStorage" value="none" />
-    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="Fullscreen" value="true" />
+
+
+    <preference name="Orientation" value="portrait" />
+    <preference name="ScrollEnabled" value="false" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+
+
+
+
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
