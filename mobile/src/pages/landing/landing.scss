@@ -52,4 +52,15 @@ img.logoImg {
     text-align:center;
   }
  }
+ [ion-fixed]{
+   height:100vh;
+   .mainRow{
+    height:100vh;
+
+   }
+ }
+ .forgotLink{
+   color:#FFF !important;
+   text-decoration: none !important;
+ }
 }

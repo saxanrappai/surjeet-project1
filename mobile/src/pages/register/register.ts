@@ -13,6 +13,7 @@ import {
   ToastService
 } from '../../services/toast-service';
 
+
 /**
  * Generated class for the RegisterPage page.
  *
@@ -47,10 +48,10 @@ export class RegisterPage {
   }
   private isUsernameValid: boolean = true;
   private isPasswordValid: boolean = true;
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public httpService: HttpService,
-    private toastCtrl: ToastService,
+    private toastCtrl: ToastService
   ) {}
 
   ionViewDidLoad() {
@@ -70,5 +71,6 @@ export class RegisterPage {
           }, 3000);
         }
       });
+      return false;
   }
 }

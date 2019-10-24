@@ -43,6 +43,8 @@ export class PagesSearchPage {
   animateClass: any;
   productsList: any;
   data: any = [];
+  completeData: any = [];
+
 
   show: boolean = false;
   products: Observable < any > ;
@@ -91,11 +93,13 @@ export class PagesSearchPage {
 
         for (let i = 0; i < this.data.length; i++) {
           let that = this;
-          setTimeout(function () {
-            // that.animateItems[i] = that.data[i];
-            that.animateItems.push(that.data[i]);
-          }, 200 * i);
+          // setTimeout(function () {
+          // that.animateItems[i] = that.data[i];
+          that.animateItems.push(that.data[i]);
+          //  }, 200 * i);
         }
+        this.completeData = this.animateItems;
+        console.log("  this.completeData ", this.completeData);
       });
 
   }
@@ -105,53 +109,47 @@ export class PagesSearchPage {
   }
 
   search(search ? : any) {
-    console.log("searching...", search.target.value);
+    console.log("searching...", search.target.value, this.completeData);
     let dataSearch = [];
-    dataSearch.length=0;
+    dataSearch.length = 0;
     if (search.target.value == '') {
       this.animateItems = this.data;
     } else {
 
+      this.animateItems = [];
 
 
 
-
-      /*
-      for (let index = 0; index < this.data.length; index++) {
+      for (let index = 0; index < this.completeData.length; index++) {
         const element = this.data[index];
 
-         if (element.title.toLowerCase().includes(search.target.value.toLowerCase())) {
-          dataSearch.push(element);
-        }
 
+        if (element.title.toLowerCase().startsWith(search.target.value.toLowerCase(), 0)) {
+          console.log("searching...", search.target.value, element.product_name);
+          this.animateItems.push(element);
+        } else if (element.product_name.toLowerCase().includes(search.target.value.toLowerCase(), 0)) {
+          console.log("searching...", search.target.value, element.product_name);
+          this.animateItems.push(element);
 
-        if (index == (this.data.length - 1)) {
-          this.animateItems = dataSearch;
         }
       }
-      */
+
     }
 
-    // this.data.forEach(element => {
-    //   if (element.title.toLowerCase().includes(search.target.value.toLowerCase())) {
-    //     dataSearch.push(element);
-    //   }
-    // });
-    // this.animateItems = dataSearch;
   }
 
   onCancelSearch() {
     this.animateItems = this.data;
   }
 
-  
-  onClickShowProductCart(paramsData){
 
-    console.log("paramsData",paramsData);
-  
+  onClickShowProductCart(paramsData) {
+
+    console.log("paramsData", paramsData);
+
     this.navCtrl.push("ProductDetailsPage", {
       'product': JSON.stringify(paramsData)
-    });  
+    });
   }
 
 }

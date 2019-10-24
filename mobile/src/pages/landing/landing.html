@@ -1,7 +1,8 @@
  
 <!-- Theme Login pages - Login + logo 2 -->
-<ion-content has-header >
-  <ion-grid >
+<ion-content has-header  no-bounce >
+ 
+  <div ion-fixed>
     <ion-row class="mainRow"  align-items-center> 
  
       <ion-col no-padding col-12 col-sm-12 col-md-12 text-center class="logoDiv">
@@ -21,7 +22,11 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="alignCenter forgotLink">Forgot your Password ?</ion-col>
+        <ion-col class="alignCenter forgotLink">
+            <a href="http://lakud.com/forgotpassword.php" onclick="window.open('http://lakud.com/forgotpassword.php', '_system'); return false;" class="forgotLink">  Forgot your Password ?
+            </a>
+
+            </ion-col>
       </ion-row>
       <ion-row>
           <ion-col class="alignCenter">
@@ -30,13 +35,9 @@
 (click)="gotoPage('RegisterPage')" class="signBtn">Join for Free</button>
 
           </ion-col>
-      </ion-row>
-
-
- 
-</ion-col>
-
- 
-    </ion-row>
-  </ion-grid>
+      </ion-row> 
+</ion-col> 
+    </ion-row> 
+    </div>
+    
 </ion-content>

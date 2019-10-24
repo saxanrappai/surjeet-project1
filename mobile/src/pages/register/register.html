@@ -8,7 +8,19 @@
 </ion-header>
 
 <ion-content has-header>
-  <form>
+
+
+ 
+
+
+
+
+
+
+
+
+
+  <form (ngSubmit) ="registerUser()" name="registerForm"  #registerForm="ngForm">
     <ion-grid>
 
 
@@ -35,8 +47,8 @@
             <ion-label position="floating">
               <ion-icon name="person" item-left></ion-icon>
             </ion-label>
-            <ion-input required class="loginInputFD" required type="text" placeholder="Full name" [(ngModel)]="data.username" name="username"
-              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+            <input required class="loginInputFD" required type="text" placeholder="Full name" [(ngModel)]="data.username" name="username"
+              [ngModelOptions]="{standalone: true}" autocomplete="false">
             <ion-label error-field no-margin *ngIf="!data.isUsernameValid">{{data.errorUser}}</ion-label>
           </ion-item>
 
@@ -90,7 +102,7 @@
         <ion-col class="alignCenter">
 
           <input type="submit" ion-button default-button text-capitalize box-shadow 
-            class="loginBtn" value="Join" (click)="registerUser()"/>
+            class="loginBtn" value="Join"  />
         </ion-col>
       </ion-row>
     </ion-grid>

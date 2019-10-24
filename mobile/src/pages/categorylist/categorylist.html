@@ -12,7 +12,7 @@
 <ion-content>
   <!--PAGE APPEARANCE ANIMATIONS - Fade in left-->
   <!-- <appearance-animation-layout-1 [data]="data" [events]="events">
-  </appearance-animation-layout-1> -->
+</appearance-animation-layout-1> -->
 
   <!--Theme Appearance animations - Fade in left-->
   <ion-grid no-padding>
@@ -26,67 +26,91 @@
 
           <ng-container *ngFor="let item of animateItems; let i = index;">
 
-            <ion-item item-divider [ngClass]="animateClass" (click)="onitemclick('onItemClick', item, $event)"
+            <ion-item *ngIf="!showSubCatUI || item.productsList" item-divider [ngClass]="animateClass" (click)="onitemclick('onItemClick', item, $event)"
               class="    {{item.selected}}">
-              <ion-avatar item-start class="imageCats">
+              <ion-avatar item-start class="imageCats" *ngIf="!showSubCatUI">
                 <img
                   [src]="(item.image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+item.image"
                   alt="{{item.title}}" />
               </ion-avatar>
-              <h2 item-title>{{item.title}}</h2> 
-                    <ion-icon icon-small item-right class="icon icon-md " [ngClass]="(item.selected=='active')?'ion-md-arrow-dropdown':'ion-md-arrow-dropright'" role="img"></ion-icon> 
+              <ion-row>
+                <ion-col class='prodTitleEpl' no-padding>
+                    <h2 item-title >{{item.title}}</h2> </ion-col>
+                <ion-col col-4  no-padding  *ngIf="showSubCatUI">
+                    <span class="text-rightSide" role="img">Available Groups ({{item.PCount}})</span>  
+                </ion-col>
+              </ion-row>
+
+
+              <ion-icon icon-small item-right class="icon icon-md "
+                [ngClass]="(item.selected=='active')?'ion-md-arrow-dropdown':'ion-md-arrow-dropright'" role="img"
+                *ngIf="!showSubCatUI"></ion-icon>
+              <div *ngIf="item.productsList">
+                <div class="hosrizScrol">
+                  <div class="imgPr " *ngFor="let products of item.productsList; let s = index;" (click)="onClickShowProductCart(products)">
+                    <div class="imageCats2" *ngIf="showSubCatUI" [ngStyle]="{'background-image': 'url(' + products.displayImage[0] + ')'}" >
+<div class='productDet'>₹ {{products.price}}</div>
+                    <div class='model'>{{products.product_name}} ({{products.stock}})</div>
+                    </div> 
+                  </div>
+                </div>
+<!--
+<div class='itemList' *ngFor="let products of item.productsList; let s = index;">
+<ion-avatar item-start class="imageCats" *ngIf="showSubCatUI">
+<img [src]="products.displayImage[0]"
+alt="Product Name: {{products.product_name}}" />
+</ion-avatar> 
+</div>
+-->
+              </div>
+
+
             </ion-item>
             <div class="subListClass {{item.selected}}">
 
 
 
 
+              <!--
 
-                <div *ngIf="item.productsList">
+<ion-avatar   class="imageCats" (click)="onClickShowProductCart(products)">
+<img [src]="products.displayImage[0]"
+alt="Product ID: {{products.product_id}}" />
+</ion-avatar>
 
-                    <div class='itemList'  *ngFor="let products of item.productsList; let s = index;" > 
+<ion-slides pager>
+<ion-slide class="imgPr" *ngFor="let sub of products.displayImage; let i = index;"[style.background-image]="'url(' + (sub ) + ')'" >
+<h2>Product ID: {{products.product_id}}</h2>
+</ion-slide> 
+
+</ion-slides>
+</div>
 
 
-                      
-              <ion-avatar   class="imageCats" (click)="onClickShowProductCart(products)">
-                  <img [src]="products.displayImage[0]"
-                    alt="Product ID: {{products.product_id}}" />
-                </ion-avatar>
+</div>
 
-                      <!--
-                        <ion-slides pager>
-                            <ion-slide class="imgPr" *ngFor="let sub of products.displayImage; let i = index;"[style.background-image]="'url(' + (sub ) + ')'" >
-                              <h2>Product ID: {{products.product_id}}</h2>
-                             </ion-slide> 
-                          
-                          </ion-slides>
-                        -->
-
-                        </div>
-
-                  
-                    </div>
+-->
 
 
               <!-- 
-              <ion-slides class="sliderProd" pager  *ngIf="productsList">
-              <ion-slide  *ngFor="let sub of productsList.product_image; let s = index;" >
-                <h2>{{sub.title}}</h2>
-              </ion-slide>
-            </ion-slides>
+<ion-slides class="sliderProd" pager  *ngIf="productsList">
+<ion-slide  *ngFor="let sub of productsList.product_image; let s = index;" >
+<h2>{{sub.title}}</h2>
+</ion-slide>
+</ion-slides>
 
-              <ion-list *ngIf="productsList">
-                <ion-item  *ngFor="let sub of productsList; let s = index;"> 
-                  <ion-avatar item-start>
-                    <img  [src]="(sub.product_image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+sub.product_image"
-                    alt="{{sub.title}}">
-                  </ion-avatar>
-                  <h2>{{sub.title}}</h2>
-                  <p>{{sub.product_title}} </p>
-                  <button ion-button clear item-end (click)="onSubItemCLick(   sub.product_id )" >View</button>
-                </ion-item>
-              </ion-list>
-            -->
+<ion-list *ngIf="productsList">
+<ion-item  *ngFor="let sub of productsList; let s = index;"> 
+<ion-avatar item-start>
+<img  [src]="(sub.product_image == '') ? 'assets/images/background/placeholder.jpg' : 'http://lakud.com/uploads/category/'+sub.product_image"
+alt="{{sub.title}}">
+</ion-avatar>
+<h2>{{sub.title}}</h2>
+<p>{{sub.product_title}} </p>
+<button ion-button clear item-end (click)="onSubItemCLick(   sub.product_id )" >View</button>
+</ion-item>
+</ion-list>
+-->
             </div>
           </ng-container>
         </ion-list>
