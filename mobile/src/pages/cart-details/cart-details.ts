@@ -1,12 +1,35 @@
-import { ToastService } from './../../services/toast-service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { HttpService } from './../../services/HttpService';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MainProductPage } from '../main-product/main-product';
-import { Observable } from 'rxjs';
-import { GlobalProvider } from '../../providers/global/global';
-import { Storage } from '@ionic/storage';
+import {
+  ToastService
+} from './../../services/toast-service';
+import {
+  HttpClient,
+  HttpHeaders
+} from '@angular/common/http';
+import {
+  HttpService
+} from './../../services/HttpService';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  Navbar
+} from 'ionic-angular';
+import {
+  MainProductPage
+} from '../main-product/main-product';
+import {
+  Observable
+} from 'rxjs';
+import {
+  GlobalProvider
+} from '../../providers/global/global';
+import {
+  Storage
+} from '@ionic/storage';
 
 /**
  * Generated class for the CartDetailsPage page.
@@ -21,9 +44,25 @@ import { Storage } from '@ionic/storage';
   providers: [HttpService, ToastService]
 })
 export class CartDetailsPage {
-  products: Observable<any>;
+  products: Observable < any > ;
   cartJsoon = {};
   data: any = [];
+
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  @ViewChild(Navbar) navBar: Navbar;
+  ionViewDidLoad() {
+    this.navBar.backButtonClick = (e: UIEvent) => {
+      console.log('backButtonClick ');
+      this.navCtrl.setRoot('MainProductPage');
+      this.navCtrl.popToRoot();
+    }
+  }
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private toastCtrl: ToastService,
     private storage: Storage,
@@ -158,11 +197,12 @@ export class CartDetailsPage {
       }
     }
   }
-  returntoShop(){
-    
-    this.navCtrl.push("MainProductPage");
+  returntoShop() {
+
+    this.navCtrl.setRoot('MainProductPage');
+    this.navCtrl.popToRoot();
   }
-  editFromCart(product){
+  editFromCart(product) {
     this.navCtrl.push("ProductDetailsPage", {
       'product': JSON.stringify(product)
     });

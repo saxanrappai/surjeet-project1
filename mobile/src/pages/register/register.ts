@@ -48,7 +48,7 @@ export class RegisterPage {
   }
   private isUsernameValid: boolean = true;
   private isPasswordValid: boolean = true;
- 
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public httpService: HttpService,
     private toastCtrl: ToastService
@@ -61,16 +61,36 @@ export class RegisterPage {
   registerUser() {
     console.log("clicked", this.data);
     let vm = this;
-    this.httpService.doRegister(this.data)
-      .subscribe(result => {
-        console.log("result from signup", result);
-        vm.toastCtrl.presentToast(result.message);
-        if (result.responce == true) {
-          setTimeout(() => {
-            this.navCtrl.push('LoginPage');
-          }, 3000);
-        }
-      });
-      return false;
+
+    if (this.data.username == '') {
+      this.data.isUsernameValid = false;
+    } else if (this.data.mobile == '') {
+      this.data.isUsernameValid = true;
+      this.data.isMobileValid = false;
+    } else if (this.data.email == '') {
+      this.data.isMobileValid = true;
+      this.data.isEmailValid = false;
+    } else if (this.data.password == '') {
+      this.data.isEmailValid = true;
+      this.data.isPasswordValid = false;
+    } else {
+
+      this.data.isPasswordValid = true;
+      this.httpService.doRegister(this.data)
+        .subscribe(result => {
+          console.log("result from signup", result);
+          vm.toastCtrl.presentToast(result.message);
+          if (result.responce == true) {
+            setTimeout(() => {
+              this.navCtrl.push('LoginPage');
+            }, 3000);
+          }
+        });
+
+    }
+
+
+
+    return false;
   }
 }

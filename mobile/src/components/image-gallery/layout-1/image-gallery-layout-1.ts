@@ -10,6 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ImageGalleryLayout1 implements OnChanges, AfterViewInit {
   @Input() data: any;
   @Input() events: any;
+  segment =0;
 
   public selectedItem = 0;
   public selectedItemPage = "0";
@@ -29,7 +30,14 @@ export class ImageGalleryLayout1 implements OnChanges, AfterViewInit {
     });
   }
 
-  changeDataSet(tab) {
+  changeDataSet(event) {
+
+
+    console.log(" event", event);
+    
+var tab = event._value;
+
+    this.segment =tab;
     if (this.data && this.data[tab]) {
       this.selectedItem = tab;
       this.selectedItemPage = tab;

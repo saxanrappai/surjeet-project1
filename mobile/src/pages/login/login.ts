@@ -1,14 +1,39 @@
-import { FCM } from '@ionic-native/fcm';
-import { HttpService } from './../../services/HttpService';
-import { MenuService } from './../../services/menu-service';
-import { LoginService } from './../../services/login-service';
-import { IService } from './../../services/IService';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { ToastService } from '../../services/toast-service';
-import { MainProductPage } from '../main-product/main-product';
-import { Storage } from '@ionic/storage';
-import { Location } from '@angular/common';
+import {
+  FCM
+} from '@ionic-native/fcm';
+import {
+  HttpService
+} from './../../services/HttpService';
+import {
+  MenuService
+} from './../../services/menu-service';
+import {
+  LoginService
+} from './../../services/login-service';
+import {
+  IService
+} from './../../services/IService';
+import {
+  Component
+} from '@angular/core';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  Platform
+} from 'ionic-angular';
+import {
+  ToastService
+} from '../../services/toast-service';
+import {
+  MainProductPage
+} from '../main-product/main-product';
+import {
+  Storage
+} from '@ionic/storage';
+import {
+  Location
+} from '@angular/common';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,7 +63,7 @@ export class LoginPage {
     public location: Location) {
     this.params.events = this.getEventsForTheme();
 
-   
+
   }
 
   initializeApp() {
@@ -86,12 +111,16 @@ export class LoginPage {
           .subscribe(data => {
             that.toastCtrl.dismissLoader();
             if (data.response) {
-             // if (data.data.user_login_type == 2) {
-                that.nativeStorage.set('loggedin', true);
-                that.nativeStorage.set('user_id', data.data.user_id);
-                that.initializeApp();
-                that.navCtrl.setRoot('MainProductPage');
-                /*
+              console.log(" user details ", data);
+
+              // if (data.data.user_login_type == 2) {
+              that.nativeStorage.set('loggedin', true);
+              that.nativeStorage.set('user_id', data.data.user_id);
+              that.nativeStorage.set('user_fullname', data.data.user_fullname); 
+              localStorage.user_fullname =  data.data.user_fullname;
+              that.initializeApp();
+              that.navCtrl.setRoot('MainProductPage');
+              /*
               } else {
                 that.toastCtrl.presentToast('You dont have an access to login, Please contact admin.');
               }
@@ -101,8 +130,8 @@ export class LoginPage {
               that.toastCtrl.presentToast(data.error);
             }
 
-          },function(){
-            that.toastCtrl.presentToast("Error occured, Please try again!!"); 
+          }, function () {
+            that.toastCtrl.presentToast("Error occured, Please try again!!");
             that.toastCtrl.dismissLoader();
           });
       },
@@ -133,7 +162,7 @@ export class LoginPage {
     };
   };
 
-  
+
   goBack() {
     console.log(" clicked");
     this.location.back();

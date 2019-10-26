@@ -16,6 +16,7 @@ import {
   NavController,
   NavParams,
   Platform,
+  Navbar,
   Content
 } from 'ionic-angular';
 import {
@@ -39,6 +40,20 @@ import {
 })
 export class PagesSearchPage {
 
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  @ViewChild(Navbar) navBar: Navbar;
+  ionViewDidLoad() {
+    this.navBar.backButtonClick = (e:UIEvent)=>{ 
+      console.log('backButtonClick '); 
+      this.navCtrl.setRoot('MainProductPage');
+ this.navCtrl.popToRoot();
+    }
+  }
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
   animateItems: any = [];
   animateClass: any;
   productsList: any;
@@ -103,10 +118,7 @@ export class PagesSearchPage {
       });
 
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PagesSearchPage');
-  }
+ 
 
   search(search ? : any) {
     console.log("searching...", search.target.value, this.completeData);

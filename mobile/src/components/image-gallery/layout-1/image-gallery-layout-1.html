@@ -1,16 +1,36 @@
 <!--Theme Gallery for Full gallery 1-->
 <ion-grid *ngIf="data != null">
+
+
+
+
+    <ion-segment (ionChange)="changeDataSet($event)" [(ngModel)]="selectedItemPage">
+        <ion-segment-button value="0">
+          <ion-label class='lbld'>Veneer</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+          <ion-label class="lbld">Laminate</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+
+
+
+
+
+
+<!-- 
   <div segment-block transparent>
     <ion-segment has-header [(ngModel)]="selectedItemPage">
-      <ion-segment-button text-capitalize value="0" (ionSelect)="changeDataSet(0)">
+      <ion-segment-button ng-class="selectedItem==0?'segment-activated':''" text-capitalize value="0" (ionSelect)="changeDataSet(0)">
         Veneer
       </ion-segment-button>
-      <ion-segment-button text-capitalize value="1" (ionSelect)=" changeDataSet(1)">
+      <ion-segment-button text-capitalize value="1" (ionSelect)=" changeDataSet(1)" class="selectedItem==1?'segment-activated':''" >
         Laminate
       </ion-segment-button>
     </ion-segment>
   </div>
-
+-->
   <!-- <ion-row no-padding> [style.backgroundImage]="'url(' + display_image + ')'" -->
   <ion-row no-padding>
     <div *ngIf="data[selectedItem].sub_cat">

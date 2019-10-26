@@ -10,109 +10,71 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{product.product_name}}</ion-title>
-  
   </ion-navbar>
 </ion-header>
-
 <ion-content no-padding style='margin-top:5px;'>
-  
-    <button ion-button (click)="showSizeChart()" clear class='infoIcon'>
-        <ion-icon name="information-circle" style="zoom:1.5;" float-right>
-        </ion-icon>
-      </button>
- 
+  <button ion-button (click)="showSizeChart()" clear class='infoIcon'>
+    <ion-icon name="information-circle" style="zoom:1.5;" float-right>
+    </ion-icon>
+  </button>
   <full-screen-gallery [data]="params.data" class="imageSliderFSc"></full-screen-gallery>
-
-
-
-  <ion-list  *ngIf="show">
+  <ion-list *ngIf="show">
     <ion-list-header class="prdDetail">
       {{product.title}}
     </ion-list-header>
-
     <ion-item> {{(product.product_description!='')?product.product_description:'-'}}</ion-item>
-
     <ion-item class="otherDescr">
+      <ion-row>
+        <ion-col col-4 class="titleDescr">Category</ion-col>
+        <ion-col class="titleDetl">{{product.category_id}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="titleDescr">Size</ion-col>
+        <ion-col class="titleDetl">{{product.size}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="titleDescr"> {{product.unit}}</ion-col>
+        <ion-col class="titleDetl">{{product.unit_value}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="titleDescr"> Qty</ion-col>
+        <ion-col col-4 class="titleDescr"> {{product.increament}} onb </ion-col>
+        <ion-col col-2 class="titleDescr">
+          <button ion-button icon-only class="cartChange" (click)="onIncrement(product, $event)">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-2 class="titleDescr">
+          <button ion-button icon-only class="cartChange" (click)="onDecrement(product, $event)">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-6 style="text-align: right;" *ngIf="this.launchValue>0">
+          <button ion-button class="deletebutton">DELETE</button>
+        </ion-col>
+        <ion-col *ngIf="this.launchValue>0?'col-6':'col-12'"  [ngStyle]="{'text-align':this.launchValue>0 ? 'left' : 'center' }">
+
+          <button ion-button class="updatebutton" *ngIf="show" (click)="addtoCart()">UPDATE</button>
+
+        </ion-col>
 
 
-        <ion-row>
-            <ion-col col-4 class="titleDescr">Category</ion-col>
-            <ion-col class="titleDetl">{{product.category_id}}</ion-col>
-          </ion-row>
-
-          <ion-row>
-              <ion-col col-4 class="titleDescr">Size</ion-col>
-              <ion-col class="titleDetl">{{product.size}}</ion-col>
-            </ion-row>
-          
+      </ion-row>
 
 
-            <ion-row>
-                <ion-col col-4 class="titleDescr"> {{product.unit}}</ion-col>
-                <ion-col class="titleDetl">{{product.unit_value}}</ion-col>
-              </ion-row>
-            
-  
-              <ion-row>
-                  <ion-col col-4 class="titleDescr"> Qty</ion-col>
-                  <ion-col col-4 class="titleDescr">   {{product.increament}} onb </ion-col>
-                  <ion-col col-2 class="titleDescr"> 
-                    
-
-                      <button ion-button icon-only class="cartChange" (click)="onIncrement(product, $event)" >
-                          <ion-icon name="add"></ion-icon> 
-                        </button>
-
-                  </ion-col> 
-                  <ion-col col-2 class="titleDescr"> 
-                    
-
-
-                      <button ion-button icon-only class="cartChange"  (click)="onDecrement(product, $event)">
-                          <ion-icon name="remove"></ion-icon> 
-                        </button>
-
-                  </ion-col> 
-                </ion-row>
-              
-    
-  
-
-
-
-
-
-
-    </ion-item> 
-    <ion-item> 
-
-<ion-row>
-
-  <ion-col col-6 style="text-align: right;">
-
-      <button ion-button class="deletebutton">DELETE</button>
-
-
-  </ion-col>
-  <ion-col col-6 style="text-align:left;">
-
-      <button ion-button class="updatebutton"  *ngIf="show" (click)="addtoCart()">UPDATE</button>
-    
-    </ion-col>
-
-
-</ion-row>
-
-
-    </ion-item> 
+    </ion-item>
   </ion-list>
 
 
   <div text-center class="item-accordion">
- 
+
 
     <ion-item padding-top transparent no-lines *ngIf="!show">
-      <div  >
+      <div>
         No Stock
       </div>
     </ion-item>

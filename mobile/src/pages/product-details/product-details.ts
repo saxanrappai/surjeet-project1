@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ModalController, Platform, Alert } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, ModalController,
+  Navbar, Platform, Alert } from 'ionic-angular';
 import { GlobalProvider } from '../../providers/global/global';
 import { GalleryModal } from 'ionic-gallery-modal';
 import { ToastService } from '../../services/toast-service';
@@ -18,6 +19,21 @@ import { ToastService } from '../../services/toast-service';
 })
 export class ProductDetailsPage {
 
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  @ViewChild(Navbar) navBar: Navbar;
+  ionViewDidLoad() {
+    this.navBar.backButtonClick = (e:UIEvent)=>{ 
+      console.log('backButtonClick ');
+      this.navCtrl.setRoot('MainProductPage');
+ this.navCtrl.popToRoot();
+
+    }
+  }
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
   params: any = {};
   product: any;
   iconAdd = 'ios-add-outline';
@@ -31,14 +47,15 @@ export class ProductDetailsPage {
   imArray: any = [];
   modal: any;
   alert: Alert;
-
+launchValue = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public global: GlobalProvider,
     private modalCtrl: ModalController,
     private toastCtrl: ToastService,
     public platform: Platform,
     private alertCtrl: AlertController) {
     this.product = JSON.parse(this.navParams.get('product'));
-    console.log(this.product);
+    console.log("product",this.product);
+    this.launchValue = this.product.increament;
     let array = JSON.parse("[" + this.product.unit_value + "]");
     let arraySizes = this.product.size.split(",");
     let arrayUnits = this.product.unit_value.split(",");

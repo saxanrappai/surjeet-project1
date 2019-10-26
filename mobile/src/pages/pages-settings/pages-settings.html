@@ -13,9 +13,9 @@
   <ion-list class="profileDetails">
     <ion-item>
       <ion-avatar item-start>
-        <img src="../../assets/images/background/green-bg.jpg" class="avatar">
+        <img src="../../assets/images/noimage.png" class="avatar" id="profileImage" (click)="getProfilePhoto()">
       </ion-avatar>
-      <h2>Profile Name</h2>
+      <h2>{{profileName}}</h2>
      </ion-item>
   </ion-list>
 

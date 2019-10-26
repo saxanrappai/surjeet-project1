@@ -28,6 +28,17 @@ export class CommonFooterComponent {
 
   onClickNavigation(url){
     console.log("url",url);
+
+
+if(url =='MainProductPage'){
+
+  this.navCtrl.setRoot('MainProductPage');
+  this.navCtrl.popToRoot();
+}else{
     this.navCtrl.push(url);
+
+}
+
+
   }
 }

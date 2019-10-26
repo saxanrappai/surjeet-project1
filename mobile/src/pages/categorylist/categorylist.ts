@@ -7,7 +7,7 @@ import {
 import {
   ListViewAppearanceAnimationService
 } from './../../services/list-view-appearance-animation-service';
-import {
+ import {
   Component,
   ViewChild
 } from '@angular/core';
@@ -16,6 +16,7 @@ import {
   NavController,
   NavParams,
   Platform,
+  Navbar,
   Content
 } from 'ionic-angular';
 import {
@@ -24,7 +25,7 @@ import {
 import {
   Observable
 } from 'rxjs';
-import { Slides } from 'ionic-angular';
+import { Slides  } from 'ionic-angular';
 
 /**
  * Generated class for the CategorylistPage page.
@@ -49,15 +50,36 @@ export class CategorylistPage {
   showSubCatUI: boolean = false;
   
   @ViewChild(Slides) slides: Slides;
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  @ViewChild(Navbar) navBar: Navbar;
+  ionViewDidLoad() {
+    this.navBar.backButtonClick = (e:UIEvent)=>{ 
+      console.log('backButtonClick ');
+      this.navCtrl.setRoot('MainProductPage');
+ this.navCtrl.popToRoot();
+
+    }
+  }
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
+  /* ------------------------------------------ */
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastService,
     public httpService: HttpService, private platform: Platform,
     public global: GlobalProvider) {
     console.log('enter');
+
+
+
+ 
+
+
     //this.global.count++;
     this.data = this.navParams.get('data');
     this.global.category_title = this.navParams.get('title');
-    console.log('cat data:', this.data);
+    //console.log('cat data:', this.data);
     // let events = this.getEventsForTheme();
     this.animateItems = [];
     for (let i = 0; i < this.data.length; i++) {
@@ -68,10 +90,10 @@ export class CategorylistPage {
       that.animateItems[i] = that.data[i];
 
       if (that.data[i].sub_cat == undefined) {
-        console.log(">>>>>>>>>>>>> work here >>>>");
+       // console.log(">>>>>>>>>>>>> work here >>>>");
         this.showSubCatUI = true;
         setTimeout((i, that) => {
-          console.log(" changes called");
+         // console.log(" changes called");
           let products = this.httpService.getproducts(that.data[i].id);
           products
             .subscribe(data => {
@@ -125,6 +147,8 @@ export class CategorylistPage {
 
   }
   
+
+
   slideChanged() {
     let currentIndex = this.slides.isEnd();
     console.log('Current index is', currentIndex);

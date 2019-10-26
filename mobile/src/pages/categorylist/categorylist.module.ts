@@ -5,7 +5,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { CategorylistPage } from './categorylist';
 import { ListViewAppearanceAnimationService } from '../../services/list-view-appearance-animation-service';
 import { ToastService } from '../../services/toast-service';
-import { ComponentsModule } from '../../components/components.module';
+import { ComponentsModule } from '../../components/components.module';  
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { ComponentsModule } from '../../components/components.module';
   ],
   imports: [
     IonicPageModule.forChild(CategorylistPage),
-    ComponentsModule
+    ComponentsModule,  
   ],
   exports: [
     CategorylistPage

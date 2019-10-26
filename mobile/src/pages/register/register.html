@@ -47,8 +47,8 @@
             <ion-label position="floating">
               <ion-icon name="person" item-left></ion-icon>
             </ion-label>
-            <input required class="loginInputFD" required type="text" placeholder="Full name" [(ngModel)]="data.username" name="username"
-              [ngModelOptions]="{standalone: true}" autocomplete="false">
+            <ion-input required class="loginInputFD" required type="text" placeholder="Full name" [(ngModel)]="data.username" name="username"
+              [ngModelOptions]="{standalone: true}"  ></ion-input>
             <ion-label error-field no-margin *ngIf="!data.isUsernameValid">{{data.errorUser}}</ion-label>
           </ion-item>
 
@@ -61,7 +61,7 @@
               <ion-icon name="phone-portrait" item-left></ion-icon>
             </ion-label>
             <ion-input required class="loginInputFD" name="mobile" required type="number" placeholder="Mobile" [(ngModel)]="data.mobile"
-              [ngModelOptions]="{standalone: true}" autocomplete="false"></ion-input>
+              [ngModelOptions]="{standalone: true}"  ></ion-input>
             <ion-label error-field no-margin *ngIf="!data.isMobileValid">{{data.errorMobile}}</ion-label>
           </ion-item>
 

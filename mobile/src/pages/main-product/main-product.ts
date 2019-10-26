@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 import { ToastService } from '../../services/toast-service';
 import { Storage } from '@ionic/storage';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { MenuController } from 'ionic-angular';
+import { log } from 'util';
 
 /**
  * Generated class for the MainProductPage page.
@@ -25,12 +27,12 @@ export class MainProductPage {
   params: any = {};
   productsList: GetCategories;
   show: boolean = false;
-  products: Observable<any>;
-
+  products: Observable<any>; 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private platform: Platform,
     private nativeStorage: Storage,
     private firebase: FCM,
+    public menuCtrl: MenuController,
     private localNotifications: LocalNotifications,
     private toastCtrl: ToastService, private httpService: HttpService) {
     //this.toastCtrl.showLoader();
@@ -87,7 +89,13 @@ export class MainProductPage {
 
     }); 
   }
-
+  ionViewDidLoad(): void {
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+  console.log("loaded == ");
+  
+  this.menuCtrl.enable(true);
+}
 
   getEventsForTheme = (): any => {
     var that = this;

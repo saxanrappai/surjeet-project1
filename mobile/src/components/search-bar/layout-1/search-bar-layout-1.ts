@@ -7,6 +7,7 @@ import { IonicPage } from 'ionic-angular';
   templateUrl: 'search-bar.html'
 })
 export class SearchBarLayout1 {
+  
   @Input() data: any;
   @Input() events: any;
 
