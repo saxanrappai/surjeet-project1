@@ -3,12 +3,18 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AppSettings } from './app-settings';
+import {
+  Storage
+} from '@ionic/storage';
 
 @Injectable()
 export class MenuService implements IService {
 
-  constructor() { }
+  constructor(
+    private nativeStorage: Storage
+    ) { }
 
+    profileName = "Profile name";
   getId = (): string => 'menu';
 
   getTitle = (): string => 'UIAppTemplate';
@@ -30,9 +36,18 @@ export class MenuService implements IService {
   };
 
   getDataForTheme = () => {
+
+
+
+    this.nativeStorage.get('user_fullname').then((name) => {
+
+      this.profileName = name; 
+    });
+
+ 
     return {
       "image": "assets/images/avatar/10.jpg",
-      "title": "Profile name"
+      "title":  this.profileName
     };
   };
 

@@ -15,7 +15,7 @@
                 <img [src]="group.displayImage">
               </ion-thumbnail>
               <h2>{{group.product_name}}</h2>
-              <p>{{group.unit_value_total}} QTY</p>
+              <p *ngIf="group.unit_value_total">{{group.unit_value_total}} QTY</p>
               <button ion-button clear item-end><ion-icon name="cart" class="cartIcon"  ></ion-icon></button>
             </ion-item>
           </ion-list>

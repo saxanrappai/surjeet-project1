@@ -25,6 +25,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   selectedProducts: any = [];
   rootPage = "";
+  profileimage = "assets/images/noimage.png";
   pages: any;
   params: any;
   leftMenuTitle: string;
@@ -50,9 +51,25 @@ export class MyApp {
 
     this.menuService.load(null).subscribe(snapshot => {
       this.params = snapshot;
+
+
     });
   }
 
+
+  setProfileimage(){
+    
+   if(localStorage.profilePic == undefined){
+    this.profileimage = "assets/images/noimage.png";
+    var image: any = document.getElementById('profileImage');
+    image.src = this.profileimage ;
+      }
+    else{
+      var image: any = document.getElementById('profileImage');
+      image.src = localStorage.profilePic ;
+    }
+
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       console.log('platform ready');
@@ -93,7 +110,7 @@ export class MyApp {
       this.events.subscribe('network:online', () => {
         // alert('network:online ==> ' + this.network.type);
       });
-    });
+    }).then(  this.setProfileimage);
   }
 
   presentProfileModal() {

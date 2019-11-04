@@ -44,19 +44,70 @@ export class PagesSettingsPage {
   @ViewChild(Navbar) navBar: Navbar;
   ionViewDidLoad() {
     this.navBar.backButtonClick = (e: UIEvent) => {
-      console.log('backButtonClick ');
-      /*
-     this.navCtrl.pop();
-     this.navCtrl.push('MainProductPage');
-     */
+      console.log('backButtonClick '); 
       this.navCtrl.setRoot('MainProductPage');
       this.navCtrl.popToRoot();
     }
+    
+   if(localStorage.profilePic == undefined){
+    this.profileimage = "assets/images/noimage.png";
+    var image: any = document.getElementById('profileImage');
+    image.src = this.profileimage ;
+      }
+    else{
+      var image: any = document.getElementById('profileImage');
+      image.src = localStorage.profilePic ;
+    }
   }
+
+
+
+
+
+
+
+    moveFile(file){
+ 
+    var deferred = $q.defer();
+
+    window.resolveLocalFileSystemURL(file,
+        function resolveOnSuccess(entry){
+
+            var dateTime = moment.utc(new Date).format('YYYYMMDD_HHmmss');
+            var newFileName = dateTime + ".jpg";
+            var newDirectory = "photos";
+
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
+
+                    //The folder is created if doesn't exist
+                    fileSys.root.getDirectory( newDirectory,
+                        {create:true, exclusive: false},
+                        function(directory) {
+
+                            entry.moveTo(directory, newFileName, function (entry) {
+                                //Now we can use "entry.toURL()" for the img src
+                                console.log(entry.toURL());
+                                resolve(entry);
+
+                            }, resOnError);
+                        },
+                        resOnError);
+                },
+                resOnError);
+        }, resOnError);
+
+    return deferred.promise;
+}
+
+function resOnError(error) {
+    console.log('Awwww shnap!: ' + error.code);
+}
+
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   profileName;
+  profileimage;
   constructor(public navCtrl: NavController,
     private nativeStorage: Storage,
     private camera: Camera,
@@ -66,6 +117,9 @@ export class PagesSettingsPage {
 
       this.profileName = name;
     });
+
+
+
   }
 
 
@@ -128,9 +182,10 @@ export class PagesSettingsPage {
       // If it's base64 (DATA_URL):
       let base64Image = "data:image/jpeg;base64," + imageData;
       console.log("base64Image", base64Image);
-      localStorage.profilePic = imageData;
+      localStorage.profilePic = imageData; 
+      
       var image: any = document.getElementById('profileImage');
-      image.src = imageData;
+      image.src = localStorage.profilePic ;
 
 
 
@@ -139,5 +194,5 @@ export class PagesSettingsPage {
       console.log("error", err);
 
     });
-  }
+  } 
 }
