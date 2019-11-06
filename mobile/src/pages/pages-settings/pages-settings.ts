@@ -43,6 +43,7 @@ export class PagesSettingsPage {
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   @ViewChild(Navbar) navBar: Navbar;
+  @ViewChild(Nav) nav: Nav;
   ionViewDidLoad() {
     this.navBar.backButtonClick = (e: UIEvent) => {
       console.log('backButtonClick '); 
@@ -64,46 +65,7 @@ export class PagesSettingsPage {
       
     }
     */
-  } 
-/*
-    moveFile(file){
- 
-    var deferred = $q.defer();
-
-    window.resolveLocalFileSystemURL(file,
-        function resolveOnSuccess(entry){
-
-            var dateTime = moment.utc(new Date).format('YYYYMMDD_HHmmss');
-            var newFileName = dateTime + ".jpg";
-            var newDirectory = "photos";
-
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
-
-                    //The folder is created if doesn't exist
-                    fileSys.root.getDirectory( newDirectory,
-                        {create:true, exclusive: false},
-                        function(directory) {
-
-                            entry.moveTo(directory, newFileName, function (entry) {
-                                //Now we can use "entry.toURL()" for the img src
-                                console.log(entry.toURL());
-                                resolve(entry);
-
-                            }, resOnError);
-                        },
-                        resOnError);
-                },
-                resOnError);
-        }, resOnError);
-
-    return deferred.promise;
-}
-
-function resOnError(error) {
-    console.log('Awwww shnap!: ' + error.code);
-}
-*/
-
+  }  
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   /* ------------------------------------------ */
@@ -124,35 +86,48 @@ function resOnError(error) {
  
   data = [{
       title: "My Profile",
-      icon: "person"
+      icon: "person",
+      url:""
     },
     {
       title: "Edit Profile",
-      icon: "create"
+      icon: "create",
+      url:""
+    },
+    {
+      title: "My orders",
+      icon: "ios-list-box-outline",
+      url:"MyordersPage"
     },
     {
       title: "Notification",
-      icon: "notifications"
+      icon: "notifications",
+      url:""
     },
     {
       title: "Change Password",
-      icon: "lock"
+      icon: "lock",
+      url:""
     },
     {
       title: "Feedback",
-      icon: "chatbubbles"
+      icon: "chatbubbles",
+      url:""
     },
     {
       title: "Frequently Asked Questions",
-      icon: "help-circle"
+      icon: "help-circle",
+      url:""
     },
     {
       title: "Terms and Conditions",
-      icon: "document"
+      icon: "document",
+      url:""
     },
     {
       title: "Privacy Policy",
-      icon: "briefcase"
+      icon: "briefcase",
+      url:""
     },
 
   ];
@@ -173,6 +148,16 @@ function resOnError(error) {
     allowEdit: true,
   }
 
+
+  pageNavigate(i){
+    if(this.data[i].url != ''){
+  //this.navCtrl.setRoot(this.data[i].url);
+  //this.navCtrl.popToRoot();
+   this.navCtrl.push(this.data[i].url);
+
+    }
+
+  }
  
   getProfilePhoto() {
     this.camera.getPicture(this.options).then((imageData) => {

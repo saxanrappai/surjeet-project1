@@ -2,6 +2,7 @@ import { ExpandableLayout1Module } from './../../components/list-view/expandable
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MyordersPage } from './myorders';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { MyordersPage } from './myorders';
   ],
   imports: [
     IonicPageModule.forChild(MyordersPage),
-    ExpandableLayout1Module
+    ExpandableLayout1Module,
+    ComponentsModule
   ],
 })
 export class MyordersPageModule { }

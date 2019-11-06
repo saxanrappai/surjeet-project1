@@ -68,7 +68,7 @@ export class MainProductPage {
   initializeApp() {
     this.platform.ready().then(() => {
       var that = this;
-      this.toastCtrl.showLoader();
+    //  this.toastCtrl.showLoader();
       this.products = this.httpService.getCategories();
       this.products
         .subscribe(data => {
@@ -78,7 +78,7 @@ export class MainProductPage {
           //   console.log('cat list:' + JSON.stringify(this.params.data));
           console.log(">>>>>>>>>> this.params", that.params); 
           that.show = true;
-          that.toastCtrl.dismissLoader();
+   //     that.toastCtrl.dismissLoader();
         });
 
       console.log('platform ready');

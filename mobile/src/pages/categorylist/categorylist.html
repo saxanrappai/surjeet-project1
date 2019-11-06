@@ -9,7 +9,7 @@
 </ion-header>
 <!--Content-->
 
-<ion-content backbutton>
+<ion-content >
   <!--PAGE APPEARANCE ANIMATIONS - Fade in left-->
   <!-- <appearance-animation-layout-1 [data]="data" [events]="events">
 </appearance-animation-layout-1> -->
@@ -50,7 +50,7 @@
                   <div class="imgPr " *ngFor="let products of item.productsList; let s = index;" (click)="onClickShowProductCart(products)">
                     <div class="imageCats2" *ngIf="showSubCatUI" [ngStyle]="{'background-image': 'url(' + products.displayImage[0] + ')'}" >
 <div class='productDet'>₹ {{products.price}}</div>
-                    <div class='model'>{{products.product_name}} ({{products.stock}})</div>
+                    <div class='model'>{{products.product_name}} ({{products.unit_value}})</div>
                     </div> 
                   </div>
                 </div>

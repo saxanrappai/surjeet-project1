@@ -1,9 +1,9 @@
 <!---Settings Main Header-->
-<ion-split-pane when="md">
   <!-- Menu Main Top -->
-  <ion-menu menu [content]="content" *ngIf="params != null">
-    <!-- Menu Main List -->
-    <ion-content transparent [ngInit]="getProfileData()">
+  <!--
+<ion-split-pane when="md">
+  <ion-menu menu [content]="content" *ngIf="params != null" [swipeEnabled]="false">
+     <ion-content transparent [ngInit]="getProfileData()">
       <ion-item text-center padding transparent no-lines>
         <ion-avatar>
           <img src="assets/images/noimage.png" id="profileImage" class="avatar" />
@@ -21,6 +21,7 @@
       </ion-list>
     </ion-content>
   </ion-menu>
+</ion-split-pane>
+-->
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
   <ion-nav [root]="rootPage" #content main swipeBackEnabled="false" main></ion-nav>
-</ion-split-pane>

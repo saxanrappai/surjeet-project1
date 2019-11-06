@@ -26,7 +26,7 @@ export class MyordersPage {
   products: Observable<any>;
   cancelOrder: Observable<any>;
   params: any = {};
-  productsList: GetOrderList;
+  productsList = [];//: GetOrderList;
   show: boolean = false;
   iconAdd = 'ios-add-outline';
   iconRemove = 'ios-remove-outline';
@@ -47,7 +47,7 @@ export class MyordersPage {
           this.productsList = data;
           console.log(">>>>>",this.productsList);
           let count = 0;
-          this.productsList.today_orders.forEach(element => {
+          this.productsList.forEach(element => {
             let items = JSON.parse(element.items);
             if (items.length > 0) {
               let list = JSON.parse(items[0]);
@@ -70,24 +70,24 @@ export class MyordersPage {
                 pIds.push(keys);
                 pNames.push()
               }
-              this.productsList.today_orders[count].pTitles = JSON.parse(element.product_title);
-              this.productsList.today_orders[count].pids = pIds;
-              this.productsList.today_orders[count].product_list = productItems;
+              this.productsList[count].pTitles = JSON.parse(element.product_title);
+              this.productsList[count].pids = pIds;
+              this.productsList[count].product_list = productItems;
             } else {
-              this.productsList.today_orders[count].pTitles = JSON.parse(element.product_title);
-              this.productsList.today_orders[count].pids = [];
-              this.productsList.today_orders[count].product_list = [];
+              this.productsList[count].pTitles = JSON.parse(element.product_title);
+              this.productsList[count].pids = [];
+              this.productsList[count].product_list = [];
             }
 
 
-                console.log(">>>>>", this.productsList.today_orders);
+                console.log(">>>>>", this.productsList);
 
             // this.productsList.today_orders[count].category_title = category;
             // this.productItems = [];
             count++;
           });
           // console.log(this.productItems);
-          this.params.data = this.productsList.today_orders;
+          this.params.data = this.productsList;
           this.show = true;
           this.toastCtrl.dismissLoader();
         });
@@ -110,7 +110,7 @@ export class MyordersPage {
               this.productsList = data;
               console.log(this.productsList);
               let count = 0;
-              this.productsList.today_orders.forEach(element => {
+              this.productsList.forEach(element => {
                 let items = JSON.parse(element.items);
                 if (items.length > 0) {
                   let list = JSON.parse(items[0]);
@@ -132,13 +132,13 @@ export class MyordersPage {
                     pIds.push(keys);
                     pNames.push()
                   }
-                  this.productsList.today_orders[count].pTitles = JSON.parse(element.product_title);
-                  this.productsList.today_orders[count].pids = pIds;
-                  this.productsList.today_orders[count].product_list = productItems;
+                  this.productsList[count].pTitles = JSON.parse(element.product_title);
+                  this.productsList[count].pids = pIds;
+                  this.productsList[count].product_list = productItems;
                 } else {
-                  this.productsList.today_orders[count].pTitles = JSON.parse(element.product_title);
-                  this.productsList.today_orders[count].pids = [];
-                  this.productsList.today_orders[count].product_list = [];
+                  this.productsList[count].pTitles = JSON.parse(element.product_title);
+                  this.productsList[count].pids = [];
+                  this.productsList[count].product_list = [];
                 }
 
 
@@ -148,7 +148,7 @@ export class MyordersPage {
                 count++;
               });
               // console.log(this.productItems);
-              this.params.data = this.productsList.today_orders;
+              this.params.data = this.productsList;
               this.show = true;
               this.toastCtrl.dismissLoader();
             });

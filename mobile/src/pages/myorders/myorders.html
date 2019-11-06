@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content>
-    <div *ngIf="productsList">
-      <expandable-layout-1 [data]="productsList.today_orders" [events]="params.events"></expandable-layout-1>
+    <div *ngIf="productsList.length>0">
+      <expandable-layout-1 [data]="productsList" [events]="params.events"></expandable-layout-1>
     </div>
   
     <div *ngIf="!productsList">
@@ -18,11 +18,12 @@
               <ion-label>No Orders</ion-label>
             </ion-item>
             </ion-list>
-          </div>
-
-
-
-
-
-
-</ion-content>
+          </div>  
+</ion-content> 
+<ion-footer >
+    <ion-toolbar>
+    <common-footer></common-footer>
+    </ion-toolbar>
+  </ion-footer>
+     
+ 

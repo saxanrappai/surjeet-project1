@@ -7,7 +7,7 @@ import {
 import {
   ListViewAppearanceAnimationService
 } from './../../services/list-view-appearance-animation-service';
- import {
+import {
   Component,
   ViewChild
 } from '@angular/core';
@@ -25,7 +25,9 @@ import {
 import {
   Observable
 } from 'rxjs';
-import { Slides  } from 'ionic-angular';
+import {
+  Slides
+} from 'ionic-angular';
 
 /**
  * Generated class for the CategorylistPage page.
@@ -48,18 +50,20 @@ export class CategorylistPage {
   productsList: any;
   data: any = [];
   showSubCatUI: boolean = false;
-  
+
   @ViewChild(Slides) slides: Slides;
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   @ViewChild(Navbar) navBar: Navbar;
   ionViewDidLoad() {
-    this.navBar.backButtonClick = (e:UIEvent)=>{ 
+    this.navBar.backButtonClick = (e: UIEvent) => {
       console.log('backButtonClick ');
+      this.navCtrl.pop();
+      /*
       this.navCtrl.setRoot('MainProductPage');
- this.navCtrl.popToRoot();
-
+      this.navCtrl.popToRoot();
+*/
     }
   }
   /* ------------------------------------------ */
@@ -73,8 +77,15 @@ export class CategorylistPage {
 
 
 
- 
 
+
+  }
+
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
 
     //this.global.count++;
     this.data = this.navParams.get('data');
@@ -82,6 +93,7 @@ export class CategorylistPage {
     //console.log('cat data:', this.data);
     // let events = this.getEventsForTheme();
     this.animateItems = [];
+    let totalCount = this.data.length;
     for (let i = 0; i < this.data.length; i++) {
       let that = this;
 
@@ -90,18 +102,24 @@ export class CategorylistPage {
       that.animateItems[i] = that.data[i];
 
       if (that.data[i].sub_cat == undefined) {
-       // console.log(">>>>>>>>>>>>> work here >>>>");
+
+        if(i==0){
+          this.toastCtrl.showLoader();
+        }
+        // console.log(">>>>>>>>>>>>> work here >>>>");
         this.showSubCatUI = true;
         setTimeout((i, that) => {
-         // console.log(" changes called");
+          // console.log(" changes called");
           let products = this.httpService.getproducts(that.data[i].id);
           products
             .subscribe(data => {
+           //   console.log("-----", i, totalCount);
+              if (i == (totalCount - 1)) {
+                that.toastCtrl.dismissLoader();
+              }
+
+
               that.data[i].productsList = data.data;
-
-
-
-
 
 
               if (that.data[i].productsList && that.data[i].productsList.length > 0) {
@@ -133,20 +151,19 @@ export class CategorylistPage {
                     element.displayImage[0] = 'assets/images/background/placeholder.jpg';
                   }
                 });
-              //  console.log("productsList", that.data[i].productsList);
+                //  console.log("productsList", that.data[i].productsList);
                 that.animateItems[i].productsList = that.data[i].productsList;
-              //  console.log("animateItems", that.animateItems);
-              } 
+                //  console.log("animateItems", that.animateItems);
+              }
             });
 
-        }, 1, i, that); 
+        }, 1, i, that);
       }
 
       //  }, 200 * i); 
     }
 
   }
-  
 
 
   slideChanged() {
@@ -308,7 +325,7 @@ export class CategorylistPage {
   //   }
   // }
 
-  search(search?: any) {
+  search(search ? : any) {
     let dataSearch = [];
     if (search.target.value == '') {
       this.animateItems = this.data;

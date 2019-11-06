@@ -33,10 +33,11 @@ export class ExpandableLayout1 {
 
     console.log("==================", this.data);
 
+if(this.data != '' && this.data.length>0){
 
     this.data.forEach(element => {
 
-      if (element.product_image != '') {
+      if (element.product_image != undefined && element.product_image != '') {
         if (element.product_image.includes("[")) {
           let images = JSON.parse(element.product_image);
 
@@ -62,6 +63,8 @@ export class ExpandableLayout1 {
 
       console.log("element >>>> ", element);
     });
+
+}
   }
   onEvent(event: string, item: any, e: any) {
     console.log(event)

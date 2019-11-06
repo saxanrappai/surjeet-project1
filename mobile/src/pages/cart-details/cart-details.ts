@@ -55,8 +55,12 @@ export class CartDetailsPage {
   ionViewDidLoad() {
     this.navBar.backButtonClick = (e: UIEvent) => {
       console.log('backButtonClick ');
+      
+     this.navCtrl.pop();
+      /*
       this.navCtrl.setRoot('MainProductPage');
       this.navCtrl.popToRoot();
+      */
     }
   }
   /* ------------------------------------------ */

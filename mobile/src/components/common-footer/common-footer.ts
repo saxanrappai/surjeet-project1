@@ -41,13 +41,11 @@ let that = this;
     console.log("url",url);
 
 
-if(url =='MainProductPage'){
-
+if(url =='MainProductPage'){ 
   this.navCtrl.setRoot('MainProductPage');
   this.navCtrl.popToRoot();
 }else{
-    this.navCtrl.push(url);
-
+    this.navCtrl.push(url); 
 }
 
 
