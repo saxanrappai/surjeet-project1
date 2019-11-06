@@ -1,20 +1,53 @@
-import { FCM } from '@ionic-native/fcm';
-import { MyordersPage } from './../pages/myorders/myorders';
-import { MainProductPage } from './../pages/main-product/main-product';
-import { Component, ViewChild } from '@angular/core';
-import { Platform, MenuController, Nav } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { LocalNotifications } from '@ionic-native/local-notifications';
+import {
+  FCM
+} from '@ionic-native/fcm';
+import {
+  MyordersPage
+} from './../pages/myorders/myorders';
+import {
+  MainProductPage
+} from './../pages/main-product/main-product';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
+import {
+  Platform,
+  MenuController,
+  Nav
+} from 'ionic-angular';
+import {
+  StatusBar
+} from '@ionic-native/status-bar';
+import {
+  SplashScreen
+} from '@ionic-native/splash-screen';
+import {
+  LocalNotifications
+} from '@ionic-native/local-notifications';
 
-import { MenuService } from '../services/menu-service';
+import {
+  MenuService
+} from '../services/menu-service';
 
-import { IService } from '../services/IService';
-import { LoginPage } from '../pages/login/login';
-import { Storage } from '@ionic/storage';
-import { GlobalProvider } from '../providers/global/global';
-import { Events } from 'ionic-angular';
-import { Network } from '@ionic-native/network';
+import {
+  IService
+} from '../services/IService';
+import {
+  LoginPage
+} from '../pages/login/login';
+import {
+  Storage
+} from '@ionic/storage';
+import {
+  GlobalProvider
+} from '../providers/global/global';
+import {
+  Events
+} from 'ionic-angular';
+import {
+  Network
+} from '@ionic-native/network';
 
 @Component({
   templateUrl: 'app.html',
@@ -57,8 +90,8 @@ export class MyApp {
   }
 
 
-  setProfileimage(){
-    
+  setProfileimage() {
+    /*
    if(localStorage.profilePic == undefined){
     this.profileimage = "assets/images/noimage.png";
     var image: any = document.getElementById('profileImage');
@@ -68,7 +101,7 @@ export class MyApp {
       var image: any = document.getElementById('profileImage');
       image.src = localStorage.profilePic ;
     }
-
+*/
   }
   initializeApp() {
     this.platform.ready().then(() => {
@@ -76,8 +109,8 @@ export class MyApp {
       this.nativeStorage.get('loggedin').then((isLoggedIn) => {
         console.log('native storage:' + isLoggedIn);
         if (isLoggedIn != null && isLoggedIn) {
-         this.rootPage = 'MainProductPage';
-       //   this.rootPage = 'RegisterPage';
+          this.rootPage = 'MainProductPage';
+          //   this.rootPage = 'RegisterPage';
         } else {
           this.rootPage = 'LandingPage';
         }
@@ -110,14 +143,26 @@ export class MyApp {
       this.events.subscribe('network:online', () => {
         // alert('network:online ==> ' + this.network.type);
       });
-    }).then(  this.setProfileimage);
+    });
   }
 
   presentProfileModal() {
     //const profileModal = this.modalCtrl.create("IntroPage");
     //profileModal.present();
   }
+  profileName = '';
+  getProfileData() { 
+    this.profileName = localStorage.user_fullname;
+      /*
+    if (that.profileName == '') {
+    this.nativeStorage.get('user_fullname').then((name) => { 
+      console.log("name",name);
+      that.profileName = name;
+    });
+    */ 
 
+
+  }
   openPage(page) {
     // close the menu when clicking a link from the menu
     // navigate to the new page if it is not the current page

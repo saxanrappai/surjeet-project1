@@ -1,7 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { AlertController, Events } from 'ionic-angular';
-import { Network } from '@ionic-native/network';
+import {
+  HttpClient
+} from '@angular/common/http';
+import {
+  Injectable
+} from '@angular/core';
+import {
+  AlertController,
+  Events
+} from 'ionic-angular';
+import {
+  Network
+} from '@ionic-native/network';
 
 export enum ConnectionStatusEnum {
   Online,
@@ -29,8 +38,33 @@ export class GlobalProvider {
     public eventCtrl: Events) {
     console.log('Hello GlobalProvider Provider');
     this.previousStatus = ConnectionStatusEnum.Online;
-
+    if (localStorage.storeSelected == undefined) {
+      localStorage.storeSelected = JSON.stringify([]);
+    }else{
+      this.selectedProducts = this.getSelected();
+    }
   }
+
+  public getSelected() { 
+    this.selectedProducts = JSON.parse(localStorage.storeSelected); 
+    console.log(" this.selectedProducts ",  this.selectedProducts );
+  }
+
+  public addSelected(data) { 
+    var storeSelected = JSON.parse(localStorage.storeSelected);
+    storeSelected.push(data);
+    localStorage.storeSelected = JSON.stringify(storeSelected);
+  }
+
+  public replaceSelected(storeSelected) {  
+    localStorage.storeSelected = JSON.stringify(storeSelected);
+  }
+
+  public clearSelected() {  
+    localStorage.storeSelected = JSON.stringify([]);
+  }
+
+
   public initializeNetworkEvents(): void {
     this.network.onDisconnect().subscribe(() => {
       if (this.previousStatus === ConnectionStatusEnum.Online) {

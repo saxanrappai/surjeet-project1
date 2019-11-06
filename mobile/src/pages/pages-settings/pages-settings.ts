@@ -19,8 +19,9 @@ import {
   Camera,
   CameraOptions
 } from '@ionic-native/camera';
+import {DomSanitizer} from '@angular/platform-browser';
 
-
+//window.resolveLocalFileSystemURL = window.resolveLocalFileSystemURL || {};
 //import { Platform, MenuController, Nav } from 'ionic-angular';
 
 /**
@@ -37,7 +38,7 @@ import {
 })
 export class PagesSettingsPage {
 
-
+  imageProf;
   /* ------------------------------------------ */
   /* ------------------------------------------ */
   /* ------------------------------------------ */
@@ -48,24 +49,23 @@ export class PagesSettingsPage {
       this.navCtrl.setRoot('MainProductPage');
       this.navCtrl.popToRoot();
     }
-    
+    /*
    if(localStorage.profilePic == undefined){
     this.profileimage = "assets/images/noimage.png";
     var image: any = document.getElementById('profileImage');
     image.src = this.profileimage ;
       }
     else{
-      var image: any = document.getElementById('profileImage');
-      image.src = localStorage.profilePic ;
+     //  image.src = localStorage.profilePic ;
+
+
+      this.imageProf =   localStorage.profilePic;
+
+      
     }
-  }
-
-
-
-
-
-
-
+    */
+  } 
+/*
     moveFile(file){
  
     var deferred = $q.defer();
@@ -102,6 +102,7 @@ export class PagesSettingsPage {
 function resOnError(error) {
     console.log('Awwww shnap!: ' + error.code);
 }
+*/
 
   /* ------------------------------------------ */
   /* ------------------------------------------ */
@@ -111,20 +112,16 @@ function resOnError(error) {
   constructor(public navCtrl: NavController,
     private nativeStorage: Storage,
     private camera: Camera,
+    private _DomSanitizationService: DomSanitizer,
     public navParams: NavParams) {
 
     this.nativeStorage.get('user_fullname').then((name) => {
 
       this.profileName = name;
     });
-
-
-
+ 
   }
-
-
-
-
+ 
   data = [{
       title: "My Profile",
       icon: "person"
@@ -176,18 +173,21 @@ function resOnError(error) {
     allowEdit: true,
   }
 
+ 
   getProfilePhoto() {
     this.camera.getPicture(this.options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
+      // If it's base64 (DATA_URL): 
       let base64Image = "data:image/jpeg;base64," + imageData;
+      console.log("imageData", imageData);
       console.log("base64Image", base64Image);
-      localStorage.profilePic = imageData; 
-      
+      localStorage.profilePic =   imageData ; 
+      /*
       var image: any = document.getElementById('profileImage');
-      image.src = localStorage.profilePic ;
+      image.src = base64Image ;
+      */
 
-
+this.imageProf =  imageData;
 
     }, (err) => {
       // Handle error

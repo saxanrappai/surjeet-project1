@@ -23,8 +23,19 @@ export class CommonFooterComponent {
   }
   initializeApp(){
   console.log("iconSelected", this.iconSelected);
+let that = this;
+  document.addEventListener("backbutton", onBackKeyDown, false);
+  function onBackKeyDown() {
+    console.log("backbutton");
+    that.onClickNavigation('MainProductPage');
 
   }
+  }
+
+
+
+
+
 
   onClickNavigation(url){
     console.log("url",url);

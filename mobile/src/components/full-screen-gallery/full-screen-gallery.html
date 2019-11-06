@@ -1,8 +1,6 @@
 <!--Screen Gallery-->
 <ion-slides  #slider pager="true" [initialSlide]="data.index" style="height:250px; padding:1em;width:100%;">
-    <ion-slide *ngFor="let item of data;" style="border-radius:10px;width:100%;height:100%;" [ngStyle]="{'background-image':'url(' + item.url + ')'}"  (click)="onImageClick(myImage)" >
-
-
+    <ion-slide *ngFor="let item of data;" style="border-radius:10px;width:100%;height:100%;" class="prodDetailsImg" [ngStyle]="{'background-image':'url(' + item.url + ')'}"  (click)="onImageClick(myImage)" >
         <img [src]="item.url" #myImage style="display:none;"
             (click)="onImageClick(myImage)" /> 
     </ion-slide>

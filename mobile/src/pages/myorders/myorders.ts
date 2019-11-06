@@ -45,7 +45,7 @@ export class MyordersPage {
       this.products
         .subscribe(data => {
           this.productsList = data;
-          console.log(this.productsList);
+          console.log(">>>>>",this.productsList);
           let count = 0;
           this.productsList.today_orders.forEach(element => {
             let items = JSON.parse(element.items);
@@ -65,6 +65,7 @@ export class MyordersPage {
                   m = m + " " + k + " - " + list[keys][k];
                 }
                 // s = s + " :: " + m;
+                console.log(">>>>>",m);
                 productItems.push(m);
                 pIds.push(keys);
                 pNames.push()
@@ -79,6 +80,7 @@ export class MyordersPage {
             }
 
 
+                console.log(">>>>>", this.productsList.today_orders);
 
             // this.productsList.today_orders[count].category_title = category;
             // this.productItems = [];

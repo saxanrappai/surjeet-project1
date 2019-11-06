@@ -13,18 +13,11 @@
   <ion-list class="profileDetails">
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/images/noimage.png" class="avatar" id="profileImage" (click)="getProfilePhoto()">
+          <img [src]="_DomSanitizationService.bypassSecurityTrustUrl( 'assets/images/noimage.png')" class="avatar" id="profileImage" (click)="getProfilePhoto()">
       </ion-avatar>
       <h2>{{profileName}}</h2>
      </ion-item>
   </ion-list>
-
-
-
-
-
-
-
 
 
   <ion-list *ngFor="let menu of data;" class="menuList" >

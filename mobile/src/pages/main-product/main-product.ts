@@ -1,15 +1,42 @@
-import { FCM } from '@ionic-native/fcm';
-import { HttpClient } from '@angular/common/http';
-import { HttpService } from './../../services/HttpService';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { ImageGalleryService } from '../../services/image-gallery-service';
-import { Observable } from 'rxjs';
-import { ToastService } from '../../services/toast-service';
-import { Storage } from '@ionic/storage';
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { MenuController } from 'ionic-angular';
-import { log } from 'util';
+import {
+  FCM
+} from '@ionic-native/fcm';
+import {
+  HttpClient
+} from '@angular/common/http';
+import {
+  HttpService
+} from './../../services/HttpService';
+import {
+  Component
+} from '@angular/core';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  Platform
+} from 'ionic-angular';
+import {
+  ImageGalleryService
+} from '../../services/image-gallery-service';
+import {
+  Observable
+} from 'rxjs';
+import {
+  ToastService
+} from '../../services/toast-service';
+import {
+  Storage
+} from '@ionic/storage';
+import {
+  LocalNotifications
+} from '@ionic-native/local-notifications';
+import {
+  MenuController
+} from 'ionic-angular';
+import {
+  log
+} from 'util';
 
 /**
  * Generated class for the MainProductPage page.
@@ -27,7 +54,7 @@ export class MainProductPage {
   params: any = {};
   productsList: GetCategories;
   show: boolean = false;
-  products: Observable<any>; 
+  products: Observable < any > ;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private platform: Platform,
     private nativeStorage: Storage,
@@ -35,25 +62,25 @@ export class MainProductPage {
     public menuCtrl: MenuController,
     private localNotifications: LocalNotifications,
     private toastCtrl: ToastService, private httpService: HttpService) {
-    //this.toastCtrl.showLoader();
-    this.products = this.httpService.getCategories();
-    this.products
-      .subscribe(data => {
-       // this.toastCtrl.dismissLoader();
-        this.productsList = data;
-        this.params.data = this.productsList.data;
-        this.params.events = this.getEventsForTheme();
-     //   console.log('cat list:' + JSON.stringify(this.params.data));
-     console.log(">>>>>>>>>> this.params", this.params);
-     
-        this.show = true;
-      });
-    this.initializeApp();
 
   }
 
-  initializeApp() { 
+  initializeApp() {
     this.platform.ready().then(() => {
+      var that = this;
+      this.toastCtrl.showLoader();
+      this.products = this.httpService.getCategories();
+      this.products
+        .subscribe(data => {
+          that.productsList = data;
+          that.params.data = this.productsList.data;
+          that.params.events = this.getEventsForTheme();
+          //   console.log('cat list:' + JSON.stringify(this.params.data));
+          console.log(">>>>>>>>>> this.params", that.params); 
+          that.show = true;
+          that.toastCtrl.dismissLoader();
+        });
+
       console.log('platform ready');
       this.nativeStorage.get('user_id').then((userID) => {
         console.log('native storage userid:' + userID);
@@ -65,7 +92,11 @@ export class MainProductPage {
 
               });
           })
-          .catch(error => console.error('Error getting token', error));
+          .catch(error => {
+
+            console.error('Error getting token', error);
+
+          });
 
         this.firebase.onNotification()
           .subscribe(data => {
@@ -87,15 +118,17 @@ export class MainProductPage {
 
       });
 
-    }); 
+    });
   }
   ionViewDidLoad(): void {
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-  console.log("loaded == ");
-  
-  this.menuCtrl.enable(true);
-}
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log("loaded == ");
+
+    this.menuCtrl.enable(true);
+
+    this.initializeApp();
+  }
 
   getEventsForTheme = (): any => {
     var that = this;

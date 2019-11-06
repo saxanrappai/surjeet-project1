@@ -12,10 +12,10 @@
  
 
 
-  <ion-grid class='display-table' *ngIf="data == ''" >
+  <ion-grid class='display-table' *ngIf="data.length==0" >
     <ion-row class='display-row'>
       <ion-col class='display-cell'> 
-         <img src="../../assets/emptycart.png" class="emptycart"/>
+         <img src="assets/emptycart.png" class="emptycart"/>
          <br/>
        <div class="emptymsg">Your cart is currently empty</div>  
        <div >
@@ -55,7 +55,7 @@ unit_value: "11"
 
 
 
-  <ion-list no-margin *ngIf="data != null">
+  <ion-list no-margin *ngIf="data.length>0">
     <ion-item item-divider no-lines [ngClass]="animateClass" *ngFor="let item of data;let i = index">
       <ion-avatar item-start class="imageCats">
         <img [src]="(item.displayImage == '') ? 'assets/images/background/placeholder.jpg' : item.displayImage[0]"
@@ -120,7 +120,23 @@ unit_value: "11"
 
 -->
 
-<ion-footer >
+<ion-footer > 
+
+
+    <ion-row  *ngIf="data.length>0"> 
+        <ion-col col-6 style="text-align: center;"    >
+          <button ion-button class="deletebutton button-full" (click)="goBack()">Add More</button>  
+        </ion-col>
+          <ion-col col-6 style="text-align: center;"    >
+          <button ion-button class="updatebutton button-full"  (click)="onEvent('onButtonClick', null, $event)">Place Order</button> 
+
+        </ion-col>
+
+
+      </ion-row>
+
+
+
   <ion-toolbar>
   <common-footer></common-footer>
   </ion-toolbar>

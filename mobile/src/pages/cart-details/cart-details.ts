@@ -68,35 +68,8 @@ export class CartDetailsPage {
     private storage: Storage,
     private global: GlobalProvider,
     private httpService: HttpService) {
-    this.data = this.global.selectedProducts;
-    this.data.forEach(element => {
-      let fullShowText = element.title;
-      let arraySizes = element.size.split(",");
-      let arrayUnits = element.unit_value.split(",");
-      let totalInc = element.increament;
 
-      for (let index = (arraySizes.length); index >= 0; index--) {
-        let finalLen = 0;
-        if (arrayUnits[index] != undefined) {
-          if (arrayUnits[index] >= totalInc) {
-            finalLen = arrayUnits[index] - totalInc;
-            totalInc = finalLen;
-            console.log('1:' + totalInc);
-            fullShowText = fullShowText + " <li> " + ((arraySizes[index] != '' && arraySizes[index] != undefined) ? arraySizes[index] : '0') + "-" + (-(totalInc - arrayUnits[index])) + "</li>";
-            break;
-          } else {
-            finalLen = totalInc - arrayUnits[index];
-            totalInc = finalLen;
-            console.log('2:' + totalInc);
-            fullShowText = fullShowText + " <li> " + ((arraySizes[index] != '' && arraySizes[index] != undefined) ? arraySizes[index] : '0') + "-" + (finalLen - (totalInc - arrayUnits[index])) + "</li>";
-
-          }
-
-        }
-      }
-      element.fullText = fullShowText;
-    });
-
+     this.getCartData();
     // this.global.selectedProducts.forEach(element => {
     //   this.cartJsoon[element.product_id] = element.increament;
     // });
@@ -152,19 +125,56 @@ export class CartDetailsPage {
     // console.log(this.data);
   }
 
+
+  getCartData(){
+    
+    this.global.getSelected();
+    this.data = this.global.selectedProducts;
+    this.data.forEach(element => {
+      let fullShowText = element.title;
+      let arraySizes = element.size.split(",");
+      let arrayUnits = element.unit_value.split(",");
+      let totalInc = element.increament;
+
+      for (let index = (arraySizes.length); index >= 0; index--) {
+        let finalLen = 0;
+        if (arrayUnits[index] != undefined) {
+          if (arrayUnits[index] >= totalInc) {
+            finalLen = arrayUnits[index] - totalInc;
+            totalInc = finalLen;
+            console.log('1:' + totalInc);
+            fullShowText = fullShowText + " <li> " + ((arraySizes[index] != '' && arraySizes[index] != undefined) ? arraySizes[index] : '0') + "-" + (-(totalInc - arrayUnits[index])) + "</li>";
+            break;
+          } else {
+            finalLen = totalInc - arrayUnits[index];
+            totalInc = finalLen;
+            console.log('2:' + totalInc);
+            fullShowText = fullShowText + " <li> " + ((arraySizes[index] != '' && arraySizes[index] != undefined) ? arraySizes[index] : '0') + "-" + (finalLen - (totalInc - arrayUnits[index])) + "</li>";
+
+          }
+
+        }
+      }
+      element.fullText = fullShowText;
+    });
+  }
   onEvent(event: string, item: any, e: any) {
     if (e) {
       e.stopPropagation();
     }
-
+    var that= this;
+    this.global.getSelected();
     this.global.selectedProducts.forEach(element => {
       this.cartJsoon[element.product_id] = element.increament;
+      element.locked  =true;
     });
+    this.global.replaceSelected(this.global.selectedProducts);
 
     this.toastCtrl.showLoader();
     this.storage.get('user_id').then((userID) => {
       this.httpService.getUserData(userID).subscribe(data => {
-        if (data.data.user_status != '0') {
+        console.log("data", data);
+        if (data.data.status != '0') {
           this.storage.get('user_id').then((user_id) => {
             this.products = this.httpService.send_order(this.cartJsoon, user_id);
             this.products
@@ -173,6 +183,7 @@ export class CartDetailsPage {
                 this.toastCtrl.dismissLoader();
                 console.log('cat list:' + JSON.stringify(data));
                 this.toastCtrl.presentToast("Order Placed Successfully");
+                this.global.clearSelected();
                 this.navCtrl.setRoot(MainProductPage);
               });
           });
@@ -190,12 +201,15 @@ export class CartDetailsPage {
     this.navCtrl.pop();
   }
   deleteFromCart(id: string) {
+    this.global.getSelected();
     for (let index = 0; index < this.global.selectedProducts.length; index++) {
       const element = this.global.selectedProducts[index];
       if (element.product_id == id) {
         this.global.selectedProducts.splice(index, 1);
       }
     }
+    this.global.replaceSelected(this.global.selectedProducts);
+    this.getCartData();
   }
   returntoShop() {
 
