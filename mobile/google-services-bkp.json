@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "696539422533",
+    "firebase_url": "https://woodcart-c6603.firebaseio.com",
+    "project_id": "woodcart-c6603",
+    "storage_bucket": "woodcart-c6603.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696539422533:android:fb7775a3fda86834",
+        "android_client_info": {
+          "package_name": "lakud-veen.appspot.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696539422533-vaaujo9170cs67cvhf6g7fd602hhpo5m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEiGZ1t8u5wERQnIrfwmGzbM3KZfHadFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696539422533-vaaujo9170cs67cvhf6g7fd602hhpo5m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

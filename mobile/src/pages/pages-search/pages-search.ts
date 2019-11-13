@@ -124,7 +124,7 @@ export class PagesSearchPage {
     console.log("searching...", search.target.value, this.completeData);
     let dataSearch = [];
     dataSearch.length = 0;
-    if (search.target.value == '') {
+    if ((search.target.value == undefined) || search.target.value.trim() == '') {
       this.animateItems = this.data;
     } else {
 

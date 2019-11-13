@@ -27,25 +27,30 @@ let that = this;
   document.addEventListener("backbutton", onBackKeyDown, false);
   function onBackKeyDown() {
     console.log("backbutton");
-    that.onClickNavigation('MainProductPage');
+    var id= that.navCtrl.getActive().id;
+    console.log("id : ",id); 
+    if(id!= "ProductDetailsPage"){
+      that.onClickNavigation('MainProductPage');
+    }
 
   }
   }
-
-
-
-
+ 
 
 
   onClickNavigation(url){
     console.log("url",url);
-
-
+    var id= this.navCtrl.getActive().id;
+    console.log("id : ",id); 
+if(id != url){
 if(url =='MainProductPage'){ 
   this.navCtrl.setRoot('MainProductPage');
   this.navCtrl.popToRoot();
 }else{
     this.navCtrl.push(url); 
+}
+
+
 }
 
 

@@ -7,7 +7,7 @@
       <ion-title>{{global.searchPage_title}}</ion-title>
     </ion-navbar>
   
-    <ion-searchbar placeholder="Search" (ionInput)="search($event)" [showCancelButton]="true"
+    <ion-searchbar placeholder="Search" (keyup)="search($event)" [showCancelButton]="true"
     (ionCancel)="onCancelSearch()">
   </ion-searchbar>
   

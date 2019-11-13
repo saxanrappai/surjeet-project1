@@ -20,6 +20,7 @@ import {
   CameraOptions
 } from '@ionic-native/camera';
 import {DomSanitizer} from '@angular/platform-browser';
+import { HttpService } from '../../services/HttpService';
 
 //window.resolveLocalFileSystemURL = window.resolveLocalFileSystemURL || {};
 //import { Platform, MenuController, Nav } from 'ionic-angular';
@@ -71,17 +72,17 @@ export class PagesSettingsPage {
   /* ------------------------------------------ */
   profileName;
   profileimage;
+  selectedImage = 'assets/images/noimage.png';
+  webpage;
   constructor(public navCtrl: NavController,
     private nativeStorage: Storage,
     private camera: Camera,
-    private _DomSanitizationService: DomSanitizer,
-    public navParams: NavParams) {
-
+    private httpService: HttpService,
+    private DomSanitizer: DomSanitizer,
+        public navParams: NavParams) {
     this.nativeStorage.get('user_fullname').then((name) => {
-
       this.profileName = name;
     });
- 
   }
  
   data = [{
@@ -104,6 +105,7 @@ export class PagesSettingsPage {
       icon: "notifications",
       url:""
     },
+    /*
     {
       title: "Change Password",
       icon: "lock",
@@ -112,22 +114,26 @@ export class PagesSettingsPage {
     {
       title: "Feedback",
       icon: "chatbubbles",
-      url:""
+      url:"bharathptl@gmail.com"
     },
-    {
+    */
+  ];
+
+  
+  data2 = [{ 
       title: "Frequently Asked Questions",
       icon: "help-circle",
-      url:""
+      url:"http://lakud.com/webpages/faq.html"
     },
     {
       title: "Terms and Conditions",
       icon: "document",
-      url:""
+      url:"http://lakud.com/webpages/termsofuse.html"
     },
     {
       title: "Privacy Policy",
       icon: "briefcase",
-      url:""
+      url:"http://lakud.com/webpages/privacypolicy.html"
     },
 
   ];
@@ -136,8 +142,6 @@ export class PagesSettingsPage {
     this.nativeStorage.set('loggedin', false);
     this.navCtrl.push("LandingPage");
   }
-
-
 
   options: CameraOptions = {
     quality: 100,
@@ -148,31 +152,54 @@ export class PagesSettingsPage {
     allowEdit: true,
   }
 
-
   pageNavigate(i){
     if(this.data[i].url != ''){
   //this.navCtrl.setRoot(this.data[i].url);
   //this.navCtrl.popToRoot();
    this.navCtrl.push(this.data[i].url);
-
     }
-
   }
  
-  getProfilePhoto() {
+  pageNavigate2(menu){
+    if(menu.url != ''){
+// this.webpage = this.httpService.getwebpage(menu.url);
+// console.log("this.webpage",this.webpage);
+ 
+var options = "location=yes,hidenavigationbuttons=no,beforeload=yes,closebuttoncaption=X,closebuttoncolor=#FFF";
+   window.open(menu.url , '_self',options);
+   return false;
+    }
+  }
+ 
+ 
+    getProfilePhoto() {
+  
     this.camera.getPicture(this.options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL): 
+
+
+
+
+
+
+
+      
       let base64Image = "data:image/jpeg;base64," + imageData;
       console.log("imageData", imageData);
       console.log("base64Image", base64Image);
-      localStorage.profilePic =   imageData ; 
-      /*
-      var image: any = document.getElementById('profileImage');
-      image.src = base64Image ;
-      */
+      localStorage.profilePic =   imageData ;  
+      this.selectedImage = imageData;
 
-this.imageProf =  imageData;
+      var image: any = document.getElementById('profileImage');
+      image.src = "data:image/jpeg;base64," + imageData;
+
+
+/*
+      var image: any = document.getElementById('profileImage');
+      image.src = imageData ; 
+*/
+//this.imageProf =  imageData;
 
     }, (err) => {
       // Handle error

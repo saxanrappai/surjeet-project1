@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "696539422533",
-    "firebase_url": "https://woodcart-c6603.firebaseio.com",
-    "project_id": "woodcart-c6603",
-    "storage_bucket": "woodcart-c6603.appspot.com"
+    "project_number": "601244682793",
+    "firebase_url": "https://lakud-veen.firebaseio.com",
+    "project_id": "lakud-veen",
+    "storage_bucket": "lakud-veen.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:696539422533:android:fb7775a3fda86834",
+        "mobilesdk_app_id": "1:601244682793:android:1f8be7f7dd55d48a186a38",
         "android_client_info": {
-          "package_name": "com.appyogi.woodcart"
+          "package_name": "com.lakud.veneerapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "696539422533-vaaujo9170cs67cvhf6g7fd602hhpo5m.apps.googleusercontent.com",
+          "client_id": "601244682793-88fbv312qs0bk858ej3ds1tlhe7rjtub.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD78aoMgCuRHgQwCaHxz82o4c8VsTZ-4mo"
+          "current_key": "AIzaSyBEiGZ1t8u5wERQnIrfwmGzbM3KZfHadFQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "696539422533-vaaujo9170cs67cvhf6g7fd602hhpo5m.apps.googleusercontent.com",
+              "client_id": "601244682793-88fbv312qs0bk858ej3ds1tlhe7rjtub.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

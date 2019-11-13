@@ -17,6 +17,7 @@ export class HttpService {
   ADD_ORDER_URL = this.BASE_URL + "index.php/api/sent_order";
   // public static String LOGIN_URL = BASE_URL + "index.php/api/login";
 
+  resultgetCategories:any=[] ;
   pageNumberStack = [];
 
   constructor(private http: HttpClient) { }
@@ -39,8 +40,11 @@ export class HttpService {
     return this.http.get('http://lakud.com/index.php/api/getallproducts');
   }
 
-  getCategories(): Observable<any> {
-    return this.http.get('http://lakud.com/index.php/api/get_categories');
+  getCategories(): Observable<any> { 
+   if( this.resultgetCategories.length ==0){
+    this.resultgetCategories = this.http.get('http://lakud.com/index.php/api/get_categories'); 
+   }
+    return this.resultgetCategories;
   }
 
   getOrderList(user_id: string): Observable<any> {
@@ -80,6 +84,11 @@ export class HttpService {
     console.log("params",params);
 
     return this.http.get('http://lakud.com/index.php/api/signup', { params });
+  }
+
+  getwebpage(url): Observable<any> { 
+
+    return this.http.get(url );
   }
 
 }

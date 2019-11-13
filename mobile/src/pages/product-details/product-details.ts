@@ -73,6 +73,7 @@ export class ProductDetailsPage {
     private toastCtrl: ToastService,
     public platform: Platform,
     private alertCtrl: AlertController) {
+     this.initializeApp();
     this.product = JSON.parse(this.navParams.get('product'));
 
     this.global.getSelected();
@@ -148,8 +149,35 @@ export class ProductDetailsPage {
     //   }
     // });
 
-
+ 
   }
+  
+
+
+
+  initializeApp(){ 
+  let that = this;
+  this.platform.registerBackButtonAction(() => {
+    //your desired action here
+    console.log(" backbutton product detail",that.alert);
+    if (that.alert != null) {
+    that.alert.dismiss();
+    that.alert =null;
+    }else{
+      this.navCtrl.pop(); 
+    }
+ });
+
+  //  document.addEventListener("backbutton", that.onBackKeyDown, false);   
+  //  }
+  //   onBackKeyDown() { 
+    //  console.log(" backbutton product detail"); 
+    //  if (that.modal != null) {
+    //    this.alert.dismiss();
+      //  return false;
+     // }
+  
+    }
 
   // openZoom() {
   //   this.modal = this.modalCtrl.create(GalleryModal, {
@@ -245,12 +273,16 @@ export class ProductDetailsPage {
         }
       }]
     });
+    
+
+
+
     this.alert.present();
   }
-
+ 
   ionViewWillLeave() {
-    if (this.modal != null) {
-      this.modal.dismiss();
+    if (this.alert != null) {
+      this.alert.dismiss();
     }
   }
 }

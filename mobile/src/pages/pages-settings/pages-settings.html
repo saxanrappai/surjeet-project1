@@ -13,7 +13,7 @@
   <ion-list class="profileDetails">
     <ion-item>
       <ion-avatar item-start>
-          <img [src]="_DomSanitizationService.bypassSecurityTrustUrl( 'assets/images/noimage.png')" class="avatar" id="profileImage" (click)="getProfilePhoto()">
+          <img  [src]="DomSanitizer.bypassSecurityTrustUrl(selectedImage)"  class="avatar" id="profileImage" (click)="getProfilePhoto()">
       </ion-avatar>
       <h2>{{profileName}}</h2>
      </ion-item>
@@ -27,6 +27,21 @@
     </ion-item>
   </ion-list>
 
+  <ion-list    class="menuList" >
+    <a href="mailto:bharathptl@gmail.com?subject=Feedback from Woodcart
+  &body=Please write your message " class="hrefLink">  <ion-item >
+      <ion-icon name="chatbubbles" item-start></ion-icon>
+      Feedback
+    </ion-item></a>
+  </ion-list> 
+  
+  <ion-list *ngFor="let menu of data2; let i = index" class="menuList" >
+    <ion-item (click)="pageNavigate2(menu)"  >
+      <ion-icon name="{{menu.icon}}" item-start></ion-icon>
+        {{menu.title}}
+    </ion-item>
+  </ion-list>
+
 
   <div   style="text-align:center;">
 
@@ -34,7 +49,7 @@
   
   </div>
 
-
+<div>{{webpage}}</div>
 
 
 </ion-content>
